@@ -1,0 +1,8 @@
+.header-template{
+    width: 100%;
+    height: 40px;
+}
+
+.header-template label{
+    color: black;
+}
