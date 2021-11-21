@@ -3,23 +3,36 @@
     <a routerLink="home" class="brand-logo">Logo</a>
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
-      <li *ngIf="session" ><a routerLink="parameters/brand-list">parametrizacion</a></li>
-      <li *ngIf="session" ><a routerLink="parameters/category-list">Proponente</a></li>
-      <li *ngIf="session" ><a routerLink="product/product-list">Jurado</a></li>
-      <li *ngIf="session" ><a routerLink="security/user-list">Solicitud</a></li>
-      <li *ngIf="session" ><a routerLink="reports/reports-list">Reportes</a></li>
-      <li *ngIf="!session" ><a routerLink="security/login">Login</a></li>
-      <li *ngIf="session" ><a routerLink="security/logout">Logout</a></li>
+      <li *ngIf="session"><a class="dropdown-trigger" data-target="dropdown">parametrizacion</a></li>
+      <li *ngIf="session"><a routerLink="proponente/listar-proponente">Proponente</a></li>
+      <li *ngIf="session"><a routerLink="jurado/listar-jurado">Jurado</a></li>
+      <li *ngIf="session"><a routerLink="solicitud/listar-solicitud">Solicitud</a></li>
+      <li *ngIf="session"><a routerLink="reportes">Reportes</a></li>
+      <li *ngIf="session"><a routerLink="security/login">Login</a></li>
+      <li *ngIf="session"><a routerLink="security/cerrar-sesion">Cerar sesion</a></li>
     </ul>
   </div>
 </nav>
 
 <ul class="sidenav" id="mobile-demo">
-  <li ><a routerLink="parameters/brand-list">Marca</a></li>
-  <li ><a routerLink="parameters/category-list">Categoria</a></li>
-  <li ><a routerLink="product/product-list">Productos</a></li>
-  <li ><a routerLink="security/user-list">Usuarios</a></li>
-  <li ><a routerLink="reports/reports-list">Reportes</a></li>
-  <li ><a routerLink="security/login">Login</a></li>
-  <li ><a routerLink="security/logout">Logout</a></li>
+  <li *ngIf="session"><a class="dropdown-trigger" data-target="drop-1" routerLink="parametrizacion">parametrizacion</a></li>
+  <li *ngIf="session"><a routerLink="proponente/listar-proponente">Proponente</a></li>
+  <li *ngIf="session"><a routerLink="jurado/listar-jurado">Jurado</a></li>
+  <li *ngIf="session"><a routerLink="solicitud/listar-solicitud">Solicitud</a></li>
+  <li *ngIf="session"><a routerLink="reportes">Reportes</a></li>
+  <li *ngIf="session"><a routerLink="security/login">Login</a></li>
+  <li *ngIf="session"><a routerLink="security/cerrar-sesion">Cerar sesion</a></li>
 </ul>
+
+
+<ul id="dropdown" class="dropdown-content ">
+  <li><a>Departamento</a></li>
+  <li><a>Estado</a></li>
+  <li><a>Facultad</a></li>
+  <li><a>Linea de investigacion</a></li>
+  <li><a>Modalidad</a></li>
+  <li><a>Tipo de comite</a></li>
+  <li><a>Tipo de solicitud</a></li>
+  <li><a>Tipo de vinculacion</a></li>
+</ul>
+

@@ -1,7 +1,48 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CambioClaveComponent } from './cambio-clave/cambio-clave.component';
+import { CerrarSesionComponent } from './cerrar-sesion/cerrar-sesion.component';
+import { LoginComponent } from './login/login.component';
+import { RecuperacionClaveComponent } from './recuperacion-clave/recuperacion-clave.component';
+import { CrearUsuarioComponent } from './usuario/crear-usuario/crear-usuario.component';
+import { EditarUsuarioComponent } from './usuario/editar-usuario/editar-usuario.component';
+import { EliminarUsuarioComponent } from './usuario/eliminar-usuario/eliminar-usuario.component';
+import { ListarUsuarioComponent } from './usuario/listar-usuario/listar-usuario.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: "cambio-clave",
+    component: CambioClaveComponent
+  },
+  {
+    path: "cerrar-sesion",
+    component: CerrarSesionComponent
+  },
+  {
+    path: "login",
+    component: LoginComponent
+  },
+  {
+    path: "recuperar-clave",
+    component: RecuperacionClaveComponent
+  },
+  {
+    path: "crear-usuario",
+    component: CrearUsuarioComponent
+  },
+  {
+    path: "editar-usuario",
+    component: EditarUsuarioComponent
+  },
+  {
+    path: "eliminar-usuario",
+    component: EliminarUsuarioComponent
+  },
+  {
+    path: "listar-usaurio",
+    component: ListarUsuarioComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
