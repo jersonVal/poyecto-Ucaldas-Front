@@ -4,9 +4,7 @@
 
 .move{
     position: absolute;
-    left:-70%;
+    left:-100%;
     top: 0px;
-    background-color: red;
-    color: black;
     z-index: 100000;
 }
