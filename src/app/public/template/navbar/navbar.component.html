@@ -15,7 +15,7 @@
 </nav>
 
 <ul class="sidenav" id="mobile-demo">
-  <li *ngIf="session"><a class="dropdown-trigger" data-target="drop-1" routerLink="parametrizacion">parametrizacion</a></li>
+  <li *ngIf="session"><a routerLink="">parametrizacion</a></li>
   <li *ngIf="session"><a routerLink="proponente/listar-proponente">Proponente</a></li>
   <li *ngIf="session"><a routerLink="jurado/listar-jurado">Jurado</a></li>
   <li *ngIf="session"><a routerLink="solicitud/listar-solicitud">Solicitud</a></li>
@@ -25,14 +25,20 @@
 </ul>
 
 
-<ul id="dropdown" class="dropdown-content ">
-  <li><a>Departamento</a></li>
-  <li><a>Estado</a></li>
-  <li><a>Facultad</a></li>
-  <li><a>Linea de investigacion</a></li>
-  <li><a>Modalidad</a></li>
-  <li><a>Tipo de comite</a></li>
-  <li><a>Tipo de solicitud</a></li>
-  <li><a>Tipo de vinculacion</a></li>
+<ul id="dropdown" class="dropdown-content new">
+  <li><a class="dropdown-trigger-2" data-target="dropdown-2">Departamento</a></li>
+  <li><a class="dropdown-trigger-2" data-target="dropdown-2">Estado</a></li>
+  <li><a class="dropdown-trigger-2" data-target="dropdown-2">Facultad</a></li>
+  <li><a class="dropdown-trigger-2" data-target="dropdown-2">Linea de investigacion</a></li>
+  <li><a class="dropdown-trigger-2" data-target="dropdown-2">Modalidad</a></li>
+  <li><a class="dropdown-trigger-2" data-target="dropdown-2">Tipo de comite</a></li>
+  <li><a class="dropdown-trigger-2" data-target="dropdown-2">Tipo de solicitud</a></li>
+  <li><a class="dropdown-trigger-2" data-target="dropdown-2">Tipo de vinculacion</a></li>
 </ul>
 
+<ul id="dropdown-2" class="dropdown-content move">
+  <li><a routerLink="jurado/listar-jurado">Crear</a></li>
+  <li><a routerLink="">Editar</a></li>
+  <li><a routerLink="">Eliminar</a></li>
+  <li><a routerLink="">Listar</a></li>
+</ul>

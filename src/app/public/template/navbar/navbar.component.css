@@ -1,0 +1,12 @@
+.new{
+    overflow: visible;
+}
+
+.move{
+    position: absolute;
+    left:-70%;
+    top: 0px;
+    background-color: red;
+    color: black;
+    z-index: 100000;
+}
