@@ -1,10 +1,5 @@
-.new{
-    overflow: visible;
-}
+@import url('../../../../styles.css');
 
-.move{
-    position: absolute;
-    left:-100%;
-    top: 0px;
-    z-index: 100000;
+.background-primary{
+    background-color: var(--primary-default);
 }

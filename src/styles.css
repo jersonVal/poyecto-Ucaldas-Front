@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-dark: #001442;
+  --primary-default: #003B70;
+  --primary-light: #6383C0;
+
+  --secondary-default: #E3F0FF;
+
+  --success-dark: #008969;
+  --success-default: #18bc9c;
+  --success-light: #97ffff;
+
+  --info-dark: #0165a8;
+  --info-default: #3498db;
+  --info-light: #b3ffff;
+
+  --warning-dark: #c06900;
+  --warning-default: #f39c12;
+  --warning-light: #ffff91;
+
+  --danger-dark: #b41909;
+  --danger-default: #e74c3c;
+  --danger-light: #ffcbbb;
+
+  --gray-dark: #01070d;
+  --gray-default: #343a40;
+  --gray-light: #b3b9bf;
+}
+
+
+

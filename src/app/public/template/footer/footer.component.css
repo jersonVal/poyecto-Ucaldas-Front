@@ -1,0 +1,17 @@
+@import url('../../../../styles.css');
+
+.background-primary {
+  background-color: var(--primary-default);
+}
+
+.background-primary-light {
+  background-color: var(--primary-light);
+}
+
+.background-primary-dark {
+  background-color: var(--primary-dark);
+}
+
+
+
+

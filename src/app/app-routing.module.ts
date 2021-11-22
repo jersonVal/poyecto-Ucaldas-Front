@@ -15,8 +15,8 @@ const routes: Routes = [
     redirectTo: "/home" 
   },
   {
-    path: "security",
-    loadChildren: () => import("./modules/security/security.module").then(x => x.SecurityModule)
+    path: "seguridad",
+    loadChildren: () => import("./modules/seguridad/seguridad.module").then(x => x.SeguridadModule)
   },
   {
     path: "parametrizacion",

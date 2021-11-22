@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SecurityRoutingModule } from './security-routing.module';
+import { SeguridadRoutingModule } from './seguridad-routing.module';
 import { LoginComponent } from './login/login.component';
 import { CambioClaveComponent } from './cambio-clave/cambio-clave.component';
 import { RecuperacionClaveComponent } from './recuperacion-clave/recuperacion-clave.component';
@@ -25,7 +25,7 @@ import { ListarUsuarioComponent } from './usuario/listar-usuario/listar-usuario.
   ],
   imports: [
     CommonModule,
-    SecurityRoutingModule
+    SeguridadRoutingModule
   ]
 })
-export class SecurityModule { }
+export class SeguridadModule { }
