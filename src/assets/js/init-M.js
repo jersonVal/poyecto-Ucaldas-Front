@@ -1,16 +1,18 @@
 document.addEventListener('DOMContentLoaded', function () {
+    //Inicializacion boton hamburguesa mobil
     var elemsSide = document.querySelectorAll('.sidenav');
-    var elemsDrop1 = document.querySelectorAll('.dropdown-trigger');
-    var elemsDrop2 = document.querySelectorAll('.dropdown-trigger-2');
-
     var sidenav = M.Sidenav.init(elemsSide, {});
-
+    //Inicializacion dropdown
+    var elemsDrop1 = document.querySelectorAll('.dropdown-trigger');
     var drop1 = M.Dropdown.init(elemsDrop1, {
-        // closeOnClick: false,
         coverTrigger: false,
         hover: true,
         constrainWidth: false
     });
-
+    //Inicializacion modal
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems, {
+        opacity: 0.8
+    });
 });
 

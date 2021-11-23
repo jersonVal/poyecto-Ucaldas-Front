@@ -6,9 +6,8 @@
   <div class="container">
     <div class="z-depth-1 grey lighten-4 row"
       style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
-
-      <!-- [formGroup]="form" -->
-      <form class="col s12" >
+      <!--  -->
+      <form  class="col s12" [formGroup]="form">
         <div class='row'>
           <div class='col s12'>
           </div>
@@ -18,8 +17,8 @@
           <div class='input-field col s12'>
             <input formControlName="username" class='validate' type='text' name='usuario' id='email' />
             <label for='email'>Email</label>
-            <!-- *ngIf="GetForm['username'].errors && (GetForm['username'].dirty || GetForm['username'].touched) " -->
-            <div>
+            <!--  -->
+            <div *ngIf="GetForm['username'].errors && (GetForm['username'].dirty || GetForm['username'].touched) ">
               <label class="warning">Por favor ingrese un usuario valido</label>
             </div>
           </div>
@@ -30,20 +29,21 @@
             <input formControlName="password" class='validate' type='password' name='password' id='password' />
             <label for='password'>contraseña</label>
             
-            <!-- *ngIf="GetForm['password'].errors && (GetForm['password'].dirty || GetForm['password'].touched)" -->
-            <div>
+            <!--  -->
+            <div *ngIf="GetForm['password'].errors && (GetForm['password'].dirty || GetForm['password'].touched)">
               <label class="warning">Por favor ingrese una contraseña valida</label>
             </div>
           </div>
           <label style='float: right;'>
-            <a class='color-third' routerLink="/security/reset-password"><b>¿Olvido su contraseña?</b></a>
+            <a class='color-third' routerLink="/seguridad/recuperar-clave"><b>¿Olvido su contraseña?</b></a>
           </label>
         </div>
 
         <br />
-        <div class='row center'>
-            <!-- [disabled]="GetForm['username'].errors || GetForm['password'].errors" type='button' (click)="Login()" -->
-          <button name='btn_login' class='col s12 btn btn-large background-primary'>Login</button>
+        <div class='row center' >
+            <!--  -->
+          <button name='btn_login' type='button' class='col s12 btn btn-large background-primary'
+          [disabled]="GetForm['username'].errors || GetForm['password'].errors" type='button' (click)="Login()">Iniciar sesión</button>
         </div>
       </form>
     </div>

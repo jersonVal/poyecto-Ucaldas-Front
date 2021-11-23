@@ -1,0 +1,22 @@
+@import url('../../../../styles.css');
+
+
+.background-primary{
+    background-color: var(--primary-default);
+}
+
+.color-primary{
+    color: var(--primary-default);
+}
+
+.background-primary:hover{
+    background-color: var(--primary-dark);
+}
+
+.color-third{
+    color: var(--third-default);
+}
+
+.warning{
+    color: var(--danger-default);
+}
