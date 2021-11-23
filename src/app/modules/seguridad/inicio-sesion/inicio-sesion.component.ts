@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-inicio-sesion',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioSesionComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup = new FormGroup({});
+  constructor(
+    private fb: FormBuilder
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  CreateForm(){
+    this.form=this.fb.group({
+      username:["",[Validators.required, Validators.email, Validators.minLength(8)]],
+      password:["",[Validators.required,Validators.minLength(5)]]
+    })
   }
 
 }
