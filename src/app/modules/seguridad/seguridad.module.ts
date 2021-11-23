@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SeguridadRoutingModule } from './seguridad-routing.module';
-import { LoginComponent } from './login/login.component';
+import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 import { CambioClaveComponent } from './cambio-clave/cambio-clave.component';
 import { RecuperacionClaveComponent } from './recuperacion-clave/recuperacion-clave.component';
 import { CrearUsuarioComponent } from './usuario/crear-usuario/crear-usuario.component';
@@ -14,7 +14,7 @@ import { ListarUsuarioComponent } from './usuario/listar-usuario/listar-usuario.
 
 @NgModule({
   declarations: [
-    LoginComponent,
+    InicioSesionComponent,
     CambioClaveComponent,
     RecuperacionClaveComponent,
     CrearUsuarioComponent,

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CambioClaveComponent } from './cambio-clave/cambio-clave.component';
 import { CerrarSesionComponent } from './cerrar-sesion/cerrar-sesion.component';
-import { LoginComponent } from './login/login.component';
+import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 import { RecuperacionClaveComponent } from './recuperacion-clave/recuperacion-clave.component';
 import { CrearUsuarioComponent } from './usuario/crear-usuario/crear-usuario.component';
 import { EditarUsuarioComponent } from './usuario/editar-usuario/editar-usuario.component';
@@ -19,8 +19,8 @@ const routes: Routes = [
     component: CerrarSesionComponent
   },
   {
-    path: "login",
-    component: LoginComponent
+    path: "inicio-sesion",
+    component: InicioSesionComponent
   },
   {
     path: "recuperar-clave",
