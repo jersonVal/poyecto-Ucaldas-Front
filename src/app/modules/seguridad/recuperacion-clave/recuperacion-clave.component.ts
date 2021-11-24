@@ -46,6 +46,7 @@ export class RecuperacionClaveComponent implements OnInit {
       this.servicioSeguridad.RecuperarClave(modelo).subscribe({
         next:( data:any ) => {
           console.log(data)
+          OpenGeneralModal('Contraseña cambiada con exito')
         },
         error:( error:any ) => {
           OpenGeneralModal(GeneralData.GENERAL_ERROR_MESSAGE)

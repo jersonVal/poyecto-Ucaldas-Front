@@ -24,8 +24,9 @@ export class SeguridadService {
   }
   
   RecuperarClave(modelo:CredencialesRecuperarClaveModel):Observable<any>{
+    console.log('entro al servicio')
     return this.http.post(`${this.url}/recuperar-clave`,{
-      usuario:modelo.username
+      correo:modelo.username
     })
   }
 

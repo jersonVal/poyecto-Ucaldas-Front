@@ -24,7 +24,7 @@
   
           <br />
           <div class='row center' >
-            <button name='btn_login' type='button' class='col s12 btn btn-large background-primary'
+            <button name='btn_login' (click)="RecuperarClave()" type='button' class='col s12 btn btn-large background-primary'
             [disabled]="GetForm['username'].errors" type='button' >Recuperar clave</button>
           </div>
         </form>

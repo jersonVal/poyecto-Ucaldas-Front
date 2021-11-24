@@ -27,19 +27,19 @@ const routes: Routes = [
     component: RecuperacionClaveComponent
   },
   {
-    path: "crear-usuario",
+    path: "usuario/crear-usuario",
     component: CrearUsuarioComponent
   },
   {
-    path: "editar-usuario",
+    path: "usuario/editar-usuario",
     component: EditarUsuarioComponent
   },
   {
-    path: "eliminar-usuario",
+    path: "usuario/eliminar-usuario",
     component: EliminarUsuarioComponent
   },
   {
-    path: "listar-usaurio",
+    path: "usuario/listar-usaurio",
     component: ListarUsuarioComponent
   }
 ];
