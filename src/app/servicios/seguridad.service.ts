@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { GeneralData} from '../config/general-data'
 import { Observable } from 'rxjs';
 import { CredencialesUsuarioModel} from '../modelos/credenciales-usuario.model'
+import { CredencialesRecuperarClaveModel } from '../modelos/credenciales-recuperar-clave.model';
 
 @Injectable({
   providedIn: 'root'
@@ -21,4 +22,11 @@ export class SeguridadService {
       clave: modelo.password
     })
   }
+  
+  RecuperarClave(modelo:CredencialesRecuperarClaveModel):Observable<any>{
+    return this.http.post(`${this.url}/recuperar-clave`,{
+      usuario:modelo.username
+    })
+  }
+
 }
