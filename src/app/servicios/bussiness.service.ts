@@ -37,7 +37,7 @@ export class BussinessService {
       documento: modelo.documento,
       correo: modelo.correo,
       fechaNacimiento: modelo.fechaNacimiento,
-      celular: modelo.celular,
+      celular: modelo.celular?.toString(),
       foto: modelo.foto,
       id_departamento: modelo.idDepartamento,
       id_tipoVinculacion: modelo.idTipoVinculacion 

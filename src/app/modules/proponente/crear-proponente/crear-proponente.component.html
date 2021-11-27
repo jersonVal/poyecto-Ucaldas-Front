@@ -61,7 +61,7 @@
                 </div>
 
                 <div class='row'>
-                    <div class='input-field col s12'>
+                    <div class='input-field col s6'>
                         <input formControlName="celular" class='validate' type='number' name='celular' id='celular' />
                         <label for='celular'>Celular</label>
 
@@ -70,6 +70,16 @@
                             <label class="warning">Por favor ingrese un celular valido</label>
                         </div>
                     </div>
+
+                    <div class='input-field col s6'>
+                      <input formControlName="correo" class='validate' type='email' name='correo' id='correo' />
+                      <label for='correo'>Correo</label>
+
+                      <div
+                          *ngIf="GetForm['correo'].errors && (GetForm['correo'].dirty || GetForm['correo'].touched) ">
+                          <label class="warning">Por favor ingrese un correo valido</label>
+                      </div>
+                  </div>
 
                 </div>
 

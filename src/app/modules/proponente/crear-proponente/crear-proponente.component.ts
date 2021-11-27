@@ -24,6 +24,7 @@ export class CrearProponenteComponent implements OnInit {
 
   ngOnInit(): void {
     this.InitSelect();
+    this.CreateForm();
   }
 
   InitSelect(){
@@ -49,7 +50,6 @@ export class CrearProponenteComponent implements OnInit {
     if(this.form.invalid){
       OpenGeneralModal('Invalido')
     }else{
-      OpenGeneralModal('Formulario correcto a identificar')
       let modelo = new CredencialesCrearProponenteModel();
       modelo.nombre = this.GetForm['nombre'].value;
       modelo.apellidos = this.GetForm['apellidos'].value;
