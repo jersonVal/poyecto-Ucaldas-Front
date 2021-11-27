@@ -36,7 +36,7 @@ export class InicioSesionComponent implements OnInit {
     if(this.form.invalid){
       OpenGeneralModal('Invalido')
     }else{
-      OpenGeneralModal('Formulario correcto a identificar')
+      OpenGeneralModal('Formulario correcto a identificar');
       let modelo = new CredencialesUsuarioModel();
       modelo.username = this.GetForm['username'].value;
       modelo.password = MD5(this.GetForm['password'].value).toString();

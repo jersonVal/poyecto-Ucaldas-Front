@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { CredencialesUsuarioModel} from '../modelos/credenciales-usuario.model'
 import { CredencialesRecuperarClaveModel } from '../modelos/credenciales-recuperar-clave.model';
 import { CredencialesCrearUsuarioModel } from '../modelos/credenciales-crear-usuario.model';
+import { CredencialesCambiarClaveModel } from '../modelos/credenciales-cambiar-clave.model';
 
 @Injectable({
   providedIn: 'root'
@@ -41,6 +42,16 @@ export class SeguridadService {
       documento: modelo.documento,
       fechaNacimiento: modelo.fechaNacimiento,
       id_rol: modelo.idRol
+    })
+  }
+
+  CambiarClave(modelo:CredencialesCambiarClaveModel):Observable<any>{
+
+    console.log(modelo)
+    return this.http.post(`${this.url}/cambiar-clave`,{
+      correo: modelo.email,
+      clave_actual: modelo.clave_actual,
+      clave_nueva: modelo.clave_nueva
     })
   }
 
