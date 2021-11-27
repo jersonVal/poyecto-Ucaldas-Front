@@ -1,1 +1,86 @@
-<p>crear-jurado works!</p>
+<main class="center">
+
+  <h5 class="color-primary">Formulario de identificaion</h5>
+  <div class="section"></div>
+
+  <div class="container">
+    <div class="z-depth-1 grey lighten-4 row"
+      style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+      <!--  -->
+      <form class="col s12" [formGroup]="form">
+        <div class='row'>
+          <div class='col s12'>
+          </div>
+        </div>
+
+        <div class='row'>
+          <div class='input-field col s12'>
+            <input formControlName="nombre" class='validate' type='text' name='nombre' id='nombre' />
+            <label for='nombre'>Nombre</label>
+            <!--  -->
+            <div *ngIf="GetForm['nombre'].errors && (GetForm['nombre'].dirty || GetForm['nombre'].touched) ">
+              <label class="warning">Por favor ingrese un nombre valido</label>
+            </div>
+          </div>
+        </div>
+
+        <div class='row'>
+          <div class='input-field col s12'>
+            <input formControlName="apellidos" class='validate' type='text' name='apellidos' id='apellidos' />
+            <label for='apellidos'>Apellidos</label>
+
+            <!--  -->
+            <div *ngIf="GetForm['apellidos'].errors && (GetForm['apellidos'].dirty || GetForm['apellidos'].touched)">
+              <label class="warning">Por favor ingrese apellidos valida</label>
+            </div>
+          </div>
+        </div>
+
+
+        <div class='row'>
+          <div class='input-field col s6'>
+            <input formControlName="telefono" class='validate' type='number' min="0" name='telefono' id='telefono' />
+            <label for='telefono'>Telefono</label>
+
+            <!--  -->
+            <div *ngIf="GetForm['telefono'].errors && (GetForm['telefono'].dirty || GetForm['telefono'].touched)">
+              <label class="warning">Por favor un telefono valido</label>
+            </div>
+          </div>
+          <div class='input-field col s6'>
+            <input formControlName="entidad" class='validate' type='text' name='entidad' id='entidad' />
+            <label for='entidad'>Entidad </label>
+
+            <!--  -->
+            <div *ngIf="GetForm['entidad'].errors && (GetForm['entidad'].dirty || GetForm['entidad'].touched)">
+              <label class="warning">Por favor ingrese una entidad valida valida</label>
+            </div>
+          </div>
+        </div>
+
+        <div class='row'>
+          <div class='input-field col s12'>
+            <input formControlName="correo" class='validate' type='email' name='correo' id='correo' />
+            <label for='correo'>Correo</label>
+
+            <!--  -->
+            <div *ngIf="GetForm['correo'].errors && (GetForm['correo'].dirty || GetForm['correo'].touched)">
+              <label class="warning">Por favor ingrese un correo valido</label>
+            </div>
+          </div>
+        </div>
+
+        <br />
+        <div class='row center'>
+          <!--  -->
+          <button name='btn_login' type='button' class='col s12 btn btn-large background-primary' type='button'
+            (click)="CreateJurado()">Crear jurado</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="section"></div>
+  <div class="section"></div>
+
+</main>

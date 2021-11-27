@@ -6,6 +6,7 @@ import { CrearJuradoComponent } from './crear-jurado/crear-jurado.component';
 import { EliminarJuradoComponent } from './eliminar-jurado/eliminar-jurado.component';
 import { EditarJuradoComponent } from './editar-jurado/editar-jurado.component';
 import { ListarJuradoComponent } from './listar-jurado/listar-jurado.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,9 @@ import { ListarJuradoComponent } from './listar-jurado/listar-jurado.component';
   ],
   imports: [
     CommonModule,
-    JuradoRoutingModule
+    JuradoRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class JuradoModule { }
