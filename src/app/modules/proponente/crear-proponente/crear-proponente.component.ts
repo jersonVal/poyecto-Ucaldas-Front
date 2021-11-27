@@ -5,7 +5,7 @@ import { CredencialesCrearProponenteModel } from 'src/app/modelos/credenciales-c
 import {BussinessService} from 'src/app/servicios/bussiness.service';
 
 declare const OpenGeneralModal: any;
-
+declare const InitSelectById: any;
 
 @Component({
   selector: 'app-crear-proponente',
@@ -15,6 +15,7 @@ declare const OpenGeneralModal: any;
 export class CrearProponenteComponent implements OnInit {
 
   form: FormGroup = new FormGroup({});
+  
 
   constructor(
     private fb: FormBuilder,
@@ -22,26 +23,26 @@ export class CrearProponenteComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.InitSelect();
+  }
+
+  InitSelect(){
+    InitSelectById('idDepartamento');
+    InitSelectById('idTipoVinculacion');
   }
 
   CreateForm(){
     this.form=this.fb.group({
-      primerNombre:["",[Validators.required, Validators.minLength(GeneralData.NAME_MIN_LENGHT)]],
-      segundoNombre:["",[Validators.required, Validators.minLength(GeneralData.NAME_MIN_LENGHT)]],
-      primerApellido:["",[Validators.required,Validators.minLength(GeneralData.NAME_MIN_LENGHT)]],
-      segundoApellido:["",[Validators.required,Validators.minLength(GeneralData.NAME_MIN_LENGHT)]],
+      nombre:["",[Validators.required, Validators.minLength(GeneralData.NAME_MIN_LENGHT)]],
+      apellidos:["",[Validators.required,Validators.minLength(GeneralData.NAME_MIN_LENGHT)]],
       documento:["",[Validators.required,Validators.minLength(GeneralData.PASSWORD_MIN_LENGHT)]],
       correo:["",[Validators.required,Validators.email,Validators.minLength(GeneralData.EMAIL_MIN_LENGHT)]],
       fechaNacimiento:["",[Validators.required]],
       celular:["",[Validators.required,Validators.maxLength(GeneralData.PHONE_MAX_LENGHT)]],
-      foto:["sfadsgsfhdggh",[Validators.required]],
-      idDepartamento:["dgsgsgs",[Validators.required]],
-      idTipoVinculacion:["gsdgdsgsfgf",[Validators.required]]
+      foto:[""],
+      idDepartamento:["617f715792854e2188063b68",[Validators.required]],
+      idTipoVinculacion:["617f715792854e2188063b68",[Validators.required]]
     })
-  }
-
-  get GetForm(){
-    return this.form.controls;
   }
 
   CrearProponente(){
@@ -50,15 +51,12 @@ export class CrearProponenteComponent implements OnInit {
     }else{
       OpenGeneralModal('Formulario correcto a identificar')
       let modelo = new CredencialesCrearProponenteModel();
-      modelo.primerNombre = this.GetForm['primerNombre'].value;
-      modelo.segundoNombre = this.GetForm['segundoNombre'].value;
-      modelo.primerApellido = this.GetForm['primerApellido'].value;
-      modelo.segundoApellido = this.GetForm['segundoApellido'].value;
-      modelo.documento = this.GetForm['documento'].value;
-      modelo.correo = this.GetForm['correo'].value;
-      modelo.fechaNacimiento = this.GetForm['fechaNacimiento'].value;
+      modelo.nombre = this.GetForm['nombre'].value;
+      modelo.apellidos = this.GetForm['apellidos'].value;
       modelo.celular = this.GetForm['celular'].value;
-      modelo.foto = this.GetForm['foto'].value;
+      modelo.correo = this.GetForm['correo'].value;
+      modelo.documento = this.GetForm['documento'].value;
+      modelo.fechaNacimiento = this.GetForm['fechaNacimiento'].value;
       modelo.idDepartamento = this.GetForm['idDepartamento'].value;
       modelo.idTipoVinculacion = this.GetForm['idTipoVinculacion'].value;
       //Llamado al servicio de identificacion de usuario
@@ -74,5 +72,16 @@ export class CrearProponenteComponent implements OnInit {
       })
     }
   }
+
+
+
+
+  
+
+  get GetForm(){
+    return this.form.controls;
+  }
+
+  
 
 }

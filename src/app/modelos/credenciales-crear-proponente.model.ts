@@ -1,8 +1,6 @@
 export class CredencialesCrearProponenteModel{
-    primerNombre?: string;
-    segundoNombre?: string;
-    primerApellido?: string;
-    segundoApellido?: string;
+    nombre?: string;
+    apellidos?: string;
     documento?: string;
     correo?: string;
     fechaNacimiento?: string;

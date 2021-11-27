@@ -32,17 +32,15 @@ export class BussinessService {
 
     console.log(modelo)
     return this.http.post(`${this.url}/proponentes`,{
-      primer_nombre: modelo.primerNombre,
-      segundo_nombre: modelo.segundoNombre,
-      primer_apellido: modelo.primerApellido,
-      segundo_apellido: modelo.segundoApellido,
+      nombre: modelo.nombre,
+      apellidos: modelo.apellidos,
       documento: modelo.documento,
       correo: modelo.correo,
       fechaNacimiento: modelo.fechaNacimiento,
       celular: modelo.celular,
       foto: modelo.foto,
       id_departamento: modelo.idDepartamento,
-      id_tipoVinculacion: modelo.idTipoVinculacion
+      id_tipoVinculacion: modelo.idTipoVinculacion 
     })
   }
 }

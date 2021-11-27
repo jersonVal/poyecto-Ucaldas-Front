@@ -1,171 +1,121 @@
 <main class="center">
-    <h5 class="color-primary">Formulario de creación de proponente</h5>
+
+    <h5 class="color-primary">Formulario de creacion de proponente</h5>
     <div class="section"></div>
 
     <div class="container">
-        <div class="z-depth-1 grey lighten-4 row" style="
-        display: inline-block;
-        padding: 32px 48px 0px 48px;
-        border: 1px solid #eee;
-      ">
-            
-
+        <div class="z-depth-1 grey lighten-4 row"
+            style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+            <!--  -->
             <form class="col s12" [formGroup]="form">
-
-                <div class="row">
-                    <div class="col s12"></div>
+                <div class='row'>
+                    <div class='col s12'>
+                    </div>
                 </div>
 
-                <div class="row">
-
-                    <div class="input-field col s6">
-                        <input formControlName="primerNombre" class="validate" type="text" name="primerNombre"
-                            id="primerNombre" />
-                        <label for="primerNombre">Primer nombre</label>
-
-                        <div *ngIf="
-                            GetForm['primerNombre'].errors &&
-                            (GetForm['primerNombre'].dirty ||
-                            GetForm['primerNombre'].touched)
-                            ">
-                            <label class="warning">Por favor ingrese un nombre valido</label>
-                        </div>
-                    </div>
-
-                    <div class="input-field col s6">
-                        <input formControlName="segundoNombre" class="validate" type="text" name="segundoNombre"
-                            id="segundoNombre" />
-                        <label for="segundoNombre">Segundo nombre</label>
-                        <!--  -->
-
-                        <div *ngIf="
-                            GetForm['segundoNombre'].errors &&
-                            (GetForm['segundoNombre'].dirty ||
-                            GetForm['segundoNombre'].touched)
-                            ">
-                            <label class="warning">Por favor ingrese un nombre valido</label>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="row">
-
-                    <div class="input-field col s6">
-                        <input formControlName="primerApellido" class="validate" type="text" name="primerApellido"
-                            id="primerApellido" />
-                        <label for="primerApellido">Primer apellido</label>
-                        <!--  -->
-
-                        <div *ngIf="
-                            GetForm['primerApellido'].errors &&
-                            (GetForm['primerApellido'].dirty ||
-                            GetForm['primerApellido'].touched)
-                            ">
-                            <label class="warning">Por favor ingrese un apellido valido</label>
-                        </div>
-                    </div>
-                    <div class="input-field col s6">
-                        <input formControlName="segundoApellido" class="validate" type="text" name="segundoApellido"
-                            id="segundoApellido" />
-                        <label for="segundoApellido">Segundo apellido</label>
-                        <!--  -->
-
-                        <div *ngIf="
-                            GetForm['segundoApellido'].errors &&
-                            (GetForm['segundoApellido'].dirty ||
-                            GetForm['segundoApellido'].touched)
-                            ">
-                            <label class="warning">Por favor ingrese un apellido valido</label>
-                        </div>
-                    </div>
-
-                </div>
-
-
-                <div class="row">
-
-                    <div class="input-field col s6">
-                        <input formControlName="documento" class="validate" type="text" name="documento"
-                            id="documento" />
-                        <label for="documento">Documento</label>
-                        <!--  -->
-
-                        <div *ngIf="
-                            GetForm['documento'].errors &&
-                            (GetForm['documento'].dirty ||
-                            GetForm['documento'].touched)
-                            ">
-                            <label class="warning">Por favor ingrese un documento valido</label>
-                        </div>
-                    </div>
-                    
+                <div class='row'>
                     <div class='input-field col s6'>
-            
+                        <input formControlName="nombre" class='validate' type='text' name='nombre' id='nombre' />
+                        <label for='nombre'>Nombre</label>
+
+                        <div
+                            *ngIf="GetForm['nombre'].errors && (GetForm['nombre'].dirty || GetForm['nombre'].touched) ">
+                            <label class="warning">Por favor ingrese un nombre valido</label>
+                        </div>
+                    </div>
+
+                    <div class='input-field col s6'>
+                        <input formControlName="apellidos" class='validate' type='text' name='apellidos'
+                            id='apellidos' />
+                        <label for='apellidos'>Apellidos</label>
+                        <!--  -->
+                        <div
+                            *ngIf="GetForm['apellidos'].errors && (GetForm['apellidos'].dirty || GetForm['apellidos'].touched) ">
+                            <label class="warning">Por favor ingrese un Apellido valido</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='row'>
+                    <div class='input-field col s6'>
+                        <input formControlName="documento" class='validate' type='text' name='documento'
+                            id='documento' />
+                        <label for='documento'>Documento</label>
+                        <!--  -->
+                        <div
+                            *ngIf="GetForm['documento'].errors && (GetForm['documento'].dirty || GetForm['documento'].touched) ">
+                            <label class="warning">Por favor ingrese un Documento valido</label>
+                        </div>
+                    </div>
+
+                    <div class='input-field col s6'>
                         <input formControlName="fechaNacimiento" class='validate' type='date' name='fechaNacimiento'
-                          id='fechaNacimiento' />
-                        <label for='fechaNacimiento'>Fecha Nacimiento</label>
+                            id='fechaNacimiento' />
+                        <label for='fechaNacimiento'>Fecha de nacimiento</label>
                         <!--  -->
-                        
-                        <div *ngIf="
-                            GetForm['fechaNacimiento'].errors && 
-                            (GetForm['fechaNacimiento'].dirty || 
-                            GetForm['fechaNacimiento'].touched) 
-                            ">
-                          <label class="warning">Por favor ingrese una fecha valida</label>
+                        <div
+                            *ngIf="GetForm['fechaNacimiento'].errors && (GetForm['fechaNacimiento'].dirty || GetForm['fechaNacimiento'].touched) ">
+                            <label class="warning">Por favor ingrese una fecha de nacimiento valido</label>
                         </div>
                     </div>
-                    
                 </div>
 
-                <div class="row">
-
-                    <div class="input-field col s6">
-                        <input formControlName="correo" class="validate" type="email" name="correo" id="correo" />
-                        <label for="correo">Correo</label>
-
-                        <!--  -->
-
-                        <div *ngIf="
-                        GetForm['correo'].errors &&
-                        (GetForm['correo'].dirty || 
-                        GetForm['correo'].touched)
-                        ">
-                            <label class="warning">Por favor ingrese un correo valida</label>
-                        </div>
-                    </div>
-                    
-                    <div class='input-field col s6'>
-            
-                        <input formControlName="celular" class='validate' type='number' name='celular'
-                          id='celular' />
+                <div class='row'>
+                    <div class='input-field col s12'>
+                        <input formControlName="celular" class='validate' type='number' name='celular' id='celular' />
                         <label for='celular'>Celular</label>
-                        <!--  -->
-                        
-                        <div *ngIf="
-                            GetForm['celular'].errors && 
-                            (GetForm['celular'].dirty || 
-                            GetForm['celular'].touched) 
-                            ">
-                          <label class="warning">Por favor ingrese un celular valido</label>
+
+                        <div
+                            *ngIf="GetForm['celular'].errors && (GetForm['celular'].dirty || GetForm['celular'].touched) ">
+                            <label class="warning">Por favor ingrese un celular valido</label>
                         </div>
                     </div>
-                    
+
+                </div>
+
+                <div class='row'>
+            
+
+                    <div class='input-field col s12'>
+                        <input formControlName="foto" class='validate' type='file' name='foto' id='foto' />
+                        <label for='foto'>Foto (Opcional)</label>
+                    </div>
+                </div>
+                
+
+                <div class='row'>
+                    <div class='input-field col s6'>
+                        <select id="idDepartamento">
+                            <option value="" disabled>Rol</option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                        <label for="sel">Departamento</label>
+                    </div>
+
+                    <div class='input-field col s6'>
+                        <select id="idTipoVinculacion">
+                            <option value="" disabled>Rol</option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                        <label for="sel">Tipo vinculacion</label>
+                    </div>
                 </div>
 
                 <br />
-                <div class="row center">
-                    <!--  -->
-                    <!-- [disabled]="GetForm['username'].errors || GetForm['password'].errors" -->
-                    <button name="btn_login" (click)="CrearProponente()" type="button"
-                        class="col s12 btn btn-large background-primary" type="button">
-                        Crear Proponente
-                    </button>
+                <div class='row center'>
+                    <button name='btn_login' type='button' class='col s12 btn btn-large background-primary'
+                        type='button' (click)="CrearProponente()">Crear Proponente</button>
                 </div>
             </form>
         </div>
     </div>
 
+
     <div class="section"></div>
     <div class="section"></div>
+
 </main>
