@@ -4,13 +4,38 @@
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
       <li *ngIf="!session"><a routerLink="home">Inicio</a></li>
-      <li *ngIf="!session"><a class="dropdown-trigger" data-target="dropdown">Parametrizacion<i
-            class="material-icons right">arrow_drop_down</i></a></li>
+
+      <!-- dropdown parametrizacion-->
+      <li *ngIf="session" class="acti">
+        <a>Parametrizacion<i class="material-icons right">arrow_drop_down</i></a>
+        <ul class="drop">
+          <li><a routerLink="parametrizacion/departamento/listar-departamento">Departamento</a></li>
+          <li><a routerLink="parametrizacion/estado/listar-estado">Estado</a></li>
+          <li><a routerLink="parametrizacion/facultad/listar-facultad">Facultad</a></li>
+          <li><a routerLink="parametrizacion/linea-investigacion/listar-linea-investigacion">Linea de investigacion</a>
+          </li>
+          <li><a routerLink="parametrizacion/modalidad/listar-modalidad">Modalidad</a></li>
+          <li><a routerLink="parametrizacion/tipo-comite/listar-tipo-comite">Tipo de comite</a></li>
+          <li><a routerLink="parametrizacion/tipo-solicitud/listar-tipo-solicitud">Tipo de solicitud</a></li>
+          <li><a routerLink="parametrizacion/tipo-vinculacion/listar-tipo-vinculacion">Tipo de vinculacion</a></li>
+        </ul>
+      </li>
+
       <li *ngIf="session"><a routerLink="proponente/listar-proponente">Proponente</a></li>
       <li *ngIf="session"><a routerLink="jurado/listar-jurado">Jurado</a></li>
       <li *ngIf="session"><a routerLink="solicitud/listar-solicitud">Solicitud</a></li>
-      <li *ngIf="session"><a class="dropdown-trigger" data-target="dropdownReportes">Reportes<i
-            class="material-icons right">arrow_drop_down</i></a></li>
+      <!-- dropdown reportes -->
+      <li *ngIf="session" class="acti">
+        <a>Reportes<i class="material-icons right">arrow_drop_down</i></a>
+        <ul class="drop">
+          <li><a routerLink="reportes/jurados-de-solicitud">Jurados de solicitud</a></li>
+          <li><a routerLink="reportes/lineas-de-investigacion-de-jurado">Lineas de investigacion del jurado</a></li>
+          <li><a routerLink="reportes/proponente-de-solicitud">Proponente de la solicitud</a></li>
+          <li><a routerLink="reportes/resultado-evaluacion">Resultado de la evaluacion</a></li>
+          <li><a routerLink="reportes/tipo-comite-de-solicitud">Tipo de comite de la solititud</a></li>
+        </ul>
+      </li>
+
       <li *ngIf="!session"><a routerLink="seguridad/inicio-sesion">Iniciar Sesion</a></li>
       <li *ngIf="!session"><a routerLink="seguridad/usuario/crear-usuario">Crear Usuario</a></li>
       <li *ngIf="session"><a routerLink="seguridad/cambio-clave">Cambiar Clave</a></li>
@@ -21,13 +46,36 @@
 
 <ul class="sidenav" id="mobile-demo">
   <li *ngIf="!session"><a routerLink="home">Inicio</a></li>
-  <li *ngIf="session"><a class="dropdown-trigger" data-target="dropdown">Parametrizacion<i
-        class="material-icons right">arrow_drop_down</i></a></li>
+
+  <li *ngIf="session" class="acti">
+    <a>Parametrizacion<i class="material-icons right">arrow_drop_down</i></a>
+    <ul class="dropMobil">
+      <li><a routerLink="parametrizacion/departamento/listar-departamento">Departamento</a></li>
+      <li><a routerLink="parametrizacion/estado/listar-estado">Estado</a></li>
+      <li><a routerLink="parametrizacion/facultad/listar-facultad">Facultad</a></li>
+      <li><a routerLink="parametrizacion/linea-investigacion/listar-linea-investigacion">Linea de investigacion</a></li>
+      <li><a routerLink="parametrizacion/modalidad/listar-modalidad">Modalidad</a></li>
+      <li><a routerLink="parametrizacion/tipo-comite/listar-tipo-comite">Tipo de comite</a></li>
+      <li><a routerLink="parametrizacion/tipo-solicitud/listar-tipo-solicitud">Tipo de solicitud</a></li>
+      <li><a routerLink="parametrizacion/tipo-vinculacion/listar-tipo-vinculacion">Tipo de vinculacion</a></li>
+    </ul>
+  </li>
+
   <li *ngIf="session"><a routerLink="proponente/listar-proponente">Proponente</a></li>
   <li *ngIf="session"><a routerLink="jurado/listar-jurado">Jurado</a></li>
   <li *ngIf="session"><a routerLink="solicitud/listar-solicitud">Solicitud</a></li>
-  <li *ngIf="session"><a class="dropdown-trigger" data-target="dropdownReportes">Reportes<i
-        class="material-icons right">arrow_drop_down</i></a></li>
+
+  <li *ngIf="session" class="acti">
+    <a>Reportes<i class="material-icons right">arrow_drop_down</i></a>
+    <ul class="dropMobil">
+      <li><a routerLink="reportes/jurados-de-solicitud">Jurados de solicitud</a></li>
+      <li><a routerLink="reportes/lineas-de-investigacion-de-jurado">Lineas de investigacion del jurado</a></li>
+      <li><a routerLink="reportes/proponente-de-solicitud">Proponente de la solicitud</a></li>
+      <li><a routerLink="reportes/resultado-evaluacion">Resultado de la evaluacion</a></li>
+      <li><a routerLink="reportes/tipo-comite-de-solicitud">Tipo de comite de la solititud</a></li>
+    </ul>
+  </li>
+
   <li *ngIf="!session"><a routerLink="seguridad/inicio-sesion">Iniciar Sesion</a></li>
   <li *ngIf="!session"><a routerLink="seguridad/usuario/crear-usuario">Crear Usuario</a></li>
   <li *ngIf="session"><a routerLink="seguridad/cambio-clave">Cambiar Clave</a></li>
@@ -35,43 +83,4 @@
 </ul>
 
 
-<ul id="dropdown" class="dropdown-content">
-  <li><a class="black-text" routerLink="parametrizacion/departamento/listar-departamento">Departamento</a></li>
-  <li><a class="black-text" routerLink="parametrizacion/estado/listar-estado">Estado</a></li>
-  <li><a class="black-text" routerLink="parametrizacion/facultad/listar-facultad">Facultad</a></li>
-  <li><a class="black-text" routerLink="parametrizacion/linea-investigacion/listar-linea-investigacion">Linea de
-      investigacion</a></li>
-  <li><a class="black-text" routerLink="parametrizacion/modalidad/listar-modalidad">Modalidad</a></li>
-  <li><a class="black-text" routerLink="parametrizacion/tipo-comite/listar-tipo-comite">Tipo de comite</a></li>
-  <li><a class="black-text" routerLink="parametrizacion/tipo-solicitud/listar-tipo-solicitud">Tipo de solicitud</a></li>
-  <li><a class="black-text" routerLink="parametrizacion/tipo-vinculacion/listar-tipo-vinculacion">Tipo de
-      vinculacion</a></li>
-</ul>
 
-<ul id="dropdownMobil" class="dropdown-content">
-  <li><a routerLink="parametrizacion/departamento/listar-departamento">Departamento</a></li>
-  <li><a routerLink="parametrizacion/estado/listar-estado">Estado</a></li>
-  <li><a routerLink="parametrizacion/facultad/listar-facultad">Facultad</a></li>
-  <li><a routerLink="parametrizacion/linea-investigacion/listar-linea-investigacion">Linea de investigacion</a></li>
-  <li><a routerLink="parametrizacion/modalidad/listar-modalidad">Modalidad</a></li>
-  <li><a routerLink="parametrizacion/tipo-comite/listar-tipo-comite">Tipo de comite</a></li>
-  <li><a routerLink="parametrizacion/tipo-solicitud/listar-tipo-solicitud">Tipo de solicitud</a></li>
-  <li><a routerLink="parametrizacion/tipo-vinculacion/listar-tipo-vinculacion">Tipo de vinculacion</a></li>
-</ul>
-
-<ul id="dropdownReportes" class="dropdown-content">
-  <li><a class="black-text" routerLink="reportes/jurados-de-solicitud">Jurados de solicitud</a></li>
-  <li><a class="black-text" routerLink="reportes/lineas-de-investigacion-de-jurado">Lineas de investigacion del
-      jurado</a></li>
-  <li><a class="black-text" routerLink="reportes/proponente-de-solicitud">Proponente de la solicitud</a></li>
-  <li><a class="black-text" routerLink="reportes/resultado-evaluacion">Resultado de la evaluacion</a></li>
-  <li><a class="black-text" routerLink="reportes/tipo-comite-de-solicitud">Tipo de comite de la solititud</a></li>
-</ul>
-
-<ul id="dropdownReportesMobil" class="dropdown-content">
-  <li><a routerLink="reportes/jurados-de-solicitud">Jurados de solicitud</a></li>
-  <li><a routerLink="reportes/lineas-de-investigacion-de-jurado">Lineas de investigacion del jurado</a></li>
-  <li><a routerLink="reportes/proponente-de-solicitud">Proponente de la solicitud</a></li>
-  <li><a routerLink="reportes/resultado-evaluacion">Resultado de la evaluacion</a></li>
-  <li><a routerLink="reportes/tipo-comite-de-solicitud">Tipo de comite de la solititud</a></li>
-</ul>

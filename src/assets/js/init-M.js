@@ -16,8 +16,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-    var elems = document.querySelectorAll('select');
+// document.addEventListener('DOMContentLoaded', function () {
+//     var elems = document.querySelectorAll('select');
+//     var instances = M.FormSelect.init(elems, {});
+// });
+
+function InitSelectById(id){
+    var elems = document.querySelector('#'+ id);
     var instances = M.FormSelect.init(elems, {});
-});
+}
 

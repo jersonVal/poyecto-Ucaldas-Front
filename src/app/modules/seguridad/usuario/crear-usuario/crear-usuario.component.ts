@@ -5,6 +5,7 @@ import { CredencialesCrearUsuarioModel } from 'src/app/modelos/credenciales-crea
 import {SeguridadService} from 'src/app/servicios/seguridad.service'
 
 declare const OpenGeneralModal: any;
+declare const InitSelectById: any;
 
 @Component({
   selector: 'app-crear-usuario',
@@ -22,6 +23,7 @@ export class CrearUsuarioComponent implements OnInit {
 
   ngOnInit(): void {
     this.CreateForm();
+    this.InitSelect();
   }
 
   CreateForm(){
@@ -67,4 +69,7 @@ export class CrearUsuarioComponent implements OnInit {
     }
   }
 
+  InitSelect(){
+    InitSelectById('rol')
+  }
 }

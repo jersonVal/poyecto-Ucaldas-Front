@@ -3,3 +3,61 @@
 .background-primary{
     background-color: var(--primary-default);
 }
+
+.acti{
+    position: relative;
+}
+
+.acti:hover .drop{
+    background: var(--primary-default);
+    display: flex;
+    flex-direction: column;
+}
+
+.acti:hover .dropMobil{
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+#mobile-demo{
+    overflow: visible;
+    width: max-content;
+    
+}
+
+#mobile-demo li a i{
+    margin: 0;
+}
+#mobile-demo li a{
+    cursor: pointer;
+    font-size: 0.75rem;
+}
+
+.dropMobil{
+    display: none;
+    width: max-content;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    z-index: 100000;
+}
+
+.drop{
+    display: none;
+    width: max-content;
+    position: absolute;
+    z-index: 100000;
+}
+
+.drop li{
+    padding: 0 1rem;
+}
+
+.drop li a:hover{
+    background: none;
+}
+
+.drop li:hover{
+    background: rgba(0, 0, 0, 0.2);
+}
