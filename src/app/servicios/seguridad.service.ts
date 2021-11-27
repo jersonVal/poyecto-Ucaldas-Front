@@ -1,21 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { GeneralData} from '../config/general-data'
-import { Observable } from 'rxjs';
+import { BehaviorSubject ,Observable } from 'rxjs';
 import { CredencialesUsuarioModel} from '../modelos/credenciales-usuario.model'
 import { CredencialesRecuperarClaveModel } from '../modelos/credenciales-recuperar-clave.model';
 import { CredencialesCrearUsuarioModel } from '../modelos/credenciales-crear-usuario.model';
 import { CredencialesCambiarClaveModel } from '../modelos/credenciales-cambiar-clave.model';
+import { SessionData } from '../modelos/session-data.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SeguridadService {
 
+  sessionDataSubject: BehaviorSubject<SessionData> = new BehaviorSubject<SessionData>(new SessionData())
   url: string = GeneralData.ADMIN_USER_URL;
   constructor(
     private http: HttpClient
-  ) { }
+  ) {
+    this.HaySesion();
+  }
 
   Login(modelo:CredencialesUsuarioModel):Observable<any>{
 
@@ -55,4 +59,20 @@ export class SeguridadService {
     })
   }
 
+  HaySesion(){
+    let data = localStorage.getItem("session-data");
+     if(data){
+       let objectData: SessionData = JSON.parse(data);
+       objectData.tieneCuenta = true;
+       this.ActualizarSesion(objectData);
+     }
+  }
+
+  ActualizarSesion(data:SessionData){
+    this.sessionDataSubject.next(data)
+  }
+
+  ObtenerSesion(){
+    return this.sessionDataSubject.asObservable();
+  }
 }

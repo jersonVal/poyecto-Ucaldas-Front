@@ -4,3 +4,4 @@ function OpenGeneralModal(message){
     var instance = M.Modal.getInstance(elem);
     instance.open();
 }
+

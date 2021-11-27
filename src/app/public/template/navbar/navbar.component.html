@@ -4,7 +4,7 @@
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
       <li *ngIf="!session"><a routerLink="home">Inicio</a></li>
-      <li *ngIf="session"><a class="dropdown-trigger" data-target="dropdown">Parametrizacion<i
+      <li *ngIf="!session"><a class="dropdown-trigger" data-target="dropdown">Parametrizacion<i
             class="material-icons right">arrow_drop_down</i></a></li>
       <li *ngIf="session"><a routerLink="proponente/listar-proponente">Proponente</a></li>
       <li *ngIf="session"><a routerLink="jurado/listar-jurado">Jurado</a></li>

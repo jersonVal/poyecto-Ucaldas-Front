@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var elemsDrop1 = document.querySelectorAll('.dropdown-trigger');
     var drop1 = M.Dropdown.init(elemsDrop1, {
         coverTrigger: false,
-        hover: true,
+        //hover: true,
         constrainWidth: false
     });
     //Inicializacion modal
