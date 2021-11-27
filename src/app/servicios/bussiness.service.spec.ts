@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { BussinessService } from './bussiness.service';
 
-describe('ConexionBackService', () => {
+describe('BussinessService', () => {
   let service: BussinessService;
 
   beforeEach(() => {
