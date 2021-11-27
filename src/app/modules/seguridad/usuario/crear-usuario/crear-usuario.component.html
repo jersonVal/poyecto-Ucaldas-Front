@@ -1,1 +1,117 @@
-<p>crear-usuario works!</p>
+<main class="center">
+
+  <h5 class="color-primary">Formulario de creación de usuario</h5>
+  <div class="section"></div>
+
+  <div class="container">
+    <div class="z-depth-1 grey lighten-4 row"
+      style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+      <!--  -->
+      
+      <form class="col s12" [formGroup]="form">
+        <div class='row'>
+          <div class='col s12'>
+          </div>
+        </div>
+
+        <div class='row'>
+          <div class='input-field col s6'>
+            
+            <input formControlName="nombre" class='validate' type='text' name='nombre' id='nombre' />
+            <label for='nombre'>Nombre</label>
+            <!--  -->
+            
+            <div *ngIf="GetForm['nombre'].errors && (GetForm['nombre'].dirty || GetForm['nombre'].touched) ">
+              <label class="warning">Por favor ingrese un nombre valido</label>
+            </div>
+          </div>
+          <div class='input-field col s6'>
+            
+            <input formControlName="apellidos" class='validate' type='text' name='apellidos' id='apellidos' />
+            <label for='apellidos'>Apellidos</label>
+            <!--  -->
+            
+            <div *ngIf="GetForm['apellidos'].errors && (GetForm['apellidos'].dirty || GetForm['apellidos'].touched) ">
+              <label class="warning">Por favor ingrese un Apellido valido</label>
+            </div>
+          </div>
+        </div>
+
+        <div class='row'>
+          <div class='input-field col s6'>
+            
+            <input formControlName="telefono" class='validate' type='number' min="0" name='telefono' id='telefono' />
+            <label for='telefono'>Telefono</label>
+            <!--  -->
+            
+            <div *ngIf="GetForm['telefono'].errors && (GetForm['telefono'].dirty || GetForm['telefono'].touched) ">
+              <label class="warning">Por favor ingrese un telefono valido</label>
+            </div>
+          </div>
+
+          <div class='input-field col s6'>
+            
+            <input formControlName="fechaNacimiento" class='validate' type='date' name='fechaNacimiento'
+              id='fechaNacimiento' />
+            <label for='fechaNacimiento'>Fecha Nacimiento</label>
+            <!--  -->
+            
+            <div *ngIf="GetForm['fechaNacimiento'].errors && (GetForm['fechaNacimiento'].dirty || GetForm['fechaNacimiento'].touched) ">
+              <label class="warning">Por favor ingrese una fecha valida</label>
+            </div>
+          </div>
+        </div>
+
+
+        <div class='row'>
+          <div class='input-field col s12'>
+            
+            <input formControlName="correo" class='validate' type='email' name='correo' id='correo' />
+            <label for='correo'>Correo</label>
+
+            <!--  -->
+            
+            <div *ngIf="GetForm['correo'].errors && (GetForm['correo'].dirty || GetForm['correo'].touched)">
+              <label class="warning">Por favor ingrese un correo valida</label>
+            </div>
+          </div>
+        </div>
+
+        <div class='row'>
+          <div class='input-field col s6'>
+            
+            <input formControlName="documento" class='validate' type='text' name='documento' id='documento' />
+            <label for='documento'>Documento</label>
+
+            <!--  -->
+            
+            <div *ngIf="GetForm['documento'].errors && (GetForm['documento'].dirty || GetForm['documento'].touched)">
+              <label class="warning">Por favor ingrese un correo valida</label>
+            </div>
+          </div>
+
+          <div class="input-field col s6">
+            <select >
+              <option value="" disabled selected>Rol</option>
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+            </select>
+            <label for="sel">Rol</label>
+            
+          </div>
+        </div>
+
+        <br />
+        <div class='row center'>
+          <!--  -->
+          <!-- [disabled]="GetForm['username'].errors || GetForm['password'].errors" -->
+          <button name='btn_login' (click)="CrearUsuario()" type='button' class='col s12 btn btn-large background-primary' type='button'>Crear Cuenta</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="section"></div>
+  <div class="section"></div>
+</main>
