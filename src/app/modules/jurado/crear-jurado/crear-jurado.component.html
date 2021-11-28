@@ -71,11 +71,20 @@
         </div>
 
         <br />
-        <div class='row center'>
-          <!--  -->
-          <button name='btn_login' type='button' class='col s12 btn btn-large background-primary' type='button'
-            (click)="CreateJurado()">Crear jurado</button>
+
+        <div class='row '>
+          <div class="col s6">
+            <button name='btn_login' type='button' class=' btn btn-large background-primary' type='button'
+              (click)="CrearJurado()">Crear Jurado</button>
+          </div>
+
+          <div class="col s6">
+            <button name='btn_login' type='button' class='col s12 btn btn-large red' type='button'
+            routerLink="/jurado/listar-jurado">Cancelar</button>
+          </div>
+          
         </div>
+
       </form>
     </div>
   </div>
