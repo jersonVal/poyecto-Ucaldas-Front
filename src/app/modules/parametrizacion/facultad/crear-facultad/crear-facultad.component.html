@@ -1,1 +1,59 @@
-<p>crear-facultad works!</p>
+<main class="center">
+
+    <h5 class="color-primary">Creacion de facultad</h5>
+    <div class="section"></div>
+  
+    <div class="container">
+      <div class="z-depth-1 grey lighten-4 row"
+        style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+        <!--  -->
+  
+        <form class="col s12" [formGroup]="form">
+          <div class='row'>
+            <div class='col s12'>
+            </div>
+          </div>
+  
+          <div class='row'>
+            <div class='input-field col s6'>
+  
+              <input formControlName="nombre" class='validate' type='text' name='nombre' id='nombre' />
+              <label for='nombre'>Nombre</label>
+              <!--  -->
+  
+              <div *ngIf="GetForm['nombre'].errors && (GetForm['nombre'].dirty || GetForm['nombre'].touched) ">
+                <label class="warning">Por favor ingrese un nombre valido</label>
+              </div>
+            </div>
+
+            <div class='input-field col s6'>
+  
+              <input formControlName="codigo" class='validate' type='text' name='codigo' id='codigo' />
+              <label for='codigo'>Codigo</label>
+              <!--  -->
+  
+              <div *ngIf="GetForm['codigo'].errors && (GetForm['codigo'].dirty || GetForm['codigo'].touched) ">
+                <label class="warning">Por favor ingrese un codigo valido</label>
+              </div>
+            </div>
+          </div>
+  
+          <br />
+          <div class='row'>
+            <div class="col s6 ">
+              <button name='btn_login' (click)="CrearFacultad()" type='button'
+                class=' btn btn-large background-primary' type='button'>Crear</button>
+            </div>
+            <div class="col s6">
+              <button name='btn_login' routerLink="/parametrizacion/facultad/listar-facultad" type='button'
+              class='btn btn-large red' type='button'>Cancelar</button>
+            </div>
+  
+          </div>
+        </form>
+      </div>
+    </div>
+  
+    <div class="section"></div>
+    <div class="section"></div>
+  </main>
