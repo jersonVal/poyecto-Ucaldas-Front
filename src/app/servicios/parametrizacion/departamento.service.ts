@@ -21,4 +21,5 @@ export class DepartamentoService {
       id_facultad: modelo.id_facultad
     })
   }
+  
 }

@@ -1,1 +1,49 @@
-<p>crear-estado works!</p>
+<main class="center">
+
+    <h5 class="color-primary">Formulario de Creacion de Estados</h5>
+    <div class="section"></div>
+  
+    <div class="container">
+      <div class="z-depth-1 grey lighten-4 row"
+        style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+        <!--  -->
+        <form class="col s12" [formGroup]="form">
+          <div class='row'>
+            <div class='col s12'>
+            </div>
+          </div>
+  
+          <div class='row'>
+            <div class='input-field col s12'>
+              <input formControlName="tipo" class='validate' type='text' name='tipo' id='tipo' />
+              <label for='tipo'>Estado</label>
+              <!--  -->
+              <div *ngIf="GetForm['tipo'].errors && (GetForm['tipo'].dirty || GetForm['tipo'].touched) ">
+                <label class="warning">Por favor ingrese un estado valido</label>
+              </div>
+            </div>
+          </div>
+          <br />
+  
+          <div class='row '>
+            <div class="col s6">
+              <button name='btn_login' type='button' class=' btn btn-large background-primary' type='button'
+                (click)="CrearEstado()">Crear Estado</button>
+            </div>
+  
+            <div class="col s6">
+              <button name='btn_login' type='button' class='col s12 btn btn-large red' type='button'
+              routerLink="/parametrizacion/estado/listar-estado">Cancelar</button>
+            </div>
+            
+          </div>
+  
+        </form>
+      </div>
+    </div>
+  
+    <div class="section"></div>
+    <div class="section"></div>
+  
+  </main>
+  

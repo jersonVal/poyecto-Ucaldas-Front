@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { GeneralData} from 'src/app/config/general-data';
+import { CredencialesCrearTipoVinculacionModel } from 'src/app/modelos/parametrizacion/tipo-vinculacion/credenciales-crear-tipo-vinculacion.model';
+import { TipoVinculacionService } from 'src/app/servicios/parametrizacion/tipo-vinculacion.service';
+
+declare const OpenGeneralModal: any;
 
 @Component({
   selector: 'app-crear-tipo-vinculacion',
@@ -7,9 +14,46 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrearTipoVinculacionComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup = new FormGroup({});
+
+  constructor(
+    private fb: FormBuilder,
+    private tipoVinculacionService: TipoVinculacionService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+    this.CreateForm();
+  }
+  CreateForm(){
+    this.form=this.fb.group({
+      nombre:["",[Validators.required]],
+    })
+  }
+  get GetForm(){
+    return this.form.controls;
+  }
+
+  CrearTipoVinculacion(){
+    if(this.form.invalid){
+      OpenGeneralModal('Invalido')
+      console.log(this.form)
+    }else{
+      let modelo = new CredencialesCrearTipoVinculacionModel();
+      modelo.nombre = this.GetForm['nombre'].value;
+      //Llamado al servicio de identificacion de usuario
+      this.tipoVinculacionService.CrearTipoVinculacion(modelo).subscribe({
+        next:( data:any ) => {
+          OpenGeneralModal('Creado con Exito')
+        },
+        error:( error:any ) => {
+          console.log(error)
+          OpenGeneralModal(GeneralData.GENERAL_ERROR_MESSAGE)
+        }
+      })
+
+      this.router.navigate(["/parametrizacion/tipo-vinculacion/listar-tipo-vinculacion"])
+    }
   }
 
 }
