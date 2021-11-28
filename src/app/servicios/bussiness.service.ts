@@ -4,6 +4,7 @@ import { GeneralData} from '../config/general-data'
 import { CredencialesCrearJuradoModel } from '../modelos/credenciales-crear-jurado.model';
 import { CredencialesCrearProponenteModel} from '../modelos/credenciales-crear-proponente.model';
 import { Observable } from 'rxjs';
+import { CredencialesCrearSolicitudModel } from '../modelos/credenciales-crear-solicitud.model';
 
 
 @Injectable({
@@ -41,6 +42,21 @@ export class BussinessService {
       foto: modelo.foto,
       id_departamento: modelo.idDepartamento,
       id_tipoVinculacion: modelo.idTipoVinculacion 
+    })
+  }
+
+  CrearSolicitud(modelo:CredencialesCrearSolicitudModel):Observable<any>{
+
+    console.log(modelo)
+    return this.http.post(`${this.url}/solicituds`,{
+      fecha: modelo.fecha,
+      archivo: modelo.archivo,
+      descripcion: modelo.descripcion,
+      nombreTrabajo: modelo.nombreTrabajo,
+      id_estado: modelo.idEstado,
+      id_tipoSolicitud: modelo.idTipoSolicitud,
+      id_modalidad: modelo.idModalidad,
+      id_lineaInvestigacion: modelo.idLineaInvestigacion
     })
   }
 }

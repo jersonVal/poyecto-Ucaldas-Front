@@ -23,7 +23,7 @@
 
       <li *ngIf="!session"><a routerLink="proponente/crear-proponente">Proponente</a></li>
       <li *ngIf="!session"><a routerLink="jurado/crear-jurado">Jurado</a></li>
-      <li *ngIf="session"><a routerLink="solicitud/listar-solicitud">Solicitud</a></li>
+      <li *ngIf="!session"><a routerLink="solicitud/crear-solicitud">Solicitud</a></li>
       <!-- dropdown reportes -->
       <li *ngIf="session" class="acti">
         <a>Reportes<i class="material-icons right">arrow_drop_down</i></a>
