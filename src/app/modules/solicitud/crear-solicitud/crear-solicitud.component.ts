@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { GeneralData} from 'src/app/config/general-data';
 import { CredencialesCrearSolicitudModel } from 'src/app/modelos/solicitud/credenciales-crear-solicitud.model';
 import {BussinessService} from 'src/app/servicios/bussiness.service'
@@ -18,7 +19,8 @@ export class CrearSolicitudComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private bussinessService: BussinessService
+    private bussinessService: BussinessService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -67,6 +69,7 @@ export class CrearSolicitudComponent implements OnInit {
           OpenGeneralModal(GeneralData.GENERAL_ERROR_MESSAGE)
         }
       })
+      this.router.navigate(['/solicitud/listar-solicitud'])
     }
   }
 
