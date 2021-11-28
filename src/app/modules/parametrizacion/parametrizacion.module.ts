@@ -34,6 +34,7 @@ import { CrearLineaInvestigacionComponent } from './lineaInvestigacion/crear-lin
 import { EditarLineaInvestigacionComponent } from './lineaInvestigacion/editar-linea-investigacion/editar-linea-investigacion.component';
 import { EliminarLineaInvestigacionComponent } from './lineaInvestigacion/eliminar-linea-investigacion/eliminar-linea-investigacion.component';
 import { ListarLineaInvestigacionComponent } from './lineaInvestigacion/listar-linea-investigacion/listar-linea-investigacion.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -73,7 +74,9 @@ import { ListarLineaInvestigacionComponent } from './lineaInvestigacion/listar-l
   ],
   imports: [
     CommonModule,
-    ParametrizacionRoutingModule
+    ParametrizacionRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ParametrizacionModule { }

@@ -6,10 +6,10 @@
       <li *ngIf="!session"><a routerLink="home">Inicio</a></li>
 
       <!-- dropdown parametrizacion-->
-      <li *ngIf="session" class="acti">
+      <li *ngIf="!session" class="acti">
         <a>Parametrizacion<i class="material-icons right">arrow_drop_down</i></a>
         <ul class="drop">
-          <li><a routerLink="parametrizacion/departamento/listar-departamento">Departamento</a></li>
+          <li><a routerLink="parametrizacion/departamento/crear-departamento">Departamento</a></li>
           <li><a routerLink="parametrizacion/estado/listar-estado">Estado</a></li>
           <li><a routerLink="parametrizacion/facultad/listar-facultad">Facultad</a></li>
           <li><a routerLink="parametrizacion/linea-investigacion/listar-linea-investigacion">Linea de investigacion</a>
