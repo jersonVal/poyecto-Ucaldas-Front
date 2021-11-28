@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { GeneralData} from '../config/general-data'
-import { CredencialesCrearJuradoModel } from '../modelos/credenciales-crear-jurado.model';
-import { CredencialesCrearProponenteModel} from '../modelos/credenciales-crear-proponente.model';
+import { CredencialesCrearJuradoModel } from '../modelos/jurado/credenciales-crear-jurado.model';
+import { CredencialesCrearProponenteModel} from '../modelos/proponente/credenciales-crear-proponente.model';
 import { Observable } from 'rxjs';
-import { CredencialesCrearSolicitudModel } from '../modelos/credenciales-crear-solicitud.model';
+import { CredencialesCrearSolicitudModel } from '../modelos/solicitud/credenciales-crear-solicitud.model';
+import { ProponenteModel } from '../modelos/proponente/proponente.model';
 
 
 @Injectable({
@@ -58,5 +59,9 @@ export class BussinessService {
       id_modalidad: modelo.idModalidad,
       id_lineaInvestigacion: modelo.idLineaInvestigacion
     })
+  }
+
+  getRecordProponente(){
+    return this.http.get<ProponenteModel[]>(`${this.url}/proponentes`);
   }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GeneralData} from 'src/app/config/general-data';
-import { CredencialesCrearUsuarioModel } from 'src/app/modelos/credenciales-crear-usuario.model';
+import { CredencialesCrearUsuarioModel } from 'src/app/modelos/usuario/credenciales-crear-usuario.model';
 import {SeguridadService} from 'src/app/servicios/seguridad.service'
 
 declare const OpenGeneralModal: any;

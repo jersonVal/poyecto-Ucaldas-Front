@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GeneralData} from 'src/app/config/general-data';
 import { Router } from '@angular/router';
-import { CredencialesCrearJuradoModel } from 'src/app/modelos/credenciales-crear-jurado.model';
+import { CredencialesCrearJuradoModel } from 'src/app/modelos/jurado/credenciales-crear-jurado.model';
 import { BussinessService } from 'src/app/servicios/bussiness.service';
 
 declare const OpenGeneralModal: any;

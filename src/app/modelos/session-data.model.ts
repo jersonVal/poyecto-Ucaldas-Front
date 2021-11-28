@@ -1,4 +1,4 @@
-import { CredencialesCrearUsuarioModel } from './credenciales-crear-usuario.model';
+import { CredencialesCrearUsuarioModel } from './usuario/credenciales-crear-usuario.model';
 
 export class SessionData{
     token?:string;

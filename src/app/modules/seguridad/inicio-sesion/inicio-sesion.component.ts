@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GeneralData} from 'src/app/config/general-data';
-import { CredencialesUsuarioModel } from 'src/app/modelos/credenciales-usuario.model';
+import { CredencialesUsuarioModel } from 'src/app/modelos/seguridad/credenciales-usuario.model';
 import {MD5} from 'crypto-js';
 import {SeguridadService} from 'src/app/servicios/seguridad.service';
 import { LocalStorageService } from 'src/app/servicios/local-storage.service';

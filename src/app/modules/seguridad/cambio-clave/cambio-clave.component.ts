@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GeneralData} from 'src/app/config/general-data';
-import { CredencialesCambiarClaveModel } from 'src/app/modelos/credenciales-cambiar-clave.model';
+import { CredencialesCambiarClaveModel } from 'src/app/modelos/seguridad/credenciales-cambiar-clave.model';
 import {MD5} from 'crypto-js'
 import {SeguridadService} from 'src/app/servicios/seguridad.service'
 

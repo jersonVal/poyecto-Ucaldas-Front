@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { GeneralData } from 'src/app/config/general-data';
-import { CredencialesCrearProponenteModel } from 'src/app/modelos/credenciales-crear-proponente.model';
+import { CredencialesCrearProponenteModel } from 'src/app/modelos/proponente/credenciales-crear-proponente.model';
 import {BussinessService} from 'src/app/servicios/bussiness.service';
 
 declare const OpenGeneralModal: any;
@@ -19,7 +20,8 @@ export class CrearProponenteComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private bussinessService: BussinessService
+    private bussinessService: BussinessService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -70,6 +72,8 @@ export class CrearProponenteComponent implements OnInit {
           OpenGeneralModal(GeneralData.GENERAL_ERROR_MESSAGE)
         }
       })
+
+      this.router.navigate(["/proponente/listar-proponente"]);
     }
   }
 

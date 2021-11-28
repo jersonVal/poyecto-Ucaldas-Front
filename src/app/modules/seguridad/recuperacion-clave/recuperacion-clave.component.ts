@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GeneralData} from 'src/app/config/general-data';
 import { SeguridadService } from 'src/app/servicios/seguridad.service';
-import { CredencialesRecuperarClaveModel } from 'src/app/modelos/credenciales-recuperar-clave.model';
+import { CredencialesRecuperarClaveModel } from 'src/app/modelos/seguridad/credenciales-recuperar-clave.model';
 
 
 declare const OpenGeneralModal: any;

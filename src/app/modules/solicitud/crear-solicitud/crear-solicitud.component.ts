@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GeneralData} from 'src/app/config/general-data';
-import { CredencialesCrearSolicitudModel } from 'src/app/modelos/credenciales-crear-solicitud.model';
+import { CredencialesCrearSolicitudModel } from 'src/app/modelos/solicitud/credenciales-crear-solicitud.model';
 import {BussinessService} from 'src/app/servicios/bussiness.service'
 
 

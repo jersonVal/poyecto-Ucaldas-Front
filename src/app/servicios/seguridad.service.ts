@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { GeneralData} from '../config/general-data'
 import { BehaviorSubject ,Observable } from 'rxjs';
-import { CredencialesUsuarioModel} from '../modelos/credenciales-usuario.model'
-import { CredencialesRecuperarClaveModel } from '../modelos/credenciales-recuperar-clave.model';
-import { CredencialesCrearUsuarioModel } from '../modelos/credenciales-crear-usuario.model';
-import { CredencialesCambiarClaveModel } from '../modelos/credenciales-cambiar-clave.model';
+import { CredencialesUsuarioModel} from '../modelos/seguridad/credenciales-usuario.model'
+import { CredencialesRecuperarClaveModel } from '../modelos/seguridad/credenciales-recuperar-clave.model';
+import { CredencialesCrearUsuarioModel } from '../modelos/usuario/credenciales-crear-usuario.model';
+import { CredencialesCambiarClaveModel } from '../modelos/seguridad/credenciales-cambiar-clave.model';
 import { SessionData } from '../modelos/session-data.model';
 
 @Injectable({
