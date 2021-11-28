@@ -37,5 +37,8 @@ body{
 warning{
     color: var(--danger-default);
 }
+table{
+  font-size:0.8rem;
+}
 
 
