@@ -55,7 +55,7 @@ export class CrearJuradoComponent implements OnInit {
       //Llamado al servicio de identificacion de usuario
       this.bussinessService.CrearJurado(modelo).subscribe({
         next:( data:any ) => {
-          console.log(data)
+          OpenGeneralModal('Creado correctamente')
         },
         error:( error:any ) => {
           OpenGeneralModal(GeneralData.GENERAL_ERROR_MESSAGE)
