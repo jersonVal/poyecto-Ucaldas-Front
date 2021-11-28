@@ -31,9 +31,7 @@
           <div class="input-field col s12">
             <select id="departamento" formControlName="idDepartamento">
               <option value="" disabled>Facultad</option>
-              <option value="artes">Option 1</option>
-              <option value="manualidase">Option 2</option>
-              <option value="nada">Option 3</option>
+              <option *ngFor="let r of dropDownInfo" value="{{r._id}}">{{r.nombre}}</option>
             </select>
             <label for="sel">Facultad</label>
           </div>

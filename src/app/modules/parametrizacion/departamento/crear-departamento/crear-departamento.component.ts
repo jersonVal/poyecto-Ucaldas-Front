@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { GeneralData} from 'src/app/config/general-data';
 import { CredencialesCrearDepartamentoModel } from 'src/app/modelos/parametrizacion/departamento/credenciales-departamento.model';
+import { FacultadModel } from 'src/app/modelos/parametrizacion/facultad/facultad.model';
+import { FacultadService } from 'src/app/servicios/parametrizacion/facultad.service';
 import { DepartamentoService } from 'src/app/servicios/parametrizacion/departamento.service';
 
 declare const OpenGeneralModal: any;
@@ -15,18 +17,21 @@ declare const InitSelectById: any;
 })
 export class CrearDepartamentoComponent implements OnInit {
 
+  dropDownInfo: FacultadModel[] = [];
   form: FormGroup = new FormGroup({});
 
   constructor(
     private fb: FormBuilder,
     private servicioDepartamento: DepartamentoService,
-    private router: Router
+    private router: Router,
+    private facultadService: FacultadService
   ) { }
 
   ngOnInit(): void {
     this.CreateForm();
     this.InitSelect();
   }
+
 
   CreateForm(){
     this.form=this.fb.group({
@@ -40,7 +45,19 @@ export class CrearDepartamentoComponent implements OnInit {
   }
 
   InitSelect(){
-    InitSelectById('departamento')
+    
+    this.facultadService.getRecord().subscribe({
+      next: (data: FacultadModel[])=>{
+        this.dropDownInfo = data
+        setTimeout(()=> {
+          InitSelectById('departamento')
+        }, 100)
+        
+      },
+      error: (err: any) => {
+        console.log(err)
+      }
+    })
   }
 
   CrearDepartamento(){
