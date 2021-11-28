@@ -4,6 +4,10 @@ import { Router } from '@angular/router';
 import { GeneralData } from 'src/app/config/general-data';
 import { CredencialesCrearProponenteModel } from 'src/app/modelos/proponente/credenciales-crear-proponente.model';
 import {BussinessService} from 'src/app/servicios/bussiness.service';
+import { TipoVinculacionModel } from 'src/app/modelos/parametrizacion/tipo-vinculacion/tipo-vinculacion.model';
+import { TipoVinculacionService } from 'src/app/servicios/parametrizacion/tipo-vinculacion.service';
+import { DepartamentoModel } from 'src/app/modelos/parametrizacion/departamento/departamento.model';
+import { DepartamentoService } from 'src/app/servicios/parametrizacion/departamento.service';
 
 declare const OpenGeneralModal: any;
 declare const InitSelectById: any;
@@ -16,12 +20,15 @@ declare const InitSelectById: any;
 export class CrearProponenteComponent implements OnInit {
 
   form: FormGroup = new FormGroup({});
-  
+  dropDownDepartamento: DepartamentoModel[] = [];
+  dropDownTipoVinculacion: TipoVinculacionModel[] = [];
 
   constructor(
     private fb: FormBuilder,
     private bussinessService: BussinessService,
-    private router: Router
+    private router: Router,
+    private departamentoService: DepartamentoService,
+    private tipoVinculacionService: TipoVinculacionService
   ) { }
 
   ngOnInit(): void {
@@ -30,8 +37,30 @@ export class CrearProponenteComponent implements OnInit {
   }
 
   InitSelect(){
-    InitSelectById('idDepartamento');
-    InitSelectById('idTipoVinculacion');
+    this.departamentoService.getRecord().subscribe({
+      next: (data: DepartamentoModel[])=>{
+        this.dropDownDepartamento = data
+        setTimeout(()=> {
+          InitSelectById('departamento');
+        }, 100)
+        
+      },
+      error: (err: any) => {
+        console.log(err)
+      }
+    })
+    this.tipoVinculacionService.getRecord().subscribe({
+      next: (data: TipoVinculacionModel[])=>{
+        this.dropDownTipoVinculacion = data
+        setTimeout(()=> {
+          InitSelectById('tipoVinculacion');
+        }, 100)
+        
+      },
+      error: (err: any) => {
+        console.log(err)
+      }
+    })
   }
 
   CreateForm(){

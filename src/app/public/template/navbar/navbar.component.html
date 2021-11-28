@@ -21,7 +21,7 @@
         </ul>
       </li>
 
-      <li *ngIf="session"><a routerLink="proponente/listar-proponente">Proponente</a></li>
+      <li *ngIf="!session"><a routerLink="proponente/listar-proponente">Proponente</a></li>
       <li *ngIf="session"><a routerLink="jurado/listar-jurado">Jurado</a></li>
       <li *ngIf="session"><a routerLink="solicitud/listar-solicitud">Solicitud</a></li>
       <!-- dropdown reportes -->
