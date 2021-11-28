@@ -51,8 +51,7 @@ export class CrearDepartamentoComponent implements OnInit {
         this.dropDownInfo = data
         setTimeout(()=> {
           InitSelectById('departamento')
-        }, 100)
-        
+        }, 100) 
       },
       error: (err: any) => {
         console.log(err)

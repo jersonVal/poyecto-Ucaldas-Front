@@ -66,10 +66,8 @@
                 <div class='row'>
                     <div class='input-field col s6'>
                         <select id="idModalidad">
-                            <option value="" disabled>Modalodad</option>
-                            <option value="1">Option 1</option>
-                            <option value="2">Option 2</option>
-                            <option value="3">Option 3</option>
+                            <option value="" disabled>Modalidad</option>
+                            <option *ngFor="let m of modalidadData" value="{{m._id}}">{{m.nombre}}</option>
                         </select>
                         <label for="sel">Modalidad</label>
                     </div>
@@ -77,9 +75,7 @@
                     <div class='input-field col s6'>
                         <select id="idTipoSolicitud">
                             <option value="" disabled>Tipo Solicitud</option>
-                            <option value="1">Option 1</option>
-                            <option value="2">Option 2</option>
-                            <option value="3">Option 3</option>
+                            <option *ngFor="let m of tipoSolicitudData" class="black" value="{{m._id}}">{{m.nombre}}</option>
                         </select>
                         <label for="sel">Tipo Solicitud</label>
                     </div>
@@ -89,9 +85,7 @@
                     <div class='input-field col s6'>
                         <select id="idEstado">
                             <option value="" disabled>Estado</option>
-                            <option value="1">Option 1</option>
-                            <option value="2">Option 2</option>
-                            <option value="3">Option 3</option>
+                            <option *ngFor="let m of estadoData" value="{{m._id}}">{{m.tipo}}</option>
                         </select>
                         <label for="sel">Estado</label>
                     </div>
@@ -99,9 +93,7 @@
                     <div class='input-field col s6'>
                         <select id="idLineaInvestigacion">
                             <option value="" disabled>Linea de Investigacion</option>
-                            <option value="1">Option 1</option>
-                            <option value="2">Option 2</option>
-                            <option value="3">Option 3</option>
+                            <option *ngFor="let m of lineaInvestigacionData" value="{{m._id}}">{{m.nombre}}</option>
                         </select>
                         <label for="sel">Linea de Investigacion</label>
                     </div>

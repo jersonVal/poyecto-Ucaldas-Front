@@ -25,4 +25,8 @@ textarea{
     height: 10rem;    
 }
 
+option{
+    color: black !important;
+}
+
 
