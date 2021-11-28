@@ -78,33 +78,33 @@
 
         <div class='row'>
 
-
-          <div class='input-field col s12'>
-            <input formControlName="foto" class='validate' type='file' name='foto' id='foto' />
-            <label for='foto'>Foto (Opcional)</label>
+          <div class="file-field input-field">
+            <div class="btn background-primary">
+              <span>Cargar</span>
+              <input formControlName="foto" class='validate' type='file' name='foto' id='foto' />
+              <!-- <input type="file"> -->
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text" placeholder="Foto (Opcional)">
+            </div>
           </div>
         </div>
 
-
         <div class='row'>
-          <div class='input-field col s6'>
-            <select id="idDepartamento">
-              <option value="" disabled>Rol</option>
-              <option value="1">Option 1</option>
-              <option value="2">Option 2</option>
-              <option value="3">Option 3</option>
+          <div class="input-field col s12">
+            <select id="departamento" formControlName="idDepartamento">
+              <option value="" disabled>Departamento</option>
+              <option *ngFor="let r of dropDownDepartamento" value="{{r._id}}">{{r.nombre}}</option>
             </select>
             <label for="sel">Departamento</label>
           </div>
 
-          <div class='input-field col s6'>
-            <select id="idTipoVinculacion">
-              <option value="" disabled>Rol</option>
-              <option value="1">Option 1</option>
-              <option value="2">Option 2</option>
-              <option value="3">Option 3</option>
+          <div class="input-field col s12">
+            <select id="tipoVinculacion" formControlName="idTipoVinculacion">
+              <option value="" disabled>Tipo de Vinculacion</option>
+              <option *ngFor="let r of dropDownTipoVinculacion" value="{{r._id}}">{{r.nombre}}</option>
             </select>
-            <label for="sel">Tipo vinculacion</label>
+            <label for="sel">Tipo de Vinculacion</label>
           </div>
         </div>
 

@@ -19,3 +19,6 @@
 .warning{
     color: var(--danger-default);
 }
+option{
+    color: #0000!important;
+}
