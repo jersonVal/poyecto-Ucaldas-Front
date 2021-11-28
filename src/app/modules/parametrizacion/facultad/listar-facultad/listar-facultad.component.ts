@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { FacultadModel } from 'src/app/modelos/parametrizacion/facultad/facultad.model';
+import { FacultadService } from 'src/app/servicios/parametrizacion/facultad.service';
 
 @Component({
   selector: 'app-listar-facultad',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarFacultadComponent implements OnInit {
 
-  constructor() { }
+  recordList: FacultadModel[] = [];
+  subscripcion: Subscription = new Subscription();
+
+  constructor(
+    private facultadService: FacultadService
+  ) { }
 
   ngOnInit(): void {
+    this.subscripcion = this.facultadService.getRecord().subscribe(
+      {
+        next: (data: FacultadModel[])=>{
+          this.recordList = data
+        },
+        error: (err: any) => {
+          console.log(err)
+        }
+      }
+    )
   }
 
 }

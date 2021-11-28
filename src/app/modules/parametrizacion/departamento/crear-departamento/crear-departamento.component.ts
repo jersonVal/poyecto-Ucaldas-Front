@@ -46,7 +46,6 @@ export class CrearDepartamentoComponent implements OnInit {
   CrearDepartamento(){
     if(this.form.invalid){
       OpenGeneralModal('Invalido')
-      console.log(this.form)
     }else{
       let modelo = new CredencialesCrearDepartamentoModel();
       modelo.nombre = this.GetForm['nombre'].value;
