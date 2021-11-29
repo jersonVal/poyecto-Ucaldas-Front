@@ -31,10 +31,20 @@ export class FacultadService {
     return this.http.get<FacultadModel>(`${this.url}/facultads/${_id}`)
   }
 
-  EditarFacultad(modelo:FacultadModel):Observable<any>{
-    return this.http.put(`${this.url}/facultads/${modelo._id}`,{
+  EditarFacultad(modelo:FacultadModel):Observable<FacultadModel>{
+    return this.http.put<FacultadModel>(`${this.url}/facultads/${modelo._id}`,{
       nombre: modelo.nombre,
       codigo: modelo.codigo
     })
+  }
+
+  RemoveFacultad(_id: string): Observable<any>{
+    return this.http.delete(`${this.url}/facultads/${_id}`,{
+      
+    })
+  }
+
+  BuscarNombre(id: string): Observable<FacultadModel>{
+    return this.http.get(`${this.url}/facultads/${id}`)
   }
 }

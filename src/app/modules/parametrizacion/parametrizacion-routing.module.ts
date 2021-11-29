@@ -95,7 +95,7 @@ const routes: Routes = [
     component: EditarFacultadComponent
   },
   {
-    path: "facultad/eliminar-facultad",
+    path: "facultad/eliminar-facultad/:_id",
     component: EliminarFacultadComponent
   },
   {

@@ -76,4 +76,6 @@ export class EditarFacultadComponent implements OnInit {
     })
   }
 
+  
+
 }
