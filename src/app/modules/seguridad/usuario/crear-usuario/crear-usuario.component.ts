@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GeneralData} from 'src/app/config/general-data';
+import { RolModel } from 'src/app/modelos/parametrizacion/rol/rol.model';
+import { RolService } from 'src/app/servicios/parametrizacion/rol.service';
 import { CredencialesCrearUsuarioModel } from 'src/app/modelos/usuario/credenciales-crear-usuario.model';
 import {SeguridadService} from 'src/app/servicios/seguridad.service'
+
+
 
 declare const OpenGeneralModal: any;
 declare const InitSelectById: any;
@@ -15,10 +19,12 @@ declare const InitSelectById: any;
 export class CrearUsuarioComponent implements OnInit {
 
   form: FormGroup = new FormGroup({});
+  rolData: RolModel[] = [];
 
   constructor(
     private fb: FormBuilder,
-    private servicioSeguridad: SeguridadService
+    private servicioSeguridad: SeguridadService,
+    private rolService: RolService
   ) { }
 
   ngOnInit(): void {
@@ -70,6 +76,16 @@ export class CrearUsuarioComponent implements OnInit {
   }
 
   InitSelect(){
-    InitSelectById('rol')
+    this.rolService.getRecord().subscribe({
+      next: (data: RolModel[])=>{
+        this.rolData = data
+        setTimeout(()=> {
+          InitSelectById('rol')
+        }, 100) 
+      },
+      error: (err: any) => {
+        console.log(err)
+      }
+    })
   }
 }

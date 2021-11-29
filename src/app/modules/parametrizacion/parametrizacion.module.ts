@@ -35,6 +35,10 @@ import { EditarLineaInvestigacionComponent } from './lineaInvestigacion/editar-l
 import { EliminarLineaInvestigacionComponent } from './lineaInvestigacion/eliminar-linea-investigacion/eliminar-linea-investigacion.component';
 import { ListarLineaInvestigacionComponent } from './lineaInvestigacion/listar-linea-investigacion/listar-linea-investigacion.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CrearRolComponent } from './rol/crear-rol/crear-rol.component';
+import { EditarRolComponent } from './rol/editar-rol/editar-rol.component';
+import { ListarRolComponent } from './rol/listar-rol/listar-rol.component';
+import { EliminarRolComponent } from './rol/eliminar-rol/eliminar-rol.component';
 
 
 @NgModule({
@@ -70,7 +74,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CrearLineaInvestigacionComponent,
     EditarLineaInvestigacionComponent,
     EliminarLineaInvestigacionComponent,
-    ListarLineaInvestigacionComponent
+    ListarLineaInvestigacionComponent,
+    CrearRolComponent,
+    EditarRolComponent,
+    ListarRolComponent,
+    EliminarRolComponent
   ],
   imports: [
     CommonModule,
