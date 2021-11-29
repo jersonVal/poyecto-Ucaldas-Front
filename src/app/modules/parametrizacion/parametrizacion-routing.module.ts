@@ -75,11 +75,11 @@ const routes: Routes = [
     component: CrearEstadoComponent
   },
   {
-    path: "estado/eliminar-estado",
+    path: "estado/eliminar-estado/:_id",
     component: EliminarEstadoComponent
   },
   {
-    path: "estado/editar-estado",
+    path: "estado/editar-estado/:_id",
     component: EditarEstadoComponent
   },
   {
@@ -107,11 +107,11 @@ const routes: Routes = [
     component: CrearLineaInvestigacionComponent
   },
   {
-    path: "linea-investigacion/editar-linea-investigacion",
+    path: "linea-investigacion/editar-linea-investigacion/:_id",
     component: EditarLineaInvestigacionComponent
   },
   {
-    path: "linea-investigacion/eliminar-linea-investigacion",
+    path: "linea-investigacion/eliminar-linea-investigacion/:_id",
     component: EliminarLineaInvestigacionComponent
   },
   {
@@ -139,11 +139,11 @@ const routes: Routes = [
     component: CrearTipoComiteComponent
   },
   {
-    path: "tipo-comite/editar-tipo-comite",
+    path: "tipo-comite/editar-tipo-comite/:_id",
     component: EditarTipoComiteComponent
   },
   {
-    path: "tipo-comite/eliminar-tipo-comite",
+    path: "tipo-comite/eliminar-tipo-comite/:_id",
     component: EliminarTipoComiteComponent
   },
   {
@@ -171,11 +171,11 @@ const routes: Routes = [
     component: CrearTipoVinculacionComponent
   },
   {
-    path: "tipo-vinculacion/editar-tipo-vinculacion",
+    path: "tipo-vinculacion/editar-tipo-vinculacion/:_id",
     component: EditarTipoVinculacionComponent
   },
   {
-    path: "tipo-vinculacion/eliminar-tipo-vinculacion",
+    path: "tipo-vinculacion/eliminar-tipo-vinculacion/:_id",
     component: EliminarTipoVinculacionComponent
   },
   {

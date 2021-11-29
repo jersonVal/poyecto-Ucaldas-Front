@@ -36,4 +36,10 @@ export class SolicitudService {
       id_lineaInvestigacion: modelo.id_lineaInvestigacion
     })
   }
+
+  RemoveSolicitud(_id: string): Observable<any>{
+    return this.http.delete(`${this.url}/solicituds/${_id}`,{
+      
+    })
+  }
 }

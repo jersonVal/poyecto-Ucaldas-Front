@@ -26,4 +26,20 @@ export class EstadoService {
   getRecord(){
     return this.http.get<EstadoModel[]>(`${this.url}/estados`);
   }
+
+  BuscarRegistro(_id: string): Observable<EstadoModel>{
+    return this.http.get<EstadoModel>(`${this.url}/estados/${_id}`)
+  }
+
+  EditarEstado(modelo:EstadoModel):Observable<EstadoModel>{
+    return this.http.put<EstadoModel>(`${this.url}/estados/${modelo._id}`,{
+      tipo: modelo.tipo
+    })
+  }
+
+  RemoveEstado(_id: string): Observable<any>{
+    return this.http.delete(`${this.url}/estados/${_id}`,{
+      
+    })
+  }
 }

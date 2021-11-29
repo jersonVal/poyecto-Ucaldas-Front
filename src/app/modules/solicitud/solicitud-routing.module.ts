@@ -15,7 +15,7 @@ const routes: Routes = [
     component: EditarSolicitudComponent
   },
   {
-    path: "eliminar-solicitud",
+    path: "eliminar-solicitud/:_id",
     component: EliminarSolicitudComponent
   },
   {

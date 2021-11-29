@@ -25,4 +25,19 @@ export class TipoVinculacionService {
   getRecord(){
     return this.http.get<TipoVinculacionModel[]>(`${this.url}/tipo-vinculacion`);
   }
+
+  BuscarRegistro(_id: string): Observable<TipoVinculacionModel>{
+    return this.http.get<TipoVinculacionModel>(`${this.url}/tipo-vinculacion/${_id}`)
+  }
+
+  EditarTipoVinculacion(modelo:TipoVinculacionModel):Observable<TipoVinculacionModel>{
+    return this.http.put<TipoVinculacionModel>(`${this.url}/tipo-vinculacion/${modelo._id}`,{
+      nombre: modelo.nombre
+    })
+  }
+
+  RemoveTipoVinculacion(_id: string): Observable<any>{
+    return this.http.delete(`${this.url}/tipo-vinculacion/${_id}`,{
+    })
+  }
 }
