@@ -26,4 +26,15 @@ export class FacultadService {
   getRecord(){
     return this.http.get<FacultadModel[]>(`${this.url}/facultads`);
   }
+
+  BuscarRegistro(_id: string): Observable<FacultadModel>{
+    return this.http.get<FacultadModel>(`${this.url}/facultads/${_id}`)
+  }
+
+  EditarFacultad(modelo:FacultadModel):Observable<any>{
+    return this.http.put(`${this.url}/facultads/${modelo._id}`,{
+      nombre: modelo.nombre,
+      codigo: modelo.codigo
+    })
+  }
 }

@@ -91,7 +91,7 @@ const routes: Routes = [
     component: CrearFacultadComponent
   },
   {
-    path: "facultad/editar-facultad",
+    path: "facultad/editar-facultad/:_id",
     component: EditarFacultadComponent
   },
   {

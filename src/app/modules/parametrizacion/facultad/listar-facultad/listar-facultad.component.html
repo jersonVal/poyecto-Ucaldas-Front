@@ -13,6 +13,9 @@
         <th>
           Codigo
         </th>
+        <th>
+          Acciones
+        </th>
       </thead>
       <tbody>
         <tr *ngFor="let r of recordList">
@@ -24,6 +27,9 @@
           </td>
           <td>
             {{r.codigo}}
+          </td>
+          <td>
+            <a routerLink="/parametrizacion/facultad/editar-facultad/{{r._id}}" class="btn">Editar</a>
           </td>
         </tr>
       </tbody>
