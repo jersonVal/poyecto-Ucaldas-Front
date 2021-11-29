@@ -64,4 +64,29 @@ export class BussinessService {
   getRecordProponente(){
     return this.http.get<ProponenteModel[]>(`${this.url}/proponentes`);
   }
+
+  BuscarRegistro(id:string):Observable<ProponenteModel>{
+    return this.http.get(`${this.url}/proponentes/${id}`,{
+      
+    })
+  }
+
+  EditarProponente(modelo:ProponenteModel):Observable<ProponenteModel>{
+
+    console.log(modelo)
+    return this.http.put(`${this.url}/proponentes/${modelo._id}`,{
+      _id:modelo._id,
+      nombre: modelo.nombre,
+      apellidos: modelo.apellidos,
+      documento: modelo.documento,
+      correo: modelo.correo,
+      fechaNacimiento: modelo.fechaNacimiento,
+      celular: modelo.celular?.toString(),
+      foto: modelo.foto,
+      id_departamento: modelo.id_departamento,
+      id_tipoVinculacion: modelo.id_tipoVinculacion 
+    });
+  }
+
 }
+
