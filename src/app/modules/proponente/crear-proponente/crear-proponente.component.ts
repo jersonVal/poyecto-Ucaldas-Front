@@ -88,8 +88,10 @@ export class CrearProponenteComponent implements OnInit {
       modelo.correo = this.GetForm['correo'].value;
       modelo.documento = this.GetForm['documento'].value;
       modelo.fechaNacimiento = this.GetForm['fechaNacimiento'].value;
+      modelo.foto = this.GetForm['foto'].value;
       modelo.idDepartamento = this.GetForm['idDepartamento'].value;
       modelo.idTipoVinculacion = this.GetForm['idTipoVinculacion'].value;
+      
       //Llamado al servicio de identificacion de usuario
       this.bussinessService.CrearProponente(modelo).subscribe({
         next:( data:any ) => {
@@ -105,16 +107,7 @@ export class CrearProponenteComponent implements OnInit {
       this.router.navigate(["/proponente/listar-proponente"]);
     }
   }
-
-
-
-
-  
-
   get GetForm(){
     return this.form.controls;
   }
-
-  
-
 }

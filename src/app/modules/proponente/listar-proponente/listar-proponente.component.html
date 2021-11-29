@@ -34,6 +34,9 @@
       <th>
         id_tipoVinculacion
       </th>
+      <th>
+        Acciones
+      </th>
     </thead>
     <tbody>
       <tr *ngFor="let r of recordList">
@@ -67,7 +70,9 @@
         <td>
           {{r.id_tipoVinculacion}}
         </td>
-
+        <td>
+          <a routerLink="/proponente/editar-proponente/{{r._id}}" ><i class="material-icons">delete</i></a>
+        </td>
       </tr>
     </tbody>
   </table>
