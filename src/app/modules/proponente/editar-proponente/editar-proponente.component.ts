@@ -20,6 +20,7 @@ declare const InitSelectById: any;
 })
 export class EditarProponenteComponent implements OnInit {
 
+  foto="";
   form: FormGroup = new FormGroup({});
   dropDownDepartamento: DepartamentoModel[] = [];
   dropDownTipoVinculacion: TipoVinculacionModel[] = [];
@@ -92,6 +93,10 @@ export class EditarProponenteComponent implements OnInit {
     let id = this.route.snapshot.params['_id']
     this.bussinessService.BuscarRegistro(id).subscribe({
       next: (data:ProponenteModel)=>{
+
+        if(data.foto){
+          this.foto=data.foto;
+        }
         this.form.controls['id'].setValue(data._id);
         this.form.controls['nombre'].setValue(data.nombre);
         this.form.controls['apellidos'].setValue(data.apellidos);
@@ -111,6 +116,12 @@ export class EditarProponenteComponent implements OnInit {
       OpenGeneralModal('Invalido')
     }else{
       let modelo = new ProponenteModel();
+
+      if(this.GetForm['foto'].value == ''){
+        modelo.foto = this.foto;
+      }else{
+        modelo.foto = this.GetForm['foto'].value;
+      }
       modelo._id = this.GetForm['id'].value;
       modelo.nombre = this.GetForm['nombre'].value;
       modelo.apellidos = this.GetForm['apellidos'].value;
@@ -118,7 +129,6 @@ export class EditarProponenteComponent implements OnInit {
       modelo.correo = this.GetForm['correo'].value;
       modelo.documento = this.GetForm['documento'].value;
       modelo.fechaNacimiento = this.GetForm['fechaNacimiento'].value;
-      modelo.foto = this.GetForm['foto'].value;
       modelo.id_departamento = this.GetForm['idDepartamento'].value;
       modelo.id_tipoVinculacion = this.GetForm['idTipoVinculacion'].value;
       //Llamado al servicio de identificacion de usuario

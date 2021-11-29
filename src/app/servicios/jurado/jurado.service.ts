@@ -18,4 +18,21 @@ export class JuradoService {
   getRecord(){
     return this.http.get<JuradoModel[]>(`${this.url}/jurados`);
   }
+  BuscarRegistro(id:string):Observable<JuradoModel>{
+    return this.http.get(`${this.url}/jurados/${id}`,{
+      
+    })
+  }
+
+  EditarProponente(modelo:JuradoModel):Observable<JuradoModel>{
+    return this.http.put(`${this.url}/jurados/${modelo._id}`,{
+      _id:modelo._id,
+      nombre: modelo.nombre,
+      apellidos: modelo.apellidos,
+      telefono: modelo.telefono?.toString(),
+      correo: modelo.correo,
+      entidad: modelo.entidad
+    })
+  }
+
 }

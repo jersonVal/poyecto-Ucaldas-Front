@@ -11,7 +11,7 @@ const routes: Routes = [
     component: CrearJuradoComponent
   },
   {
-    path: "editar-jurado",
+    path: "editar-jurado/:_id",
     component: EditarJuradoComponent
   },
   {

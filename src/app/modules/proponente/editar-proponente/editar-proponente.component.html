@@ -1,6 +1,6 @@
 <main class="center">
 
-    <h5 class="color-primary">Formulario de creacion de proponente</h5>
+    <h5 class="color-primary">Formulario de edicion de proponente</h5>
     <div class="section"></div>
   
     <div class="container">
@@ -86,8 +86,7 @@
             <div class="file-field input-field">
               <div class="btn background-primary">
                 <span>Cargar</span>
-                <input formControlName="foto" class='validate' type='file' name='foto' id='foto' />
-                <!-- <input type="file"> -->
+                <input formControlName="foto" class='validate' type='file' value="" name='foto' id='foto' />
               </div>
               <div class="file-path-wrapper">
                 <input class="active" class="file-path validate" type="text" placeholder="Foto (Opcional)">
@@ -117,7 +116,7 @@
           <div class='row '>
             <div class="col s6">
               <button name='btn_login' type='button' class=' btn btn-large background-primary' type='button'
-                (click)="CrearProponente()">Crear Proponente</button>
+                (click)="CrearProponente()">Editar Proponente</button>
             </div>
   
             <div class="col s6">
