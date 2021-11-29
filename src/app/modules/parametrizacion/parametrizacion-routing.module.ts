@@ -20,6 +20,10 @@ import { CrearModalidadComponent } from './modalidad/crear-modalidad/crear-modal
 import { EditarModalidadComponent } from './modalidad/editar-modalidad/editar-modalidad.component';
 import { EliminarModalidadComponent } from './modalidad/eliminar-modalidad/eliminar-modalidad.component';
 import { ListarModalidadComponent } from './modalidad/listar-modalidad/listar-modalidad.component';
+import { CrearRolComponent } from './rol/crear-rol/crear-rol.component';
+import { EditarRolComponent } from './rol/editar-rol/editar-rol.component';
+import { EliminarRolComponent } from './rol/eliminar-rol/eliminar-rol.component';
+import { ListarRolComponent } from './rol/listar-rol/listar-rol.component';
 import { CrearTipoComiteComponent } from './tipoComite/crear-tipo-comite/crear-tipo-comite.component';
 import { EditarTipoComiteComponent } from './tipoComite/editar-tipo-comite/editar-tipo-comite.component';
 import { EliminarTipoComiteComponent } from './tipoComite/eliminar-tipo-comite/eliminar-tipo-comite.component';
@@ -34,6 +38,22 @@ import { EliminarTipoVinculacionComponent } from './tipoVinculacion/eliminar-tip
 import { ListarTipoVinculacionComponent } from './tipoVinculacion/listar-tipo-vinculacion/listar-tipo-vinculacion.component';
 
 const routes: Routes = [
+  {
+    path: "rol/crear-rol",
+    component: CrearRolComponent
+  },
+  {
+    path: "rol/editar-rol",
+    component: EditarRolComponent
+  },
+  {
+    path: "rol/eliminar-rol",
+    component: EliminarRolComponent
+  },
+  {
+    path: "rol/listar-rol",
+    component: ListarRolComponent
+  },
   {
     path: "departamento/crear-departamento",
     component: CrearDepartamentoComponent 

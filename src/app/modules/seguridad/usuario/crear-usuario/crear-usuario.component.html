@@ -93,9 +93,7 @@
           <div class="input-field col s6">
             <select id="rol" multiple>
               <option value="" disabled>Rol</option>
-              <option value="1">Option 1</option>
-              <option value="2">Option 2</option>
-              <option value="3">Option 3</option>
+              <option *ngFor="let r of rolData" value="{{r._id}}">{{r.nombre}}</option>
             </select>
             <label for="sel">Rol</label>
             
