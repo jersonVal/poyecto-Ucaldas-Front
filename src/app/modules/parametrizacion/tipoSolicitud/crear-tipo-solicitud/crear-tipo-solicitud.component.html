@@ -28,13 +28,13 @@
           </div>
 
           <div class='row'>
-            <div class='input-field col s12'>
-                <label for="">Formato</label>
-              <input formControlName="formato" type='file' name='formato' id='formato' />
-              <!--  -->
-  
-              <div *ngIf="GetForm['formato'].errors && (GetForm['formato'].dirty || GetForm['formato'].touched) ">
-                <label class="warning">Por favor ingrese un formato valido</label>
+            <div class="file-field input-field">
+              <div class="btn background-primary">
+                <span>Cargar</span>
+                <input formControlName="formato" type='file' name='formato' id='formato' />
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" placeholder="Formato">
               </div>
             </div>
           </div>
