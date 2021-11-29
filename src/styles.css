@@ -34,11 +34,20 @@
 body{
   font-family: 'Poppins', sans-serif;
 }
-warning{
+
+.warning{
     color: var(--danger-default);
 }
 table{
   font-size:0.8rem;
+}
+
+.btn{
+  background-color: var(--primary-default) !important;
+}
+
+.red{
+  background: var(--danger-default) !important;
 }
 
 

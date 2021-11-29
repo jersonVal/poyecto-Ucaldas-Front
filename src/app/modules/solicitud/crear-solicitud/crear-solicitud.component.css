@@ -22,7 +22,14 @@
 
 textarea{
     resize: none;
-    height: 10rem;    
+    height: 10rem;   
+    border-radius: 0.2rem; 
+    border: 0.1rem solid black;
+    padding: 1rem;
+}
+
+#lblDescription{
+    margin: 1rem;
 }
 
 option{
