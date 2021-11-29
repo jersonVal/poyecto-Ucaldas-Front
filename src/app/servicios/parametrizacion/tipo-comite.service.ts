@@ -26,4 +26,19 @@ export class TipoComiteService {
   getRecord(){
     return this.http.get<TipoComiteModel[]>(`${this.url}/tipo-comites`);
   }
+
+  BuscarRegistro(_id: string): Observable<TipoComiteModel>{
+    return this.http.get<TipoComiteModel>(`${this.url}/tipo-comites/${_id}`)
+  }
+
+  EditarTipoComite(modelo:TipoComiteModel):Observable<TipoComiteModel>{
+    return this.http.put<TipoComiteModel>(`${this.url}/tipo-comites/${modelo._id}`,{
+      nombre: modelo.nombre
+    })
+  }
+
+  RemoveTipoComite(_id: string): Observable<any>{
+    return this.http.delete(`${this.url}/tipo-comites/${_id}`,{
+    })
+  }
 }

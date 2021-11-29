@@ -1,4 +1,4 @@
-<div class="container">
+<div class="p2">
   <h2>Solicitudes</h2>
     <br>
     <a routerLink="/solicitud/crear-solicitud" class="btn btn-success">Nuevo registro</a>
@@ -21,16 +21,16 @@
           Nombre del trabajo
         </th>
         <th>
-          Id estado
+          Estado
         </th>
         <th>
-          Id Tipo de modalidad
+          Tipo de Solicitud
         </th>
         <th>
-            Id Modalidad
+          Modalidad
         </th>
         <th>
-          Id Linea de investigacion
+          Linea de investigacion
         </th>
         <th>
           Acciones
@@ -53,20 +53,21 @@
           <td>
             {{r.nombreTrabajo}}
           </td>
-          <td>
-            {{r.id_estado}}
+          <td *ngIf="r.id_estado">
+            {{BuscarEstado(r.id_estado)}}
+          </td>
+          <td *ngIf="r.id_tipoSolicitud">
+            {{BuscarTipoSolicitud(r.id_tipoSolicitud)}}
+          </td>
+          <td *ngIf="r.id_modalidad">
+            {{BuscarModalidad(r.id_modalidad)}}
+          </td>
+          <td *ngIf="r.id_lineaInvestigacion">
+            {{BuscarLineaInvestigacion(r.id_lineaInvestigacion)}}
           </td>
           <td>
-            {{r.id_tipoSolicitud}}
-          </td>
-          <td>
-            {{r.id_modalidad}}
-          </td>
-          <td>
-            {{r.id_lineaInvestigacion}}
-          </td>
-          <td>
-            <a routerLink="/solicitud/editar-solicitud/{{r._id}}"><i class="material-icons">delete</i></a>
+            <a routerLink="/solicitud/editar-solicitud/{{r._id}}"><i class="material-icons">edit</i></a>
+            <a routerLink="/solicitud/eliminar-solicitud/{{r._id}}"><i class="material-icons">delete</i></a>
           </td>
         </tr>
       </tbody>

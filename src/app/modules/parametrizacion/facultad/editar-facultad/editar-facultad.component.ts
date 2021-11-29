@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GeneralData } from 'src/app/config/general-data';
-import { CredencialesCrearFacultadModel } from 'src/app/modelos/parametrizacion/facultad/credenciales-facultad.model';
 import { FacultadModel } from 'src/app/modelos/parametrizacion/facultad/facultad.model';
 import { FacultadService } from 'src/app/servicios/parametrizacion/facultad.service';
 

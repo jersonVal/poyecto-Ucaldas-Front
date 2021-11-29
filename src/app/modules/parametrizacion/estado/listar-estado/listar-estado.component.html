@@ -11,6 +11,9 @@
         <th>
           Estado
         </th>
+        <th>
+          Acciones
+        </th>
       </thead>
       <tbody>
         <tr *ngFor="let r of recordList">
@@ -19,6 +22,10 @@
           </td>
           <td>
             {{r.tipo}}
+          </td>
+          <td>
+            <a routerLink="/parametrizacion/estado/editar-estado/{{r._id}}" ><i class="material-icons">edit</i></a>
+            <a routerLink="/parametrizacion/estado/eliminar-estado/{{r._id}}" ><i class="material-icons">delete</i></a>
           </td>
       </tbody>
     </table>

@@ -108,6 +108,7 @@ export class EditarSolicitudComponent implements OnInit {
       modelo.id_modalidad = this.GetForm['idModalidad'].value;
       modelo.id_lineaInvestigacion = this.GetForm['idLineaInvestigacion'].value;
       //Llamado al servicio de identificacion de usuario
+      console.log(modelo)
       this.solicitudService.EditarSolicitud(modelo).subscribe({
         next:( data:any ) => {
           OpenGeneralModal('Creado con Exito')

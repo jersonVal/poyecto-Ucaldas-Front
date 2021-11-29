@@ -12,6 +12,9 @@
         <th>
           Tipo de Vinculacion
         </th>
+        <th>
+          Acciones
+        </th>
       </thead>
       <tbody>
         <tr *ngFor="let r of recordList">
@@ -20,6 +23,10 @@
           </td>
           <td>
             {{r.nombre}}
+          </td>
+          <td>
+            <a routerLink="/parametrizacion/tipo-vinculacion/editar-tipo-vinculacion/{{r._id}}" ><i class="material-icons">edit</i></a>
+            <a routerLink="/parametrizacion/tipo-vinculacion/eliminar-tipo-vinculacion/{{r._id}}" ><i class="material-icons">delete</i></a>
           </td>
       </tbody>
     </table>

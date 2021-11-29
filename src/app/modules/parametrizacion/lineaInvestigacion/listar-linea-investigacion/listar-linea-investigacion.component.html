@@ -11,6 +11,9 @@
         <th>
           Linea de Investigacion
         </th>
+        <th>
+          Acciones
+        </th>
       </thead>
       <tbody>
         <tr *ngFor="let r of recordList">
@@ -19,6 +22,10 @@
           </td>
           <td>
             {{r.nombre}}
+          </td>
+          <td>
+            <a routerLink="/parametrizacion/linea-investigacion/editar-linea-investigacion/{{r._id}}" ><i class="material-icons">edit</i></a>
+            <a routerLink="/parametrizacion/linea-investigacion/eliminar-linea-investigacion/{{r._id}}" ><i class="material-icons">delete</i></a>
           </td>
       </tbody>
     </table>

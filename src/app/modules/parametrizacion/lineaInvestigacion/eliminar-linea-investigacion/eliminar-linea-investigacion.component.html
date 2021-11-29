@@ -1,1 +1,47 @@
-<p>eliminar-linea-investigacion works!</p>
+<main class="center">
+
+  <h5 class="color-primary">Eliminar Linea de investigacion</h5>
+  <div class="section"></div>
+
+  <div class="container">
+    <div class="z-depth-1 grey lighten-4 row"
+      style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+      <!--  -->
+
+      <div class='row'>
+        <div class='col s12'>
+        </div>
+      </div>
+
+      <div class='row'>
+        <h5 class="">Esta seguro de eliminar el registro con la siguiente informacion ?</h5>
+        <div class="input-field col s12">
+
+          <ul>
+            <li>
+              <strong>Id: {{id}}</strong></li>
+            <li>nombre: {{nombre}}</li>
+          </ul>
+        </div>
+
+        <br />
+        <div class='row'>
+          <div class="col s6 ">
+            <button name='btn_login' (click)="RemoveLineaInvestigacion()" type='button' class=' btn btn-large background-primary'
+              type='button'>Eliminar</button>
+          </div>
+          <div class="col s6">
+            <button name='btn_login' routerLink="/parametrizacion/facultad/listar-facultad" type='button'
+              class='btn btn-large red' type='button'>Cancelar</button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="section"></div>
+  <div class="section"></div>
+</main>
