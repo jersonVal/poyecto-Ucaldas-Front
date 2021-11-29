@@ -20,6 +20,10 @@
           <td>
             {{r.nombre}}
           </td>
+          <td>
+            <a routerLink="/parametrizacion/modalidad/editar-modalidad/{{r._id}}" ><i class="material-icons">edit</i></a>
+            <a routerLink="/parametrizacion/modalidad/eliminar-modalidad/{{r._id}}" ><i class="material-icons">delete</i></a> 
+          </td>
         </tr>
       </tbody>
     </table>

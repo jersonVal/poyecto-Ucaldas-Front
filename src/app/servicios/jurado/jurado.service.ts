@@ -35,4 +35,10 @@ export class JuradoService {
     })
   }
 
+  EliminarJurado(_id: string): Observable<any>{
+    return this.http.delete(`${this.url}/jurados/${_id}`,{
+      
+    })
+  }
+
 }

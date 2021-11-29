@@ -15,7 +15,7 @@ const routes: Routes = [
     component: EditarProponenteComponent
   },
   {
-    path: "eliminar-proponente",
+    path: "eliminar-proponente/:_id",
     component: EliminarProponenteComponent
   },
   {

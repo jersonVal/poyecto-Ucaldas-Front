@@ -27,4 +27,25 @@ export class DepartamentoService {
   getRecord(){
     return this.http.get<DepartamentoModel[]>(`${this.url}/departamentos`);
   }
+
+  BuscarRegistro(id:string):Observable<DepartamentoModel>{
+    return this.http.get(`${this.url}/departamentos/${id}`,{
+      
+    })
+  }
+
+  EditarDepartamento(modelo:DepartamentoModel):Observable<DepartamentoModel>{
+
+    console.log(modelo)
+    return this.http.put(`${this.url}/departamentos/${modelo._id}`,{
+      _id:modelo._id,
+      nombre: modelo.nombre,
+      id_facultad: modelo.id_facultad
+    });
+  }
+  EliminarDepartamento(_id: string): Observable<any>{
+    return this.http.delete(`${this.url}/departamentos/${_id}`,{
+      
+    })
+  }
 }

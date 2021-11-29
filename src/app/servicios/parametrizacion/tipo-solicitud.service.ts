@@ -26,4 +26,24 @@ export class TipoSolicitudService {
   getRecord(){
     return this.http.get<TipoSolicitudModel[]>(`${this.url}/tipo-solicituds`);
   }
+  BuscarRegistro(id:string):Observable<TipoSolicitudModel>{
+    return this.http.get(`${this.url}/tipo-solicituds/${id}`,{
+      
+    })
+  }
+
+  EditarTipoSolicitud(modelo:TipoSolicitudModel):Observable<TipoSolicitudModel>{
+
+    console.log(modelo)
+    return this.http.put(`${this.url}/tipo-solicituds/${modelo._id}`,{
+      _id:modelo._id,
+      formato: modelo.formato,
+      nombre: modelo.nombre
+    });
+  }
+  EliminarTipoSolicitud(_id: string): Observable<any>{
+    return this.http.delete(`${this.url}/tipo-solicituds/${_id}`,{
+      
+    })
+  }
 }

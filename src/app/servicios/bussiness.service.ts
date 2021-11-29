@@ -87,6 +87,11 @@ export class BussinessService {
       id_tipoVinculacion: modelo.id_tipoVinculacion 
     });
   }
+  EliminarProponente(_id: string): Observable<any>{
+    return this.http.delete(`${this.url}/proponentes/${_id}`,{
+      
+    })
+  }
 
 }
 

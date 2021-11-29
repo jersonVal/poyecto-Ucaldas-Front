@@ -59,11 +59,11 @@ const routes: Routes = [
     component: CrearDepartamentoComponent 
   },
   {
-    path: "departamento/editar-departamento",
+    path: "departamento/editar-departamento/:_id",
     component: EditarDepartamentoComponent 
   },
   {
-    path: "departamento/eliminar-departamento",
+    path: "departamento/eliminar-departamento/:_id",
     component: EliminarDepartamentoComponent 
   },
   {
@@ -123,11 +123,11 @@ const routes: Routes = [
     component: CrearModalidadComponent
   },
   {
-    path: "modalidad/editar-modalidad",
+    path: "modalidad/editar-modalidad/:_id",
     component: EditarModalidadComponent
   },
   {
-    path: "modalidad/eliminar-modalidad",
+    path: "modalidad/eliminar-modalidad/:_id",
     component: EliminarModalidadComponent
   },
   {
@@ -155,11 +155,11 @@ const routes: Routes = [
     component: CrearTipoSolicitudComponent
   },
   {
-    path: "tipo-solicitud/editar-tipo-solicitud",
+    path: "tipo-solicitud/editar-tipo-solicitud/:_id",
     component: EditarTipoSolicitudComponent
   },
   {
-    path: "tipo-solicitud/eliminar-tipo-solicitud",
+    path: "tipo-solicitud/eliminar-tipo-solicitud/:_id",
     component: EliminarTipoSolicitudComponent
   },
   {

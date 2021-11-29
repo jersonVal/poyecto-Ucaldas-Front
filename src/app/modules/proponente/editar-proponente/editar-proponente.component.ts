@@ -104,14 +104,14 @@ export class EditarProponenteComponent implements OnInit {
         this.form.controls['correo'].setValue(data.correo);
         this.form.controls['fechaNacimiento'].setValue(data.fechaNacimiento);
         this.form.controls['celular'].setValue(data.celular);
-        this.form.controls['foto'].setValue(data.foto);
+        // this.form.controls['foto'].setValue(data.foto);
         this.form.controls['idDepartamento'].setValue(data.id_departamento);
         this.form.controls['idTipoVinculacion'].setValue(data.id_tipoVinculacion);
       }
     })
   }
 
-  CrearProponente(){
+  EditarProponente(){
     if(this.form.invalid){
       OpenGeneralModal('Invalido')
     }else{
