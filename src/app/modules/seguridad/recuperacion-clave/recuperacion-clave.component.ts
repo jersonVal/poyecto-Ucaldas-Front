@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GeneralData} from 'src/app/config/general-data';
 import { SeguridadService } from 'src/app/servicios/seguridad.service';
 import { CredencialesRecuperarClaveModel } from 'src/app/modelos/seguridad/credenciales-recuperar-clave.model';
+import { Router } from '@angular/router';
 
 
 declare const OpenGeneralModal: any;
@@ -18,7 +19,8 @@ export class RecuperacionClaveComponent implements OnInit {
   form: FormGroup = new FormGroup({});
   constructor(
     private fb: FormBuilder,
-    private servicioSeguridad: SeguridadService
+    private servicioSeguridad: SeguridadService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -52,6 +54,7 @@ export class RecuperacionClaveComponent implements OnInit {
           OpenGeneralModal(GeneralData.GENERAL_ERROR_MESSAGE)
         }
       })
+      this.router.navigate(['/home']);
     }
   }
 

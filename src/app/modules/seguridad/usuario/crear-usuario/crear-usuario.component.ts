@@ -5,6 +5,7 @@ import { RolModel } from 'src/app/modelos/parametrizacion/rol/rol.model';
 import { RolService } from 'src/app/servicios/parametrizacion/rol.service';
 import { CredencialesCrearUsuarioModel } from 'src/app/modelos/usuario/credenciales-crear-usuario.model';
 import {SeguridadService} from 'src/app/servicios/seguridad.service'
+import { Router } from '@angular/router';
 
 
 
@@ -24,7 +25,8 @@ export class CrearUsuarioComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private servicioSeguridad: SeguridadService,
-    private rolService: RolService
+    private rolService: RolService,
+    private router : Router
   ) { }
 
   ngOnInit(): void {
@@ -72,6 +74,7 @@ export class CrearUsuarioComponent implements OnInit {
           OpenGeneralModal(GeneralData.GENERAL_ERROR_MESSAGE)
         }
       })
+      this.router.navigate(['/seguridad/inicio-sesion']);
     }
   }
 

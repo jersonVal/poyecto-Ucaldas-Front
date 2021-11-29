@@ -6,7 +6,7 @@
       <li><a routerLink="home">Inicio</a></li>
 
       <!-- dropdown parametrizacion-->
-      <li *ngIf="!session" class="acti">
+      <li *ngIf="session" class="acti">
         <a>Parametrizacion<i class="material-icons right">arrow_drop_down</i></a>
         <ul class="drop">
           <li><a routerLink="parametrizacion/departamento/listar-departamento">Departamento</a></li>
@@ -22,11 +22,11 @@
         </ul>
       </li>
 
-      <li *ngIf="!session"><a routerLink="proponente/listar-proponente">Proponente</a></li>
-      <li *ngIf="!session"><a routerLink="jurado/listar-jurado">Jurado</a></li>
-      <li *ngIf="!session"><a routerLink="solicitud/listar-solicitud">Solicitud</a></li>
+      <li *ngIf="session"><a routerLink="proponente/listar-proponente">Proponente</a></li>
+      <li *ngIf="session"><a routerLink="jurado/listar-jurado">Jurado</a></li>
+      <li *ngIf="session"><a routerLink="solicitud/listar-solicitud">Solicitud</a></li>
       <!-- dropdown reportes -->
-      <li *ngIf="!session" class="acti">
+      <li *ngIf="session" class="acti">
         <a>Reportes<i class="material-icons right">arrow_drop_down</i></a>
         <ul class="drop">
           <li><a routerLink="reportes/jurados-de-solicitud">Jurados de solicitud</a></li>
