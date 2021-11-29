@@ -1,4 +1,5 @@
 <div class="container">
+  <h2>Facultad</h2>
     <br>
     <a routerLink="/parametrizacion/facultad/crear-facultad" class="btn btn-success">Nuevo registro</a>
   
@@ -29,7 +30,8 @@
             {{r.codigo}}
           </td>
           <td>
-            <a routerLink="/parametrizacion/facultad/editar-facultad/{{r._id}}" class="btn">Editar</a>
+            <a routerLink="/parametrizacion/facultad/editar-facultad/{{r._id}}" ><i class="material-icons">edit</i></a>
+            <a routerLink="/parametrizacion/facultad/eliminar-facultad/{{r._id}}" ><i class="material-icons">delete</i></a>
           </td>
         </tr>
       </tbody>

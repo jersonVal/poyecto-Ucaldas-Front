@@ -19,4 +19,21 @@ export class SolicitudService {
   getRecord(){
     return this.http.get<SolicitudModel[]>(`${this.url}/solicituds`);
   }
+
+  BuscarRegistro(_id: string):Observable<SolicitudModel>{
+    return this.http.get<SolicitudModel>(`${this.url}/solicituds/${_id}`);
+  }
+
+  EditarSolicitud(modelo:SolicitudModel):Observable<SolicitudModel>{
+    return this.http.put(`${this.url}/solicituds/${modelo._id}`,{
+      fecha: modelo.fecha,
+      archivo: modelo.archivo,
+      descripcion: modelo.descripcion,
+      nombreTrabajo: modelo.nombreTrabajo,
+      id_estado: modelo.id_estado,
+      id_tipoSolicitud: modelo.id_tipoSolicitud,
+      id_modalidad: modelo.id_modalidad,
+      id_lineaInvestigacion: modelo.id_lineaInvestigacion
+    })
+  }
 }

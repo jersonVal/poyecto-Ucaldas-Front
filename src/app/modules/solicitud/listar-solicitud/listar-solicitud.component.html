@@ -32,6 +32,9 @@
         <th>
           Id Linea de investigacion
         </th>
+        <th>
+          Acciones
+        </th>
       </thead>
       <tbody>
         <tr *ngFor="let r of recordList">
@@ -61,6 +64,9 @@
           </td>
           <td>
             {{r.id_lineaInvestigacion}}
+          </td>
+          <td>
+            <a routerLink="/solicitud/editar-solicitud/{{r._id}}"><i class="material-icons">delete</i></a>
           </td>
         </tr>
       </tbody>

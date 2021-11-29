@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { DepartamentoModel } from 'src/app/modelos/parametrizacion/departamento/departamento.model';
+import { FacultadModel } from 'src/app/modelos/parametrizacion/facultad/facultad.model';
 import { DepartamentoService } from 'src/app/servicios/parametrizacion/departamento.service';
+import { FacultadService } from 'src/app/servicios/parametrizacion/facultad.service';
 
 @Component({
   selector: 'app-listar-departamento',
@@ -10,11 +12,14 @@ import { DepartamentoService } from 'src/app/servicios/parametrizacion/departame
 })
 export class ListarDepartamentoComponent implements OnInit {
 
+  // nombre: string = "";
+  facultades: FacultadModel[] = [];
   recordList: DepartamentoModel[] = [];
   subscripcion: Subscription = new Subscription();
 
   constructor(
-    private departamentoService: DepartamentoService
+    private departamentoService: DepartamentoService,
+    private facultadService: FacultadService
   ) { }
 
   ngOnInit(): void {
@@ -28,6 +33,25 @@ export class ListarDepartamentoComponent implements OnInit {
         }
       }
     )
+
+    this.facultadService.getRecord().subscribe({
+      next: (data: FacultadModel[])=>{
+        this.facultades = data
+      }
+    })
+
+  }
+
+  BuscarNombre(id: string): string {
+    let nombre = ""
+    for(let i of this.facultades){
+      if(i._id === id){
+        if(i.nombre){
+          nombre = i.nombre
+        }
+      }
+    }
+    return nombre
   }
 
 }
