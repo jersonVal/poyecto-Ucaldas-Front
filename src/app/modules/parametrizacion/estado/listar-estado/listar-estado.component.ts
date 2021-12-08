@@ -23,10 +23,16 @@ export class ListarEstadoComponent implements OnInit {
 
   ngOnInit(): void {
     // this.subscripcion = 
+    this.GetRecord();
+  }
+
+  GetRecord(){
     this.estadoService.getRecord().subscribe(
       {
         next: (data: EstadoModel[])=>{
+          console.log(data)
           this.recordList = data
+          // console.log(this.recordList)
         },
         error: (err) => {
           console.log(err)

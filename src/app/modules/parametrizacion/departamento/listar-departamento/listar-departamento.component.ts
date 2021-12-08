@@ -27,6 +27,18 @@ export class ListarDepartamentoComponent implements OnInit {
 
   ngOnInit(): void {
     // this.subscripcion = 
+
+    this.GetRecord();
+
+    this.facultadService.getRecord().subscribe({
+      next: (data: FacultadModel[])=>{
+        this.facultades = data
+      }
+    })
+
+  }
+
+  GetRecord(){
     this.departamentoService.getRecord().subscribe(
       {
         next: (data: DepartamentoModel[])=>{
@@ -37,13 +49,6 @@ export class ListarDepartamentoComponent implements OnInit {
         }
       }
     )
-
-    this.facultadService.getRecord().subscribe({
-      next: (data: FacultadModel[])=>{
-        this.facultades = data
-      }
-    })
-
   }
 
   BuscarNombre(id: string): string {

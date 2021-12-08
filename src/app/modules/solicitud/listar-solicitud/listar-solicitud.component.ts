@@ -40,6 +40,12 @@ export class ListarSolicitudComponent implements OnInit {
   ngOnInit(): void {
     // this.subscripcion = 
     
+    this.GetRecord();
+
+    this.InitSearch();
+  }
+
+  GetRecord(){
     this.solicitudService.getRecord().subscribe(
       {
         next: (data: SolicitudModel[])=>{
@@ -50,8 +56,6 @@ export class ListarSolicitudComponent implements OnInit {
         }
       }
     )
-
-    this.InitSearch();
   }
 
   BuscarEstado(id: string): string {
