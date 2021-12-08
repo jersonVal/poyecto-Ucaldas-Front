@@ -23,6 +23,10 @@ export class ListarTipoComiteComponent implements OnInit {
 
   ngOnInit(): void {
     // this.subscripcion = 
+    this.GetRecord();
+  }
+
+  GetRecord(){
     this.tipoComiteService.getRecord().subscribe(
       {
         next: (data: TipoComiteModel[])=>{

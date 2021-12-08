@@ -23,6 +23,10 @@ export class ListarFacultadComponent implements OnInit {
 
   ngOnInit(): void {
     // this.subscripcion = 
+    this.GetRecord();
+  }
+
+  GetRecord(){
     this.facultadService.getRecord().subscribe(
       {
         next: (data: FacultadModel[])=>{

@@ -24,6 +24,10 @@ export class ListarTipoSolicitudComponent implements OnInit {
 
   ngOnInit(): void {
     // this.subscripcion = 
+    this.GetRecord();
+  }
+
+  GetRecord(){
     this.tipoSolicitudService.getRecord().subscribe(
       {
         next: (data: TipoSolicitudModel[])=>{

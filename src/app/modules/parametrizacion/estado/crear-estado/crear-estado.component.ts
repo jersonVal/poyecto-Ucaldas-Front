@@ -53,7 +53,6 @@ export class CrearEstadoComponent implements OnInit {
           OpenGeneralModal(GeneralData.GENERAL_ERROR_MESSAGE)
         }
       })
-
       this.router.navigate(["/parametrizacion/estado/listar-estado"])
     }
   }
