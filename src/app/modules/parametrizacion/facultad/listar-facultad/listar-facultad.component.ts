@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { GeneralData } from 'src/app/config/general-data';
 import { FacultadModel } from 'src/app/modelos/parametrizacion/facultad/facultad.model';
 import { FacultadService } from 'src/app/servicios/parametrizacion/facultad.service';
 
@@ -10,6 +11,9 @@ import { FacultadService } from 'src/app/servicios/parametrizacion/facultad.serv
 })
 export class ListarFacultadComponent implements OnInit {
 
+  pageSize : number = GeneralData.REGISTROS_POR_PAGINA;
+  p: number = 1;
+  total:number=0;
   recordList: FacultadModel[] = [];
   subscripcion: Subscription = new Subscription();
 

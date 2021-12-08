@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import {NgxPaginationModule} from 'ngx-pagination';
 import { ParametrizacionRoutingModule } from './parametrizacion-routing.module';
 import { CrearFacultadComponent } from './facultad/crear-facultad/crear-facultad.component';
 import { EditarFacultadComponent } from './facultad/editar-facultad/editar-facultad.component';
@@ -84,7 +84,8 @@ import { EliminarRolComponent } from './rol/eliminar-rol/eliminar-rol.component'
     CommonModule,
     ParametrizacionRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ]
 })
 export class ParametrizacionModule { }

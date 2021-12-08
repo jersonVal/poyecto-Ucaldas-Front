@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { GeneralData } from 'src/app/config/general-data';
 import { TipoComiteModel } from 'src/app/modelos/parametrizacion/tipo-comite/tipo-comite.model';
 import { TipoComiteService } from 'src/app/servicios/parametrizacion/tipo-comite.service';
 
@@ -10,6 +11,9 @@ import { TipoComiteService } from 'src/app/servicios/parametrizacion/tipo-comite
 })
 export class ListarTipoComiteComponent implements OnInit {
 
+  pageSize : number = GeneralData.REGISTROS_POR_PAGINA;
+  p: number = 1;
+  total:number=0;
   recordList: TipoComiteModel[] = [];
   subscripcion: Subscription = new Subscription();
 

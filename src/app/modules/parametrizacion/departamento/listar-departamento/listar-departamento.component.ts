@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { GeneralData } from 'src/app/config/general-data';
 import { DepartamentoModel } from 'src/app/modelos/parametrizacion/departamento/departamento.model';
 import { FacultadModel } from 'src/app/modelos/parametrizacion/facultad/facultad.model';
 import { DepartamentoService } from 'src/app/servicios/parametrizacion/departamento.service';
@@ -12,7 +13,9 @@ import { FacultadService } from 'src/app/servicios/parametrizacion/facultad.serv
 })
 export class ListarDepartamentoComponent implements OnInit {
 
-  // nombre: string = "";
+  pageSize : number = GeneralData.REGISTROS_POR_PAGINA;
+  p: number = 1;
+  total:number=0;
   facultades: FacultadModel[] = [];
   recordList: DepartamentoModel[] = [];
   subscripcion: Subscription = new Subscription();

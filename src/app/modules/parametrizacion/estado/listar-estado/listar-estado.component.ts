@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { GeneralData } from 'src/app/config/general-data';
 import { EstadoModel } from 'src/app/modelos/parametrizacion/estado/estado.model';
 import { EstadoService } from 'src/app/servicios/parametrizacion/estado.service';
 
@@ -10,6 +11,9 @@ import { EstadoService } from 'src/app/servicios/parametrizacion/estado.service'
 })
 export class ListarEstadoComponent implements OnInit {
 
+  pageSize : number = GeneralData.REGISTROS_POR_PAGINA;
+  p: number = 1;
+  total:number=0;
   recordList: EstadoModel[] = [];
   subscripcion: Subscription = new Subscription();
 

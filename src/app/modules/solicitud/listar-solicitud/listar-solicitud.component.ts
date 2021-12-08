@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { GeneralData } from 'src/app/config/general-data';
 import { EstadoModel } from 'src/app/modelos/parametrizacion/estado/estado.model';
 import { LineaInvestigacionModel } from 'src/app/modelos/parametrizacion/lineaInvestigacion/linea-investigacion.model';
 import { ModalidadModel } from 'src/app/modelos/parametrizacion/modalidad/modalidad.model';
@@ -18,6 +19,9 @@ import { SolicitudService } from 'src/app/servicios/solicitud/solicitud.service'
 })
 export class ListarSolicitudComponent implements OnInit {
 
+  pageSize : number = GeneralData.REGISTROS_POR_PAGINA;
+  p: number = 1;
+  total:number=0;
   estados: EstadoModel[]= [];
   tipoSolicitudes: TipoSolicitudModel[] = [];
   modalidades: ModalidadModel[] = [];

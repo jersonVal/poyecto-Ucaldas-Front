@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { GeneralData } from 'src/app/config/general-data';
 import { TipoVinculacionModel } from 'src/app/modelos/parametrizacion/tipo-vinculacion/tipo-vinculacion.model';
 import { TipoVinculacionService } from 'src/app/servicios/parametrizacion/tipo-vinculacion.service';
 
@@ -10,6 +11,9 @@ import { TipoVinculacionService } from 'src/app/servicios/parametrizacion/tipo-v
 })
 export class ListarTipoVinculacionComponent implements OnInit {
 
+  pageSize : number = GeneralData.REGISTROS_POR_PAGINA;
+  p: number = 1;
+  total:number=0;
   recordList: TipoVinculacionModel[] = [];
   subscripcion: Subscription = new Subscription();
 
