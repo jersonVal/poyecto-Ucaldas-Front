@@ -6,4 +6,5 @@ export namespace GeneralData {
     export const BUSSINESS_URL = "http://localhost:3000";
     export const ADMIN_USER_URL = "http://localhost:3001";
     export const GENERAL_ERROR_MESSAGE = "Error al conectar con el backend";
+    export const REGISTROS_POR_PAGINA = 5;
 }   
