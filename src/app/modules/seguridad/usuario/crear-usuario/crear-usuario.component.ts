@@ -54,7 +54,6 @@ export class CrearUsuarioComponent implements OnInit {
     if(this.form.invalid){
       OpenGeneralModal('Invalido')
     }else{
-      OpenGeneralModal('Formulario correcto a identificar')
       let modelo = new CredencialesCrearUsuarioModel();
       modelo.nombre = this.GetForm['nombre'].value;
       modelo.apellidos = this.GetForm['apellidos'].value;
