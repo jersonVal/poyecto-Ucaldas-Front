@@ -1,3 +1,9 @@
 .p2{
     padding: 2rem;
 }
+
+@import url('../../../../styles.css');
+
+.primary ::ng-deep .ngx-pagination .current {
+    background: var(--primary-default);
+}

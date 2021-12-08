@@ -48,13 +48,13 @@
             {{r.entidad}}
           </td>
           <td>
-            <a routerLink="/jurado/editar-jurado/{{r._id}}" ><i class="material-icons">edit</i></a>
+            <a routerLink="/jurado/editar-jurado/{{r._id}}" ><i class="material-icons edit">edit</i></a>
             <a routerLink="/jurado/eliminar-jurado/{{r._id}}" ><i class="material-icons trash">delete</i></a>
           </td>
         </tr>
         <tr>
           <td colspan="5">
-            <pagination-controls (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+            <pagination-controls class="primary" (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
           </td>
         </tr>
       </tbody>
