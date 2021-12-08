@@ -23,7 +23,11 @@ export class ListarLineaInvestigacionComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.subscripcion = 
+    this.GetRecord();
+  }
+
+  
+  GetRecord(){
     this.lineaInvestigacionService.getRecord().subscribe(
       {
         next: (data: LineaInvestigacionModel[])=>{

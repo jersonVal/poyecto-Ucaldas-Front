@@ -22,7 +22,10 @@ export class ListarEstadoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.subscripcion = 
+    this.GetRecord()
+  }
+  
+  GetRecord(){
     this.estadoService.getRecord().subscribe(
       {
         next: (data: EstadoModel[])=>{
@@ -33,6 +36,7 @@ export class ListarEstadoComponent implements OnInit {
         }
       }
     )
+
   }
 
 }

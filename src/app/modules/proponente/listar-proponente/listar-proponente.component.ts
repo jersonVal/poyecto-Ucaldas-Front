@@ -31,17 +31,9 @@ export class ListarProponenteComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.subscripcion = 
-    this.bussinessService.getRecordProponente().subscribe(
-      {
-        next: (data: ProponenteModel[])=>{
-          this.recordList = data
-        },
-        error: (err) => {
-          console.log(err)
-        }
-      }
-    )
+
+    this.GetRecord()
+    
     this.departamentoService.getRecord().subscribe(
       {
         next: (data: DepartamentoModel[])=>{
@@ -53,6 +45,19 @@ export class ListarProponenteComponent implements OnInit {
       {
         next: (data: TipoVinculacionModel[])=>{
           this.tipoVinculacion = data
+        }
+      }
+    )
+  }
+
+  GetRecord(){
+    this.bussinessService.getRecordProponente().subscribe(
+      {
+        next: (data: ProponenteModel[])=>{
+          this.recordList = data
+        },
+        error: (err) => {
+          console.log(err)
         }
       }
     )

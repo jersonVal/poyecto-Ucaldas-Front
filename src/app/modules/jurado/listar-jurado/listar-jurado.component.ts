@@ -23,6 +23,10 @@ export class ListarJuradoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.GetRecord()
+  }
+
+  GetRecord(){
     this.subscripcion = this.juradoService.getRecord().subscribe(
       {
         next: (data: JuradoModel[])=>{
