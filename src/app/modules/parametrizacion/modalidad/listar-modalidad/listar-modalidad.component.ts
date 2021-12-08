@@ -22,7 +22,11 @@ export class ListarModalidadComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.subscripcion = 
+    this.GetRecord()
+    
+  }
+
+  GetRecord(){
     this.modalidadService.getRecord().subscribe(
       {
         next: (data: ModalidadModel[])=>{
@@ -33,6 +37,7 @@ export class ListarModalidadComponent implements OnInit {
         }
       }
     )
+
   }
 
 }

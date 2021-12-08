@@ -22,6 +22,10 @@ export class ListarTipoVinculacionComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.GetRecord()
+  }
+
+  GetRecord(){
     this.tipoVinculacionService.getRecord().subscribe(
       {
         next: (data: TipoVinculacionModel[])=>{
