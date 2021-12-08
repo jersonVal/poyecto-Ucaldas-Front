@@ -27,7 +27,7 @@ export class ListarSolicitudComponent implements OnInit {
   modalidades: ModalidadModel[] = [];
   lineasInvestigacion: LineaInvestigacionModel[] = [];
   recordList: SolicitudModel[] = [];
-  subscripcion: Subscription = new Subscription();
+  // subscripcion: Subscription = new Subscription();
 
   constructor(
     private solicitudService: SolicitudService,
@@ -38,7 +38,9 @@ export class ListarSolicitudComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.subscripcion = this.solicitudService.getRecord().subscribe(
+    // this.subscripcion = 
+    
+    this.solicitudService.getRecord().subscribe(
       {
         next: (data: SolicitudModel[])=>{
           this.recordList = data

@@ -15,14 +15,15 @@ export class ListarModalidadComponent implements OnInit {
   p: number = 1;
   total:number=0;
   recordList: ModalidadModel[] = [];
-  subscripcion: Subscription = new Subscription();
+  // subscripcion: Subscription = new Subscription();
 
   constructor(
     private modalidadService: ModalidadService
   ) { }
 
   ngOnInit(): void {
-    this.subscripcion = this.modalidadService.getRecord().subscribe(
+    // this.subscripcion = 
+    this.modalidadService.getRecord().subscribe(
       {
         next: (data: ModalidadModel[])=>{
           this.recordList = data

@@ -15,14 +15,15 @@ export class ListarFacultadComponent implements OnInit {
   p: number = 1;
   total:number=0;
   recordList: FacultadModel[] = [];
-  subscripcion: Subscription = new Subscription();
+  // subscripcion: Subscription = new Subscription();
 
   constructor(
     private facultadService: FacultadService
   ) { }
 
   ngOnInit(): void {
-    this.subscripcion = this.facultadService.getRecord().subscribe(
+    // this.subscripcion = 
+    this.facultadService.getRecord().subscribe(
       {
         next: (data: FacultadModel[])=>{
           this.recordList = data

@@ -15,14 +15,15 @@ export class ListarEstadoComponent implements OnInit {
   p: number = 1;
   total:number=0;
   recordList: EstadoModel[] = [];
-  subscripcion: Subscription = new Subscription();
+  // subscripcion: Subscription = new Subscription();
 
   constructor(
     private estadoService: EstadoService
   ) { }
 
   ngOnInit(): void {
-    this.subscripcion = this.estadoService.getRecord().subscribe(
+    // this.subscripcion = 
+    this.estadoService.getRecord().subscribe(
       {
         next: (data: EstadoModel[])=>{
           this.recordList = data

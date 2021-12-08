@@ -18,7 +18,7 @@ export class ListarDepartamentoComponent implements OnInit {
   total:number=0;
   facultades: FacultadModel[] = [];
   recordList: DepartamentoModel[] = [];
-  subscripcion: Subscription = new Subscription();
+  // subscripcion: Subscription = new Subscription();
 
   constructor(
     private departamentoService: DepartamentoService,
@@ -26,7 +26,8 @@ export class ListarDepartamentoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.subscripcion = this.departamentoService.getRecord().subscribe(
+    // this.subscripcion = 
+    this.departamentoService.getRecord().subscribe(
       {
         next: (data: DepartamentoModel[])=>{
           this.recordList = data

@@ -15,14 +15,15 @@ export class ListarTipoComiteComponent implements OnInit {
   p: number = 1;
   total:number=0;
   recordList: TipoComiteModel[] = [];
-  subscripcion: Subscription = new Subscription();
+  // subscripcion: Subscription = new Subscription();
 
   constructor(
     private tipoComiteService: TipoComiteService
   ) { }
 
   ngOnInit(): void {
-    this.subscripcion = this.tipoComiteService.getRecord().subscribe(
+    // this.subscripcion = 
+    this.tipoComiteService.getRecord().subscribe(
       {
         next: (data: TipoComiteModel[])=>{
           this.recordList = data

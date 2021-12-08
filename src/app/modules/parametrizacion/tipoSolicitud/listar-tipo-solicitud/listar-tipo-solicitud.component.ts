@@ -16,14 +16,15 @@ export class ListarTipoSolicitudComponent implements OnInit {
   total:number=0;
 
   recordList: TipoSolicitudModel[] = [];
-  subscripcion: Subscription = new Subscription();
+  // subscripcion: Subscription = new Subscription();
 
   constructor(
     private tipoSolicitudService: TipoSolicitudService 
   ) { }
 
   ngOnInit(): void {
-    this.subscripcion = this.tipoSolicitudService.getRecord().subscribe(
+    // this.subscripcion = 
+    this.tipoSolicitudService.getRecord().subscribe(
       {
         next: (data: TipoSolicitudModel[])=>{
           this.recordList = data

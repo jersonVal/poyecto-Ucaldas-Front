@@ -16,14 +16,15 @@ export class ListarLineaInvestigacionComponent implements OnInit {
   total:number=0;
 
   recordList: LineaInvestigacionModel[] = [];
-  subscripcion: Subscription = new Subscription();
+  // subscripcion: Subscription = new Subscription();
 
   constructor(
     private lineaInvestigacionService: LineaInvestigacionService
   ) { }
 
   ngOnInit(): void {
-    this.subscripcion = this.lineaInvestigacionService.getRecord().subscribe(
+    // this.subscripcion = 
+    this.lineaInvestigacionService.getRecord().subscribe(
       {
         next: (data: LineaInvestigacionModel[])=>{
           this.recordList = data
