@@ -7,6 +7,7 @@ import { EliminarProponenteComponent } from './eliminar-proponente/eliminar-prop
 import { EditarProponenteComponent } from './editar-proponente/editar-proponente.component';
 import { ListarProponenteComponent } from './listar-proponente/listar-proponente.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     ProponenteRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ]
 })
 export class ProponenteModule { }

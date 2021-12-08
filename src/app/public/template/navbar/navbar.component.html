@@ -23,8 +23,13 @@
       </li>
 
       <li *ngIf="session"><a routerLink="proponente/listar-proponente">Proponente</a></li>
+<<<<<<< HEAD
       <li *ngIf="!session"><a routerLink="jurado/listar-jurado">Jurado</a></li>
       <li *ngIf="!session"><a routerLink="solicitud/listar-solicitud">Solicitud</a></li>
+=======
+      <li *ngIf="session"><a routerLink="jurado/listar-jurado">Jurado</a></li>
+      <li *ngIf="session"><a routerLink="solicitud/listar-solicitud">Solicitud</a></li>
+>>>>>>> e659f1e7b9562538f13c4c692ec8f1715cf19a99
       <!-- dropdown reportes -->
       <li *ngIf="session" class="acti">
         <a>Reportes<i class="material-icons right">arrow_drop_down</i></a>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { GeneralData } from 'src/app/config/general-data';
 import { DepartamentoModel } from 'src/app/modelos/parametrizacion/departamento/departamento.model';
 import { TipoVinculacionModel } from 'src/app/modelos/parametrizacion/tipo-vinculacion/tipo-vinculacion.model';
 import { ProponenteModel } from 'src/app/modelos/proponente/proponente.model';
@@ -14,10 +15,14 @@ import { TipoVinculacionService } from 'src/app/servicios/parametrizacion/tipo-v
 })
 export class ListarProponenteComponent implements OnInit {
 
+  pageSize : number = GeneralData.REGISTROS_POR_PAGINA;
+  p: number = 1;
+  total:number=0;
+
   departamentos: DepartamentoModel[] = []
   tipoVinculacion: TipoVinculacionModel[] = []
   recordList: ProponenteModel[] = [];
-  subscripcion: Subscription = new Subscription();
+  // subscripcion: Subscription = new Subscription();
 
   constructor(
     private bussinessService: BussinessService,
@@ -26,7 +31,8 @@ export class ListarProponenteComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.subscripcion = this.bussinessService.getRecordProponente().subscribe(
+    // this.subscripcion = 
+    this.bussinessService.getRecordProponente().subscribe(
       {
         next: (data: ProponenteModel[])=>{
           this.recordList = data
