@@ -25,13 +25,13 @@
             {{r.nombre}}
           </td>
           <td>
-            <a routerLink="/parametrizacion/tipo-vinculacion/editar-tipo-vinculacion/{{r._id}}" ><i class="material-icons">edit</i></a>
+            <a routerLink="/parametrizacion/tipo-vinculacion/editar-tipo-vinculacion/{{r._id}}" ><i class="material-icons edit">edit</i></a>
             <a routerLink="/parametrizacion/tipo-vinculacion/eliminar-tipo-vinculacion/{{r._id}}" ><i class="material-icons trash">delete</i></a>
           </td>
         </tr>
         <tr>
           <td colspan="5">
-            <pagination-controls (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+            <pagination-controls class="btn" (pageChange)="p = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
           </td>
         </tr>    
       </tbody>
