@@ -50,4 +50,8 @@ table{
   background: var(--danger-default) !important;
 }
 
+.trash{
+  color: var(--danger-default);
+}
+
 

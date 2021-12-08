@@ -22,16 +22,10 @@ export class ListarEstadoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-<<<<<<< HEAD
     // this.subscripcion = 
     this.GetRecord();
   }
 
-=======
-    this.GetRecord()
-  }
-  
->>>>>>> 62fff0fd65c7393dddd57bc0813594e573a0bccf
   GetRecord(){
     this.estadoService.getRecord().subscribe(
       {
