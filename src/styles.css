@@ -54,4 +54,9 @@ table{
   color: var(--danger-default);
 }
 
+.edit{
+  color: var(--primary-default);
+}
+
+
 
