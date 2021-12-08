@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { GeneralData } from 'src/app/config/general-data';
 import { TipoSolicitudModel } from 'src/app/modelos/parametrizacion/tipoSolicitud/tipoSolicitud.model';
 import { TipoSolicitudService } from 'src/app/servicios/parametrizacion/tipo-solicitud.service';
 
@@ -9,6 +10,10 @@ import { TipoSolicitudService } from 'src/app/servicios/parametrizacion/tipo-sol
   styleUrls: ['./listar-tipo-solicitud.component.css']
 })
 export class ListarTipoSolicitudComponent implements OnInit {
+
+  pageSize : number = GeneralData.REGISTROS_POR_PAGINA;
+  p: number = 1;
+  total:number=0;
 
   recordList: TipoSolicitudModel[] = [];
   subscripcion: Subscription = new Subscription();

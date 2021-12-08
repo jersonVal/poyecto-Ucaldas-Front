@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { GeneralData } from 'src/app/config/general-data';
 import { LineaInvestigacionModel } from 'src/app/modelos/parametrizacion/lineaInvestigacion/linea-investigacion.model';
 import { LineaInvestigacionService } from 'src/app/servicios/parametrizacion/linea-investigacion.service';
 
@@ -9,6 +10,10 @@ import { LineaInvestigacionService } from 'src/app/servicios/parametrizacion/lin
   styleUrls: ['./listar-linea-investigacion.component.css']
 })
 export class ListarLineaInvestigacionComponent implements OnInit {
+
+  pageSize : number = GeneralData.REGISTROS_POR_PAGINA;
+  p: number = 1;
+  total:number=0;
 
   recordList: LineaInvestigacionModel[] = [];
   subscripcion: Subscription = new Subscription();
