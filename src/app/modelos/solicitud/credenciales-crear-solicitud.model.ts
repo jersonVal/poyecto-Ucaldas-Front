@@ -3,7 +3,7 @@ export class CredencialesCrearSolicitudModel {
     archivo?: string;
     descripcion?: string;
     nombreTrabajo?: string;
-    idEstado?: string;
+    idProponente?: string;
     idTipoSolicitud?: string;
     idModalidad?: string;
     idLineaInvestigacion?: string;

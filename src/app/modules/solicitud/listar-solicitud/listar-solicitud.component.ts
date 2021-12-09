@@ -5,7 +5,9 @@ import { EstadoModel } from 'src/app/modelos/parametrizacion/estado/estado.model
 import { LineaInvestigacionModel } from 'src/app/modelos/parametrizacion/lineaInvestigacion/linea-investigacion.model';
 import { ModalidadModel } from 'src/app/modelos/parametrizacion/modalidad/modalidad.model';
 import { TipoSolicitudModel } from 'src/app/modelos/parametrizacion/tipoSolicitud/tipoSolicitud.model';
+import { ProponenteModel } from 'src/app/modelos/proponente/proponente.model';
 import { SolicitudModel } from 'src/app/modelos/solicitud/solicitud.model';
+import { BussinessService } from 'src/app/servicios/bussiness.service';
 import { EstadoService } from 'src/app/servicios/parametrizacion/estado.service';
 import { LineaInvestigacionService } from 'src/app/servicios/parametrizacion/linea-investigacion.service';
 import { ModalidadService } from 'src/app/servicios/parametrizacion/modalidad.service';
@@ -22,7 +24,7 @@ export class ListarSolicitudComponent implements OnInit {
   pageSize : number = GeneralData.REGISTROS_POR_PAGINA;
   p: number = 1;
   total:number=0;
-  estados: EstadoModel[]= [];
+  proponentes: ProponenteModel[]= [];
   tipoSolicitudes: TipoSolicitudModel[] = [];
   modalidades: ModalidadModel[] = [];
   lineasInvestigacion: LineaInvestigacionModel[] = [];
@@ -31,6 +33,7 @@ export class ListarSolicitudComponent implements OnInit {
 
   constructor(
     private solicitudService: SolicitudService,
+    private bussinessService: BussinessService,
     private estadoService: EstadoService,
     private tipoSolicitudService: TipoSolicitudService,
     private modalidadService: ModalidadService,
@@ -58,12 +61,12 @@ export class ListarSolicitudComponent implements OnInit {
     )
   }
 
-  BuscarEstado(id: string): string {
+  BuscarProponente(id: string): string {
     let nombre = ""
-    for(let i of this.estados){
+    for(let i of this.proponentes){
       if(i._id === id){
-        if(i.tipo){
-          nombre = i.tipo
+        if(i.nombre && i.apellidos){
+          nombre = i.nombre + " " +  i.apellidos
         }
       }
     }
@@ -107,9 +110,9 @@ export class ListarSolicitudComponent implements OnInit {
   }
 
   InitSearch(){
-    this.estadoService.getRecord().subscribe({
-      next: (data: EstadoModel[])=>{
-        this.estados = data
+    this.bussinessService.getRecordProponente().subscribe({
+      next: (data: ProponenteModel[])=>{
+        this.proponentes = data
       }
     })
 

@@ -12,6 +12,7 @@ import { LineaInvestigacionModel } from 'src/app/modelos/parametrizacion/lineaIn
 import { LineaInvestigacionService } from 'src/app/servicios/parametrizacion/linea-investigacion.service';
 import { CredencialesCrearSolicitudModel } from 'src/app/modelos/solicitud/credenciales-crear-solicitud.model';
 import {BussinessService} from 'src/app/servicios/bussiness.service'
+import { ProponenteModel } from 'src/app/modelos/proponente/proponente.model';
 
 
 
@@ -26,7 +27,7 @@ export class CrearSolicitudComponent implements OnInit {
 
   form: FormGroup = new FormGroup({});
 
-  estadoData: EstadoModel[] = [];
+  proponenteData: ProponenteModel[] = [];
   modalidadData: ModalidadModel[] = [];
   tipoSolicitudData: TipoSolicitudModel[] = [];
   lineaInvestigacionData: LineaInvestigacionModel[] = [];
@@ -35,7 +36,6 @@ export class CrearSolicitudComponent implements OnInit {
     private fb: FormBuilder,
     private bussinessService: BussinessService,
     private router: Router,
-    private estadoService: EstadoService,
     private modalidadService: ModalidadService,
     private tipoSolicitudService: TipoSolicitudService,
     private lineaInvestigacionService: LineaInvestigacionService
@@ -52,10 +52,10 @@ export class CrearSolicitudComponent implements OnInit {
       archivo:["",[Validators.required]],
       descripcion:["",[Validators.required]],
       nombreTrabajo:["",[Validators.required,Validators.minLength(GeneralData.NAME_MIN_LENGHT)]],
-      idEstado:["dfsdgdsgsd",[Validators.required]],
-      idTipoSolicitud:["gsdgdsgdsgds",[Validators.required]],
-      idModalidad:["hdshdsgdsgsdg",[Validators.required]],
-      idLineaInvestigacion:["hsdhdsfgsfds",[Validators.required]],
+      idProponente:["",[Validators.required]],
+      idTipoSolicitud:["",[Validators.required]],
+      idModalidad:["",[Validators.required]],
+      idLineaInvestigacion:["",[Validators.required]],
     })
   }
 
@@ -72,14 +72,13 @@ export class CrearSolicitudComponent implements OnInit {
       modelo.archivo = this.GetForm['archivo'].value;
       modelo.descripcion = this.GetForm['descripcion'].value;
       modelo.nombreTrabajo = this.GetForm['nombreTrabajo'].value;
-      modelo.idEstado = this.GetForm['idEstado'].value;
+      modelo.idProponente = this.GetForm['idProponente'].value;
       modelo.idTipoSolicitud = this.GetForm['idTipoSolicitud'].value;
       modelo.idModalidad = this.GetForm['idModalidad'].value;
       modelo.idLineaInvestigacion = this.GetForm['idLineaInvestigacion'].value;
       //Llamado al servicio de identificacion de usuario
       this.bussinessService.CrearSolicitud(modelo).subscribe({
         next:( data:any ) => {
-          console.log(data)
           OpenGeneralModal('Creado con Exito')
         },
         error:( error:any ) => {
@@ -93,11 +92,11 @@ export class CrearSolicitudComponent implements OnInit {
 
   InitSelect(){
 
-    this.estadoService.getRecord().subscribe({
+    this.bussinessService.getRecordProponente().subscribe({
       next: (data: EstadoModel[])=>{
-        this.estadoData = data
+        this.proponenteData = data
         setTimeout(()=> {
-          InitSelectById('idEstado')
+          InitSelectById('idProponente')
         }, 100) 
       }
     })

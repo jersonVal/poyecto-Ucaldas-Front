@@ -47,14 +47,12 @@ export class BussinessService {
   }
 
   CrearSolicitud(modelo:CredencialesCrearSolicitudModel):Observable<any>{
-
-    console.log(modelo)
     return this.http.post(`${this.url}/solicituds`,{
       fecha: modelo.fecha,
       archivo: modelo.archivo,
       descripcion: modelo.descripcion,
       nombreTrabajo: modelo.nombreTrabajo,
-      id_estado: modelo.idEstado,
+      id_proponente: modelo.idProponente,
       id_tipoSolicitud: modelo.idTipoSolicitud,
       id_modalidad: modelo.idModalidad,
       id_lineaInvestigacion: modelo.idLineaInvestigacion

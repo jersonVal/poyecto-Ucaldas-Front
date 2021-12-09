@@ -68,7 +68,7 @@
 
         <div class='row'>
           <div class='input-field col s6'>
-            <select id="idModalidad">
+            <select id="idModalidad" formControlName="idModalidad">
               <option value="" disabled>Modalidad</option>
               <option *ngFor="let m of modalidadData" value="{{m._id}}">{{m.nombre}}</option>
             </select>
@@ -76,7 +76,7 @@
           </div>
 
           <div class='input-field col s6'>
-            <select id="idTipoSolicitud">
+            <select id="idTipoSolicitud" formControlName="idTipoSolicitud">
               <option value="" disabled>Tipo Solicitud</option>
               <option *ngFor="let m of tipoSolicitudData" class="black" value="{{m._id}}">{{m.nombre}}</option>
             </select>
@@ -86,15 +86,15 @@
 
         <div class='row'>
           <div class='input-field col s6'>
-            <select id="idEstado">
-              <option value="" disabled>Estado</option>
-              <option *ngFor="let m of estadoData" value="{{m._id}}">{{m.tipo}}</option>
+            <select id="idProponente" formControlName="idProponente">
+              <option value="" disabled>Proponente</option>
+              <option *ngFor="let m of proponenteData" value="{{m._id}}">{{m.nombre}} {{m.apellidos}}</option>
             </select>
-            <label for="sel">Estado</label>
+            <label for="sel">Proponente</label>
           </div>
 
           <div class='input-field col s6'>
-            <select id="idLineaInvestigacion">
+            <select id="idLineaInvestigacion" formControlName="idLineaInvestigacion">
               <option value="" disabled>Linea de Investigacion</option>
               <option *ngFor="let m of lineaInvestigacionData" value="{{m._id}}">{{m.nombre}}</option>
             </select>

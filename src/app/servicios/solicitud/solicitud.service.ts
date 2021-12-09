@@ -30,7 +30,7 @@ export class SolicitudService {
       archivo: modelo.archivo,
       descripcion: modelo.descripcion,
       nombreTrabajo: modelo.nombreTrabajo,
-      id_estado: modelo.id_estado,
+      id_estado: modelo.id_proponente,
       id_tipoSolicitud: modelo.id_tipoSolicitud,
       id_modalidad: modelo.id_modalidad,
       id_lineaInvestigacion: modelo.id_lineaInvestigacion

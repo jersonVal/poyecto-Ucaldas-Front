@@ -4,7 +4,7 @@ export class SolicitudModel {
     archivo?: string;
     descripcion?: string;
     nombreTrabajo?: string;
-    id_estado?: string;
+    id_proponente?: string;
     id_tipoSolicitud?: string;
     id_modalidad?: string;
     id_lineaInvestigacion?: string;

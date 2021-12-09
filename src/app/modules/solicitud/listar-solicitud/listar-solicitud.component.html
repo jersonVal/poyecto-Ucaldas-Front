@@ -21,7 +21,7 @@
           Nombre del trabajo
         </th>
         <th>
-          Estado
+          Proponente
         </th>
         <th>
           Tipo de Solicitud
@@ -53,8 +53,8 @@
           <td>
             {{r.nombreTrabajo}}
           </td>
-          <td *ngIf="r.id_estado">
-            {{BuscarEstado(r.id_estado)}}
+          <td *ngIf="r.id_proponente">
+            {{BuscarProponente(r.id_proponente)}}
           </td>
           <td *ngIf="r.id_tipoSolicitud">
             {{BuscarTipoSolicitud(r.id_tipoSolicitud)}}
