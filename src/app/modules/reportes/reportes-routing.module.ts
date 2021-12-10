@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { JuradosDeSolicitudComponent } from './jurados-de-solicitud/jurados-de-solicitud.component';
+import { CrearJuradoSolicitudComponent } from './jurado-solicitud/crear-jurado-solicitud/crear-jurado-solicitud.component';
+import { EditarJuradoSolicitudComponent } from './jurado-solicitud/editar-jurado-solicitud/editar-jurado-solicitud.component';
+import { EliminarJuradoSolicitudComponent } from './jurado-solicitud/eliminar-jurado-solicitud/eliminar-jurado-solicitud.component';
+import { ListarJuradoSolicitudComponent } from './jurado-solicitud/listar-jurado-solicitud/listar-jurado-solicitud.component';
 import { LineaDeInvestigacionDeJuradoComponent } from './linea-de-investigacion-de-jurado/linea-de-investigacion-de-jurado.component';
 import { ProponenteDeSolicitudComponent } from './proponente-de-solicitud/proponente-de-solicitud.component';
 import { ResultadoEvaluacionComponent } from './resultado-evaluacion/resultado-evaluacion.component';
@@ -8,8 +11,20 @@ import { TipoDeComiteDeSolicitudComponent } from './tipo-de-comite-de-solicitud/
 
 const routes: Routes = [
   {
-    path: "jurados-de-solicitud",
-    component: JuradosDeSolicitudComponent
+    path: "jurado-solicitud/crear-jurado-solicitud",
+    component: CrearJuradoSolicitudComponent
+  },
+  {
+    path: "jurado-solicitud/editar-jurado-solicitud",
+    component: EditarJuradoSolicitudComponent
+  },
+  {
+    path: "jurado-solicitud/eliminar-jurado-solicitud",
+    component: EliminarJuradoSolicitudComponent
+  },
+  {
+    path: "jurado-solicitud/listar-jurado-solicitud",
+    component: ListarJuradoSolicitudComponent
   },
   {
     path:"lineas-de-investigacion-de-jurado",
