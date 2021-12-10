@@ -1,1 +1,77 @@
-<p>listar-jurado-solicitud works!</p>
+<div class="p-2">
+    <h2>Solicitud de Jurados</h2>
+    <br>
+    <a routerLink="/reportes/jurado-solicitud/crear-jurado-solicutud" class="btn btn-success">Nuevo registro</a>
+
+    <table class="table responsive-table">
+        <thead>
+            <th>
+                Id
+            </th>
+            <th>
+                Nombre de la Solicitud
+            </th>
+            <th>
+                Nombre Jurado
+            </th>
+            <th>
+                Apellido Jurado
+            </th>
+            <th>
+                Fecha de Invitacion
+            </th>
+            <th>
+                Fecha de Respuesta
+            </th>
+            <th>
+                Observaciones
+            </th>
+            <th>
+                Estado
+            </th>
+            <th>
+                Acciones
+            </th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let r of recordList | paginate: { itemsPerPage: pageSize, currentPage: p, totalItems: total }">
+                <td>
+                    {{r._id}}
+                </td>
+                <td *ngIf="r.id_solicitudJuradoResultado">
+                    {{BuscarNombreSolicitud(r.id_solicitudJuradoResultado)}}
+                </td>
+                <td *ngIf="r.id_jurado">
+                    {{BuscarNombreJurado(r.id_jurado)}}
+                </td>
+                <td *ngIf="r.id_jurado">
+                    {{BuscarApellidosJurado(r.id_jurado)}}
+                </td>
+                <td>
+                    {{r.fechaInvitacion}}
+                </td>
+                <td>
+                    {{r.fechaRespuesta}}
+                </td>
+                <td>
+                    {{r.observaciones}}
+                </td>
+                <td>
+                    {{r.id_estado}}
+                </td>
+                <td>
+                    <a routerLink="/reportes/jurado-solicitud/editar-jurado-solicitud/{{r._id}}"><i
+                            class="material-icons  edit">edit</i></a>
+                    <a routerLink="/reportes/jurado-solicitud/eliminar-jurado-solicitud/{{r._id}}"><i
+                            class="material-icons trash">delete</i></a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5">
+                    <pagination-controls class="primary" (pageChange)="p = $event" previousLabel="Anterior"
+                        nextLabel="Siguiente"></pagination-controls>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

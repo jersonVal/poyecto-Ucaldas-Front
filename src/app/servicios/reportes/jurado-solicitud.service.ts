@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { GeneralData} from '../../config/general-data'
 import { CredencialesAsociarJuradoSolicitudModel } from 'src/app/modelos/reportes/credenciales-jurado-solicitud.model';
 import { Observable } from 'rxjs';
+import { JuradoSolicitudModel } from 'src/app/modelos/reportes/jurado-solicitud.model';
 
 @Injectable({
   providedIn: 'root'
@@ -24,5 +25,8 @@ export class JuradoSolicitudService {
       observaciones: modelo.observaciones,
       id_estado: modelo.estado
     })
+  }
+  getRecord(){
+    return this.http.get<JuradoSolicitudModel[]>(`${this.url}/solicitud-jurados`);
   }
 }
