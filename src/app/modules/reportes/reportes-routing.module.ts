@@ -19,7 +19,7 @@ const routes: Routes = [
     component: EditarJuradoSolicitudComponent
   },
   {
-    path: "jurado-solicitud/eliminar-jurado-solicitud",
+    path: "jurado-solicitud/eliminar-jurado-solicitud/:_id",
     component: EliminarJuradoSolicitudComponent
   },
   {

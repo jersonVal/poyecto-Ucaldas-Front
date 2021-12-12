@@ -41,6 +41,13 @@ export class JuradoSolicitudService {
     })
   }
 
+
+  EliminarSolicitudJurado(_id: string): Observable<any>{
+    return this.http.delete(`${this.url}/solicitud-jurados/${_id}`,{
+      
+    })
+  }
+
   BuscarRegistro(_id: string):Observable<JuradoSolicitudModel>{
     return this.http.get<JuradoSolicitudModel>(`${this.url}/solicitud-jurados/${_id}`);
   }
