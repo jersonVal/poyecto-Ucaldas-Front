@@ -12,6 +12,10 @@ import { ListarJuradoSolicitudComponent } from './jurado-solicitud/listar-jurado
 import { EliminarJuradoSolicitudComponent } from './jurado-solicitud/eliminar-jurado-solicitud/eliminar-jurado-solicitud.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { CrearLineaInvestigacionComponent } from './linea-investigacion-jurado/crear-linea-investigacion/crear-linea-investigacion.component';
+import { EditarLineaInvestigacionComponent } from './linea-investigacion-jurado/editar-linea-investigacion/editar-linea-investigacion.component';
+import { EliminarLineaInvestigacionComponent } from './linea-investigacion-jurado/eliminar-linea-investigacion/eliminar-linea-investigacion.component';
+import { ListarLineaInvestigacionComponent } from './linea-investigacion-jurado/listar-linea-investigacion/listar-linea-investigacion.component';
 
 
 @NgModule({
@@ -23,7 +27,11 @@ import { NgxPaginationModule } from 'ngx-pagination';
     CrearJuradoSolicitudComponent,
     EditarJuradoSolicitudComponent,
     ListarJuradoSolicitudComponent,
-    EliminarJuradoSolicitudComponent
+    EliminarJuradoSolicitudComponent,
+    CrearLineaInvestigacionComponent,
+    EditarLineaInvestigacionComponent,
+    EliminarLineaInvestigacionComponent,
+    ListarLineaInvestigacionComponent
   ],
   imports: [
     CommonModule,
