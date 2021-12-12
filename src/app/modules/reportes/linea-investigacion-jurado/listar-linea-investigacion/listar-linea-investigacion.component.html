@@ -1,1 +1,44 @@
-<p>listar-linea-investigacion works!</p>
+<div class="p-2">
+    <h2>Lineas de investigacion de jurado</h2>
+    <br>
+    <a routerLink="/reportes/linea-investigacion-jurado/crear-linea-investigacion-jurado" class="btn btn-success">Nuevo registro</a>
+
+    <table class="table responsive-table">
+        <thead>
+            <th>
+                Id
+            </th>
+            <th>
+                Jurado
+            </th>
+            <th>
+                Linea de investigacion
+            </th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let r of recordList | paginate: { itemsPerPage: pageSize, currentPage: p, totalItems: total }">
+                <td>
+                    {{r._id}}
+                </td>
+                <td *ngIf="r.id_jurado">
+                    {{BuscarJurado(r.id_jurado)}}
+                </td>
+                <td *ngIf="r.id_lineaInvestigacion">
+                    {{BuscarLinea(r.id_lineaInvestigacion)}}
+                </td>
+                <td>
+                    <a routerLink="/reportes/jurado-solicitud/editar-jurado-solicitud/{{r._id}}"><i
+                            class="material-icons  edit">edit</i></a>
+                    <a routerLink="/reportes/jurado-solicitud/eliminar-jurado-solicitud/{{r._id}}"><i
+                            class="material-icons trash">delete</i></a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5">
+                    <pagination-controls class="primary" (pageChange)="p = $event" previousLabel="Anterior"
+                        nextLabel="Siguiente"></pagination-controls>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -4,7 +4,10 @@ import { CrearJuradoSolicitudComponent } from './jurado-solicitud/crear-jurado-s
 import { EditarJuradoSolicitudComponent } from './jurado-solicitud/editar-jurado-solicitud/editar-jurado-solicitud.component';
 import { EliminarJuradoSolicitudComponent } from './jurado-solicitud/eliminar-jurado-solicitud/eliminar-jurado-solicitud.component';
 import { ListarJuradoSolicitudComponent } from './jurado-solicitud/listar-jurado-solicitud/listar-jurado-solicitud.component';
-import { LineaDeInvestigacionDeJuradoComponent } from './linea-de-investigacion-de-jurado/linea-de-investigacion-de-jurado.component';
+import { CrearLineaInvestigacionComponent } from './linea-investigacion-jurado/crear-linea-investigacion/crear-linea-investigacion.component';
+import { EditarLineaInvestigacionComponent } from './linea-investigacion-jurado/editar-linea-investigacion/editar-linea-investigacion.component';
+import { EliminarLineaInvestigacionComponent } from './linea-investigacion-jurado/eliminar-linea-investigacion/eliminar-linea-investigacion.component';
+import { ListarLineaInvestigacionComponent } from './linea-investigacion-jurado/listar-linea-investigacion/listar-linea-investigacion.component';
 import { ProponenteDeSolicitudComponent } from './proponente-de-solicitud/proponente-de-solicitud.component';
 import { ResultadoEvaluacionComponent } from './resultado-evaluacion/resultado-evaluacion.component';
 import { TipoDeComiteDeSolicitudComponent } from './tipo-de-comite-de-solicitud/tipo-de-comite-de-solicitud.component';
@@ -27,8 +30,20 @@ const routes: Routes = [
     component: ListarJuradoSolicitudComponent
   },
   {
-    path:"lineas-de-investigacion-de-jurado",
-    component: LineaDeInvestigacionDeJuradoComponent
+    path:"lineas-de-investigacion-de-jurado/crear-linea-investigacion-jurado",
+    component: CrearLineaInvestigacionComponent
+  },
+  {
+    path:"lineas-de-investigacion-de-jurado/editar-linea-investigacion-jurado/:_id",
+    component: EditarLineaInvestigacionComponent
+  },
+  {
+    path:"lineas-de-investigacion-de-jurado/eliminar-linea-investigacion-jurado/:_id",
+    component: EliminarLineaInvestigacionComponent
+  },
+  {
+    path:"lineas-de-investigacion-de-jurado/listar-linea-investigacion-jurado",
+    component: ListarLineaInvestigacionComponent
   },
   {
     path: "proponente-de-solicitud",
