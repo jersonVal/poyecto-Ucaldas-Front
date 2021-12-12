@@ -15,7 +15,7 @@ const routes: Routes = [
     component: CrearJuradoSolicitudComponent
   },
   {
-    path: "jurado-solicitud/editar-jurado-solicitud",
+    path: "jurado-solicitud/editar-jurado-solicitud/:_id",
     component: EditarJuradoSolicitudComponent
   },
   {

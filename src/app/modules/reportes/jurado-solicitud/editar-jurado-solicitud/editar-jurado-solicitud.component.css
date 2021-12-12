@@ -1,0 +1,37 @@
+@import url('../../../../../styles.css');
+
+.background-primary{
+    background-color: var(--primary-default);
+}
+
+.color-primary{
+    color: var(--primary-default);
+}
+
+.background-primary:hover{
+    background-color: var(--primary-dark);
+}
+
+.color-third{
+    color: var(--third-default);
+}
+
+.warning{
+    color: var(--danger-default);
+}
+
+textarea{
+    resize: none;
+    height: 10rem;   
+    border-radius: 0.2rem; 
+    border: 0.1rem solid black;
+    padding: 1rem;
+}
+
+#lblDescription{
+    margin: 1rem;
+}
+
+option{
+    color: black !important;
+}

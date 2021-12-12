@@ -29,4 +29,19 @@ export class JuradoSolicitudService {
   getRecord(){
     return this.http.get<JuradoSolicitudModel[]>(`${this.url}/solicitud-jurados`);
   }
+
+  EditarJuradoSolicitud(modelo:JuradoSolicitudModel):Observable<JuradoSolicitudModel>{
+    return this.http.put(`${this.url}/solicitud-jurados/${modelo._id}`,{
+      id_solicitudJuradoResultado: modelo.id_solicitudJuradoResultado,
+      id_jurado: modelo.id_jurado,
+      fechaInvitacion: modelo.fechaInvitacion,
+      fechaRespuesta: modelo.fechaRespuesta,
+      observaciones: modelo.observaciones,
+      id_estado: modelo.id_estado
+    })
+  }
+
+  BuscarRegistro(_id: string):Observable<JuradoSolicitudModel>{
+    return this.http.get<JuradoSolicitudModel>(`${this.url}/solicitud-jurados/${_id}`);
+  }
 }

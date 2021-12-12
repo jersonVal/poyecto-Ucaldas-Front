@@ -1,7 +1,7 @@
 <div class="p-2">
     <h2>Solicitud de Jurados</h2>
     <br>
-    <a routerLink="/reportes/jurado-solicitud/crear-jurado-solicutud" class="btn btn-success">Nuevo registro</a>
+    <a routerLink="/reportes/jurado-solicitud/crear-jurado-solicitud" class="btn btn-success">Nuevo registro</a>
 
     <table class="table responsive-table">
         <thead>
@@ -56,8 +56,8 @@
                 <td>
                     {{r.observaciones}}
                 </td>
-                <td>
-                    {{r.id_estado}}
+                <td *ngIf="r.id_estado">
+                    {{BuscarEstado(r.id_estado)}}
                 </td>
                 <td>
                     <a routerLink="/reportes/jurado-solicitud/editar-jurado-solicitud/{{r._id}}"><i
