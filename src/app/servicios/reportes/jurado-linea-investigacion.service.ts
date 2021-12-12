@@ -22,5 +22,8 @@ export class JuradoLineaInvestigacionService {
       lineas_investigacion: modelo.lineas_investigacion,
     })
   }
-  
+
+  getRecord(){
+    return this.http.get<JuradoLineaInvestigacionModel[]>(`${this.url}/lineas-investigacion-jurado`);
+  }
 }
