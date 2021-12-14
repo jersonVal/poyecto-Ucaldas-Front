@@ -45,6 +45,7 @@ export class CrearTipoComiteComponent implements OnInit {
       this.tipoComiteService.CrearTipoComite(modelo).subscribe({
         next:( data:any ) => {
           OpenGeneralModal('Creado con Exito')
+          this.router.navigate(["/parametrizacion/tipo-comite/listar-tipo-comite"])
         },
         error:( error:any ) => {
           console.log(error)
@@ -52,7 +53,7 @@ export class CrearTipoComiteComponent implements OnInit {
         }
       })
 
-      this.router.navigate(["/parametrizacion/tipo-comite/listar-tipo-comite"])
+      
     }
   }
 

@@ -45,6 +45,7 @@ export class CrearTipoVinculacionComponent implements OnInit {
       this.tipoVinculacionService.CrearTipoVinculacion(modelo).subscribe({
         next:( data:any ) => {
           OpenGeneralModal('Creado con Exito')
+          this.router.navigate(["/parametrizacion/tipo-vinculacion/listar-tipo-vinculacion"])
         },
         error:( error:any ) => {
           console.log(error)
@@ -52,7 +53,7 @@ export class CrearTipoVinculacionComponent implements OnInit {
         }
       })
 
-      this.router.navigate(["/parametrizacion/tipo-vinculacion/listar-tipo-vinculacion"])
+      
     }
   }
 

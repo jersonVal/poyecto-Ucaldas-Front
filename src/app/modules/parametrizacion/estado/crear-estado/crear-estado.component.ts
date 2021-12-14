@@ -47,13 +47,14 @@ export class CrearEstadoComponent implements OnInit {
       this.estadoService.CrearEstado(modelo).subscribe({
         next:( data:any ) => {
           OpenGeneralModal('Creado con Exito')
+          this.router.navigate(["/parametrizacion/estado/listar-estado"])
         },
         error:( error:any ) => {
           console.log(error)
           OpenGeneralModal(GeneralData.GENERAL_ERROR_MESSAGE)
         }
       })
-      this.router.navigate(["/parametrizacion/estado/listar-estado"])
+      
     }
   }
 

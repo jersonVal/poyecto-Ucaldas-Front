@@ -47,6 +47,7 @@ export class CrearLineaInvestigacionComponent implements OnInit {
       this.lineaInvestigacionService.CrearLineaInvestigacion(modelo).subscribe({
         next:( data:any ) => {
           OpenGeneralModal('Creado con Exito')
+          this.router.navigate(["/parametrizacion/linea-investigacion/listar-linea-investigacion"])
         },
         error:( error:any ) => {
           console.log(error)
@@ -54,7 +55,7 @@ export class CrearLineaInvestigacionComponent implements OnInit {
         }
       })
 
-      this.router.navigate(["/parametrizacion/linea-investigacion/listar-linea-investigacion"])
+      
     }
   }
 

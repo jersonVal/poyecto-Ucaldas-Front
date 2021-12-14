@@ -3,6 +3,7 @@ import { SolicitudModel} from '../../modelos/solicitud/solicitud.model';
 import { GeneralData} from '../../config/general-data';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { CargarFotoModel } from 'src/app/modelos/proponente/cargar_foto.model';
 
 
 @Injectable({
@@ -41,5 +42,12 @@ export class SolicitudService {
     return this.http.delete(`${this.url}/solicituds/${_id}`,{
       
     })
+  }
+
+  CargarFile(formData: FormData):Observable<CargarFotoModel>{
+    return this.http.post<CargarFotoModel>(`${this.url}/CargarArchivo`,
+    formData
+    )
+
   }
 }
