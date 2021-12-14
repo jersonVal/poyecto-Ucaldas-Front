@@ -38,16 +38,33 @@
 
         <div class='row'>
 
-          <div class="file-field input-field">
+          <div class="row">
+            <div class="col s12">
+              <div class="row">
+                <div class="col s12 center-align borde">
+                  <!-- <img *ngIf="!cargarFile" class="proponente-defecto" src="/assets/imagenes/proponentes/imagen_defecto.png" alt=""> -->
+                  <img *ngIf="cargarFile" class="proponente-defecto" src="{{url}}/archivo/4/{{cargarFilename}}" alt="">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12 imagendiv center-align">
+                  <input type="file" class="btn cargar" (change)="OnChangeInputFile($event)"/>
+                </div>
+  
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="file-field input-field">
             <div class="btn background-primary">
               <span>Cargar</span>
               <input formControlName="archivo" class='validate' type='file' name='archivo' id='archivo' />
-              <!-- <input type="file"> -->
+              
             </div>
             <div class="file-path-wrapper">
               <input class="file-path validate" type="text" placeholder="Subir archivo">
             </div>
-          </div>
+          </div> -->
 
         </div>
 

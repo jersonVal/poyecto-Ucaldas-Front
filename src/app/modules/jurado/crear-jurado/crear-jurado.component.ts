@@ -56,12 +56,13 @@ export class CrearJuradoComponent implements OnInit {
       this.bussinessService.CrearJurado(modelo).subscribe({
         next:( data:any ) => {
           OpenGeneralModal('Creado correctamente')
+          this.router.navigate(['/jurado/listar-jurado']);
         },
         error:( error:any ) => {
           OpenGeneralModal(GeneralData.GENERAL_ERROR_MESSAGE)
         }
       })
-      this.router.navigate(['/jurado/listar-jurado']);
+      
     }
   }
 

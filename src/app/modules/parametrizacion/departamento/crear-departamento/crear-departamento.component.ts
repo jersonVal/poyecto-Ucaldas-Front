@@ -70,6 +70,7 @@ export class CrearDepartamentoComponent implements OnInit {
       this.servicioDepartamento.CrearDepartamento(modelo).subscribe({
         next:( data:any ) => {
           OpenGeneralModal('Creado con Exito')
+          this.router.navigate(["/parametrizacion/departamento/listar-departamento"])
         },
         error:( error:any ) => {
           console.log(error)
@@ -77,7 +78,7 @@ export class CrearDepartamentoComponent implements OnInit {
         }
       })
 
-      this.router.navigate(["/parametrizacion/departamento/listar-departamento"])
+      
     }
   }
 

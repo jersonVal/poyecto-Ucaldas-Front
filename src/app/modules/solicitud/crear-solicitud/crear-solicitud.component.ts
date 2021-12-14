@@ -13,6 +13,8 @@ import { LineaInvestigacionService } from 'src/app/servicios/parametrizacion/lin
 import { CredencialesCrearSolicitudModel } from 'src/app/modelos/solicitud/credenciales-crear-solicitud.model';
 import {BussinessService} from 'src/app/servicios/bussiness.service'
 import { ProponenteModel } from 'src/app/modelos/proponente/proponente.model';
+import { CargarFotoModel } from 'src/app/modelos/proponente/cargar_foto.model';
+import { SolicitudService } from 'src/app/servicios/solicitud/solicitud.service';
 
 
 
@@ -27,6 +29,11 @@ export class CrearSolicitudComponent implements OnInit {
 
   form: FormGroup = new FormGroup({});
 
+  formFile: FormGroup = new FormGroup({});
+  url: string = GeneralData.BUSSINESS_URL;
+  cargarFilename?: string = "";
+  cargarFile: boolean = false;
+
   proponenteData: ProponenteModel[] = [];
   modalidadData: ModalidadModel[] = [];
   tipoSolicitudData: TipoSolicitudModel[] = [];
@@ -38,12 +45,20 @@ export class CrearSolicitudComponent implements OnInit {
     private router: Router,
     private modalidadService: ModalidadService,
     private tipoSolicitudService: TipoSolicitudService,
-    private lineaInvestigacionService: LineaInvestigacionService
+    private lineaInvestigacionService: LineaInvestigacionService,
+    private solicitudService: SolicitudService
   ) { }
 
   ngOnInit(): void {
     this.CreateForm();
     this.InitSelect();
+    this.CreateFormFile();
+  }
+
+  CreateFormFile(){
+    this.formFile=this.fb.group({
+      file:["",[]]
+    })
   }
 
   CreateForm(){
@@ -80,13 +95,14 @@ export class CrearSolicitudComponent implements OnInit {
       this.bussinessService.CrearSolicitud(modelo).subscribe({
         next:( data:any ) => {
           OpenGeneralModal('Creado con Exito')
+          this.router.navigate(['/solicitud/listar-solicitud'])
         },
         error:( error:any ) => {
           console.log(error)
           OpenGeneralModal(GeneralData.GENERAL_ERROR_MESSAGE)
         }
       })
-      this.router.navigate(['/solicitud/listar-solicitud'])
+      
     }
   }
 
@@ -131,6 +147,30 @@ export class CrearSolicitudComponent implements OnInit {
       }
     })
     // InitSelectById('idLineaInvestigacion')
+  }
+
+  OnChangeInputFile(event: any){
+    if(event.target.files.length > 0){
+      const file = event.target.files[0];
+      this.formFile.controls["file"].setValue(file);
+      //Asignar el valor de el file
+     // this.form.controls["foto"].setValue(file.name);
+      
+      this.CargarImagen();
+    }
+
+  }
+  CargarImagen(){
+    const formData = new FormData();
+    formData.append("file",this.formFile.controls["file"].value);
+    //Obtener el valor de el file
+    this.solicitudService.CargarFile(formData).subscribe({
+      next: (data:CargarFotoModel)=>{
+        this.form.controls["archivo"].setValue(data.filename);
+        this.cargarFilename = data.filename;
+        this.cargarFile = true;
+      }
+    })
   }
 
 }
