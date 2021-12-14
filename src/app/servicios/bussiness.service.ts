@@ -6,6 +6,7 @@ import { CredencialesCrearProponenteModel} from '../modelos/proponente/credencia
 import { Observable } from 'rxjs';
 import { CredencialesCrearSolicitudModel } from '../modelos/solicitud/credenciales-crear-solicitud.model';
 import { ProponenteModel } from '../modelos/proponente/proponente.model';
+import { CargarFotoModel } from '../modelos/proponente/cargar_foto.model';
 
 
 @Injectable({
@@ -89,6 +90,12 @@ export class BussinessService {
     return this.http.delete(`${this.url}/proponentes/${_id}`,{
       
     })
+  }
+  CargarFileProponente(formData: FormData):Observable<CargarFotoModel>{
+    return this.http.post<CargarFotoModel>(`${this.url}/CargarImagenPrincipalProponente`,
+    formData
+    )
+
   }
 
 }

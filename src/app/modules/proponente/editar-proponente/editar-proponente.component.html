@@ -13,6 +13,37 @@
             <div class='col s12'>
             </div>
           </div>
+
+          <!-- <div class="row">
+            <div class="col s12">
+              <div class="row">
+                <div class="col s12 center-align borde">
+                  <img  class="proponente-defecto" src="{{url}}/archivo/4/{{cargarFilename}}" alt="">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12 imagendiv center-align">
+                  <input type="file" class="btn cargar" (change)="OnChangeInputFile($event)"/>
+                </div>
+  
+              </div>
+            </div>
+          </div>
+
+          <input type="text" formControlName="foto"/> -->
+
+          <div class='row'>
+  
+            <div class="file-field input-field">
+              <div class="btn background-primary">
+                <span>Seleccionar</span>
+                <input formControlName="foto" class='validate' type='file' value="" name='foto' id='foto' />
+              </div>
+              <div class="file-path-wrapper">
+                <input class="active" class="file-path validate" type="text" placeholder="Editar Foto">
+              </div>
+            </div>
+          </div>
   
           <div class='row'>
             <div class='input-field col s6'>
@@ -82,18 +113,7 @@
   
           </div>
   
-          <div class='row'>
-  
-            <div class="file-field input-field">
-              <div class="btn background-primary">
-                <span>Cargar</span>
-                <input formControlName="foto" class='validate' type='file' value="" name='foto' id='foto' />
-              </div>
-              <div class="file-path-wrapper">
-                <input class="active" class="file-path validate" type="text" placeholder="Foto (Opcional)">
-              </div>
-            </div>
-          </div>
+          
   
           <div class='row'>
             <div class="input-field col s12">

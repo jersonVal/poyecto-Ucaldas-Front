@@ -17,12 +17,13 @@ export class JuradoLineaInvestigacionService {
   ) { }
 
   CrearJuradoLineaInvestigacion(modelo:CredencialesJuradoLineaInvestigacionModel):Observable<any>{
+
     return this.http.post(`${this.url}/asociar-jurado-lineas-investigacion`,{
       id_jurado: modelo.id_jurado,
       lineas_investigacion: modelo.lineas_investigacion,
     })
   }
-
+ 
   getRecord(){
     return this.http.get<JuradoLineaInvestigacionModel[]>(`${this.url}/lineas-investigacion-jurado`);
   }

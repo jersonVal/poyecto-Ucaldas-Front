@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { GeneralData } from 'src/app/config/general-data';
 import { DepartamentoModel } from 'src/app/modelos/parametrizacion/departamento/departamento.model';
 import { TipoVinculacionModel } from 'src/app/modelos/parametrizacion/tipo-vinculacion/tipo-vinculacion.model';
+import { CargarFotoModel } from 'src/app/modelos/proponente/cargar_foto.model';
 import { ProponenteModel } from 'src/app/modelos/proponente/proponente.model';
 import { BussinessService } from 'src/app/servicios/bussiness.service';
 import { DepartamentoService } from 'src/app/servicios/parametrizacion/departamento.service';
@@ -24,6 +25,10 @@ export class EditarProponenteComponent implements OnInit {
   form: FormGroup = new FormGroup({});
   dropDownDepartamento: DepartamentoModel[] = [];
   dropDownTipoVinculacion: TipoVinculacionModel[] = [];
+  formFile: FormGroup = new FormGroup({});
+  url: string = GeneralData.BUSSINESS_URL;
+  cargarFilename?: string = "";
+  cargarFile: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -38,6 +43,7 @@ export class EditarProponenteComponent implements OnInit {
     this.InitSelect();
     this.CreateForm();
     this.BuscarRegistro();
+    this.CreateFormFile();
   }
 
   InitSelect(){
@@ -74,6 +80,12 @@ export class EditarProponenteComponent implements OnInit {
     
   }
 
+  CreateFormFile(){
+    this.formFile=this.fb.group({
+      file:["",[]]
+    })
+  }
+
   CreateForm(){
     this.form=this.fb.group({
       id:["",[Validators.required]],
@@ -104,7 +116,7 @@ export class EditarProponenteComponent implements OnInit {
         this.form.controls['correo'].setValue(data.correo);
         this.form.controls['fechaNacimiento'].setValue(data.fechaNacimiento);
         this.form.controls['celular'].setValue(data.celular);
-        // this.form.controls['foto'].setValue(data.foto);
+        this.form.controls['foto'].setValue(data.foto);
         this.form.controls['idDepartamento'].setValue(data.id_departamento);
         this.form.controls['idTipoVinculacion'].setValue(data.id_tipoVinculacion);
       }
@@ -145,6 +157,28 @@ export class EditarProponenteComponent implements OnInit {
 
       this.router.navigate(["/proponente/listar-proponente"]);
     }
+  }
+  OnChangeInputFile(event: any){
+    if(event.target.files.length > 0){
+      const file = event.target.files[0];
+      this.formFile.controls["file"].setValue(file);
+      //Asignar el valor de el file
+      this.form.controls["foto"].setValue(file.name);
+      this.CargarImagen()
+    }
+
+  }
+  CargarImagen(){
+    const formData = new FormData();
+    formData.append("file",this.formFile.controls["file"].value);
+    //Obtener el valor de el file
+    this.bussinessService.CargarFileProponente(formData).subscribe({
+      next: (data:CargarFotoModel)=>{
+        this.form.controls["foto"].setValue(data.filename);
+        this.cargarFilename = data.filename;
+        this.cargarFile = true;
+      }
+    })
   }
   get GetForm(){
     return this.form.controls;

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { GeneralData } from 'src/app/config/general-data';
 import { JuradoModel } from 'src/app/modelos/jurado/jurado.model';
 import { LineaInvestigacionModel } from 'src/app/modelos/parametrizacion/lineaInvestigacion/linea-investigacion.model';
@@ -29,6 +29,7 @@ export class CrearLineaInvestigacionComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
+    private route: ActivatedRoute,
     private juradoLineaInvestigacionService: JuradoLineaInvestigacionService,
     private lineaInvestigacionService: LineaInvestigacionService,
     private juradoService: JuradoService
@@ -42,7 +43,7 @@ export class CrearLineaInvestigacionComponent implements OnInit {
   CreateForm(){
     this.form=this.fb.group({
       idJurado:["",[Validators.required]],
-      lineas_investigacion:["",[Validators.required]]
+      lineasInvestigacion:["",[Validators.required]]
     })
   }
 
@@ -66,9 +67,10 @@ export class CrearLineaInvestigacionComponent implements OnInit {
         },
         error:( error:any ) => {
           OpenGeneralModal(GeneralData.GENERAL_ERROR_MESSAGE)
+          console.log(error)
         }
       })
-      this.router.navigate(['/reportes/linea-investigacion-jurado/listar-linea-investigacion']);
+      this.router.navigate(['/reportes/lineas-de-investigacion-de-jurado/listar-linea-investigacion-jurado']);
     }
   }
 
@@ -85,7 +87,7 @@ export class CrearLineaInvestigacionComponent implements OnInit {
         console.log(err)
       }
     })
-    
+
     this.lineaInvestigacionService.getRecord().subscribe({
       next: (data: LineaInvestigacionModel[])=>{
         this.lineasInvestigacion = data

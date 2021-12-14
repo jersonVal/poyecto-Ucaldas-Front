@@ -16,7 +16,7 @@
   
           <div class='row'>
             <div class='input-field col s6'>
-                <select id="jurado" formControlName="idJurado" multiple>
+                <select id="jurado" formControlName="idJurado">
                   <option value="">Jurado</option>
                   <option *ngFor="let r of juradoSelect" value="{{r._id}}">{{r.nombre}} {{r.apellidos}}</option>
                 </select>
@@ -37,13 +37,13 @@
   
           <div class='row '>
             <div class="col s6">
-              <button name='btn_login' type='button' class=' btn btn-large background-primary' type='button'
+              <button name='btn_login' type='button' (click)="CrearJuradoLineaInvestigacion()" class=' btn btn-large background-primary' type='button'
                 >Asociar</button>
             </div>
   
             <div class="col s6">
               <button name='btn_login' type='button' class='col s12 btn btn-large red' type='button'
-                routerLink="/reportes/linea-investigacion-jurado/listar-linea-investigacion">Cancelar</button>
+                routerLink="/reportes/lineas-de-investigacion-de-jurado/listar-linea-investigacion-jurado">Cancelar</button>
             </div>
   
           </div>

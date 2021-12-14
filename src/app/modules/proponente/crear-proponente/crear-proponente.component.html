@@ -8,10 +8,29 @@
       style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
       <!--  -->
       <form class="col s12" [formGroup]="form">
+        
         <div class='row'>
           <div class='col s12'>
           </div>
         </div>
+
+        <div class="row">
+          <div class="col s12">
+            <div class="row">
+              <div class="col s12 center-align borde">
+                <img *ngIf="!cargarFile" class="proponente-defecto" src="/assets/imagenes/proponentes/imagen_defecto.png" alt="">
+                <img *ngIf="cargarFile" class="proponente-defecto" src="{{url}}/archivo/4/{{cargarFilename}}" alt="">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 imagendiv center-align">
+                <input type="file" class="btn cargar" (change)="OnChangeInputFile($event)"/>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
 
         <div class='row'>
           <div class='input-field col s6'>
@@ -76,19 +95,18 @@
 
         </div>
 
-        <div class='row'>
+        <!-- <div class='row'>
 
           <div class="file-field input-field">
             <div class="btn background-primary">
               <span>Cargar</span>
               <input formControlName="foto" class='validate' type='file' name='foto' id='foto' />
-              <!-- <input type="file"> -->
             </div>
             <div class="file-path-wrapper">
               <input class="file-path validate" type="text" placeholder="Foto (Opcional)">
             </div>
           </div>
-        </div>
+        </div> -->
 
         <div class='row'>
           <div class="input-field col s12">
@@ -117,9 +135,9 @@
 
           <div class="col s6">
             <button name='btn_login' type='button' class='col s12 btn btn-large red' type='button'
-            routerLink="/proponente/listar-proponente">Cancelar</button>
+              routerLink="/proponente/listar-proponente">Cancelar</button>
           </div>
-          
+
         </div>
       </form>
     </div>

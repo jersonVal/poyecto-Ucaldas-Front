@@ -8,6 +8,7 @@ import { TipoVinculacionModel } from 'src/app/modelos/parametrizacion/tipo-vincu
 import { TipoVinculacionService } from 'src/app/servicios/parametrizacion/tipo-vinculacion.service';
 import { DepartamentoModel } from 'src/app/modelos/parametrizacion/departamento/departamento.model';
 import { DepartamentoService } from 'src/app/servicios/parametrizacion/departamento.service';
+import { CargarFotoModel } from 'src/app/modelos/proponente/cargar_foto.model';
 
 declare const OpenGeneralModal: any;
 declare const InitSelectById: any;
@@ -22,6 +23,10 @@ export class CrearProponenteComponent implements OnInit {
   form: FormGroup = new FormGroup({});
   dropDownDepartamento: DepartamentoModel[] = [];
   dropDownTipoVinculacion: TipoVinculacionModel[] = [];
+  formFile: FormGroup = new FormGroup({});
+  url: string = GeneralData.BUSSINESS_URL;
+  cargarFilename?: string = "";
+  cargarFile: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -34,6 +39,7 @@ export class CrearProponenteComponent implements OnInit {
   ngOnInit(): void {
     this.InitSelect();
     this.CreateForm();
+    this.CreateFormFile();
   }
 
   InitSelect(){
@@ -71,9 +77,15 @@ export class CrearProponenteComponent implements OnInit {
       correo:["",[Validators.required,Validators.email,Validators.minLength(GeneralData.EMAIL_MIN_LENGHT)]],
       fechaNacimiento:["",[Validators.required]],
       celular:["",[Validators.required,Validators.maxLength(GeneralData.PHONE_MAX_LENGHT)]],
-      foto:[""],
-      idDepartamento:["617f715792854e2188063b68",[Validators.required]],
-      idTipoVinculacion:["617f715792854e2188063b68",[Validators.required]]
+      foto:["",[Validators.required]],
+      idDepartamento:["",[Validators.required]],
+      idTipoVinculacion:["",[Validators.required]]
+    })
+  }
+
+  CreateFormFile(){
+    this.formFile=this.fb.group({
+      file:["",[]]
     })
   }
 
@@ -109,5 +121,27 @@ export class CrearProponenteComponent implements OnInit {
   }
   get GetForm(){
     return this.form.controls;
+  }
+  OnChangeInputFile(event: any){
+    if(event.target.files.length > 0){
+      const file = event.target.files[0];
+      this.formFile.controls["file"].setValue(file);
+      //Asignar el valor de el file
+      this.form.controls["foto"].setValue(file.name);
+      this.CargarImagen();
+    }
+
+  }
+  CargarImagen(){
+    const formData = new FormData();
+    formData.append("file",this.formFile.controls["file"].value);
+    //Obtener el valor de el file
+    this.bussinessService.CargarFileProponente(formData).subscribe({
+      next: (data:CargarFotoModel)=>{
+        this.form.controls["foto"].setValue(data.filename);
+        this.cargarFilename = data.filename;
+        this.cargarFile = true;
+      }
+    })
   }
 }

@@ -22,11 +22,11 @@
         </ul>
       </li>
 
-      <li *ngIf="session"><a routerLink="proponente/listar-proponente">Proponente</a></li>
+      <li *ngIf="!session"><a routerLink="proponente/listar-proponente">Proponente</a></li>
       <li *ngIf="session"><a routerLink="jurado/listar-jurado">Jurado</a></li>
       <li *ngIf="session"><a routerLink="solicitud/listar-solicitud">Solicitud</a></li>
       <!-- dropdown reportes -->
-      <li *ngIf="session" class="acti">
+      <li *ngIf="!session" class="acti">
         <a>Reportes<i class="material-icons right">arrow_drop_down</i></a>
         <ul class="drop">
           <li><a routerLink="reportes/jurado-solicitud/listar-jurado-solicitud">Asociar jurados con solicitud</a></li>
@@ -34,7 +34,7 @@
           <li><a routerLink="reportes/resultado-evaluacion">Resultado de la evaluacion</a></li>
           <li><a routerLink="reportes/tipo-comite-de-solicitud">Tipo de comite de la solititud</a></li>
         </ul>
-      </li>
+      </li> 
 
       <li *ngIf="!session"><a routerLink="seguridad/inicio-sesion">Iniciar Sesion</a></li>
       <li *ngIf="!session"><a routerLink="seguridad/usuario/crear-usuario">Crear Usuario</a></li>
