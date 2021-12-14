@@ -132,14 +132,15 @@ export class EditarJuradoSolicitudComponent implements OnInit {
       
       this.juradoSolicitudService.EditarJuradoSolicitud(modelo).subscribe({
         next:( data:any ) => {
-          OpenGeneralModal('Creado con Exito')
+          OpenGeneralModal('Editado con Exito');
+          this.router.navigate(['/reportes/jurado-solicitud/listar-jurado-solicitud']);
         },
         error:( error:any ) => {
-          console.log(error)
-          OpenGeneralModal(GeneralData.GENERAL_ERROR_MESSAGE)
+          console.log(error);
+          OpenGeneralModal(GeneralData.GENERAL_ERROR_MESSAGE);
         }
       })
-      this.router.navigate(['/reportes/jurado-solicitud/listar-jurado-solicitud'])
+      // this.router.navigate(['/reportes/jurado-solicitud/listar-jurado-solicitud'])
     }
   }
 

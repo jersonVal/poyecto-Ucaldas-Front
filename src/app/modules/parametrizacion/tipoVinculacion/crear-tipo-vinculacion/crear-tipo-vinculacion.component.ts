@@ -53,7 +53,6 @@ export class CrearTipoVinculacionComponent implements OnInit {
         }
       })
 
-      
     }
   }
 

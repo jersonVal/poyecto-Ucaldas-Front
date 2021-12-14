@@ -26,7 +26,7 @@
       <li *ngIf="session"><a routerLink="jurado/listar-jurado">Jurado</a></li>
       <li *ngIf="session"><a routerLink="solicitud/listar-solicitud">Solicitud</a></li>
       <!-- dropdown reportes -->
-      <li *ngIf="session" class="acti">
+      <li *ngIf="!session" class="acti">
         <a>Reportes<i class="material-icons right">arrow_drop_down</i></a>
         <ul class="drop">
           <li><a routerLink="reportes/jurado-solicitud/listar-jurado-solicitud">Asociar jurados con solicitud</a></li>
