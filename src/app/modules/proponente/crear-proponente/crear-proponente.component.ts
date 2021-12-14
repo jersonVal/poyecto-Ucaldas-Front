@@ -109,6 +109,7 @@ export class CrearProponenteComponent implements OnInit {
         next:( data:any ) => {
           console.log(data)
           OpenGeneralModal('Creado con Exito')
+          this.router.navigate(["/proponente/listar-proponente"]);
         },
         error:( error:any ) => {
           console.log(error)
@@ -116,7 +117,7 @@ export class CrearProponenteComponent implements OnInit {
         }
       })
 
-      this.router.navigate(["/proponente/listar-proponente"]);
+      
     }
   }
   get GetForm(){

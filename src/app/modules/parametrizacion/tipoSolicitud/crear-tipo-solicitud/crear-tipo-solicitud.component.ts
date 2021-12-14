@@ -47,15 +47,16 @@ export class CrearTipoSolicitudComponent implements OnInit {
       //Llamado al servicio de identificacion de usuario
       this.tipoSolicitudService.CrearTipoSolicitud(modelo).subscribe({
         next:( data:any ) => {
-          OpenGeneralModal('Creado con Exito')
+          OpenGeneralModal('Creado con Exito');
+          this.router.navigate(["/parametrizacion/tipo-solicitud/listar-tipo-solicitud"]);
         },
         error:( error:any ) => {
           console.log(error)
-          OpenGeneralModal(GeneralData.GENERAL_ERROR_MESSAGE)
+          OpenGeneralModal(GeneralData.GENERAL_ERROR_MESSAGE);
         }
       })
 
-      this.router.navigate(["/parametrizacion/tipo-solicitud/listar-tipo-solicitud"])
+      
     }
   }
 

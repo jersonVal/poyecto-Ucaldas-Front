@@ -46,6 +46,7 @@ export class CrearModalidadComponent implements OnInit {
       this.modalidadService.CrearModalidad(modelo).subscribe({
         next:( data:any ) => {
           OpenGeneralModal('Creado con Exito')
+          this.router.navigate(["/parametrizacion/modalidad/listar-modalidad"])
         },
         error:( error:any ) => {
           console.log(error)
@@ -53,7 +54,7 @@ export class CrearModalidadComponent implements OnInit {
         }
       })
 
-      this.router.navigate(["/parametrizacion/modalidad/listar-modalidad"])
+      
     }
   }
 

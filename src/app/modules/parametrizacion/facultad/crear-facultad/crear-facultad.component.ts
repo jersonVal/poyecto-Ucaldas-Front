@@ -47,7 +47,8 @@ export class CrearFacultadComponent implements OnInit {
       //Llamado al servicio de identificacion de usuario
       this.facultadService.CrearFacultad(modelo).subscribe({
         next:( data:any ) => {
-          OpenGeneralModal('Creado con Exito')
+          OpenGeneralModal('Creado con Exito');
+          this.router.navigate(["/parametrizacion/facultad/listar-facultad"]);
         },
         error:( error:any ) => {
           console.log(error)
@@ -55,7 +56,7 @@ export class CrearFacultadComponent implements OnInit {
         }
       })
 
-      this.router.navigate(["/parametrizacion/facultad/listar-facultad"])
+      
     }
   }
 
