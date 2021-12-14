@@ -57,6 +57,7 @@ export class EditarEstadoComponent implements OnInit {
       this.estadoService.EditarEstado(modelo).subscribe({
         next:( data:any ) => {
           OpenGeneralModal('Editado con Exito')
+          this.router.navigate(["/parametrizacion/estado/listar-estado"])
         },
         error:( error:any ) => {
           console.log(error)
@@ -64,7 +65,7 @@ export class EditarEstadoComponent implements OnInit {
         }
       })
 
-      this.router.navigate(["/parametrizacion/estado/listar-estado"])
+      
   }
 
 }

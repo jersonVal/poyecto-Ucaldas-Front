@@ -70,6 +70,7 @@ export class EditarTipoSolicitudComponent implements OnInit {
         next:( data:any ) => {
           console.log(data)
           OpenGeneralModal('Editado con Exito')
+          this.router.navigate(["/parametrizacion/tipo-solicitud/listar-tipo-solicitud"]);
         },
         error:( error:any ) => {
           console.log(error)
@@ -77,7 +78,7 @@ export class EditarTipoSolicitudComponent implements OnInit {
         }
       })
 
-      this.router.navigate(["/parametrizacion/tipo-solicitud/listar-tipo-solicitud"]);
+      
     }
   }
   get GetForm(){

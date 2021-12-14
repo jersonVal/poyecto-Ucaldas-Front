@@ -73,6 +73,7 @@ export class EditarJuradoComponent implements OnInit {
         next:( data:any ) => {
           console.log(data)
           OpenGeneralModal('Editado con Exito')
+          this.router.navigate(["/jurado/listar-jurado"]);
         },
         error:( error:any ) => {
           console.log(error)
@@ -80,7 +81,7 @@ export class EditarJuradoComponent implements OnInit {
         }
       })
 
-      this.router.navigate(["/jurado/listar-jurado"]);
+      
     }
   }
   get GetForm(){

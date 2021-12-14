@@ -58,6 +58,7 @@ export class EditarModalidadComponent implements OnInit {
         next:( data:any ) => {
           console.log(data)
           OpenGeneralModal('Editado con Exito')
+          this.router.navigate(["/parametrizacion/modalidad/listar-modalidad"]);
         },
         error:( error:any ) => {
           console.log(error)
@@ -65,7 +66,7 @@ export class EditarModalidadComponent implements OnInit {
         }
       })
 
-      this.router.navigate(["/parametrizacion/modalidad/listar-modalidad"]);
+      
     }
   }
   get GetForm(){

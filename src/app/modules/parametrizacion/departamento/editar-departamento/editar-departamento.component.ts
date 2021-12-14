@@ -82,6 +82,7 @@ export class EditarDepartamentoComponent implements OnInit {
         next:( data:any ) => {
           console.log(data)
           OpenGeneralModal('Editado con Exito')
+          this.router.navigate(["/parametrizacion/departamento/listar-departamento"]);
         },
         error:( error:any ) => {
           console.log(error)
@@ -89,7 +90,7 @@ export class EditarDepartamentoComponent implements OnInit {
         }
       })
 
-      this.router.navigate(["/parametrizacion/departamento/listar-departamento"]);
+      
     }
   }
   get GetForm(){

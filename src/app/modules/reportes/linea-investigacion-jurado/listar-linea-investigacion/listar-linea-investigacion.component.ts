@@ -51,7 +51,6 @@ export class ListarLineaInvestigacionComponent implements OnInit {
       {
         next: (data: JuradoLineaInvestigacionModel[])=>{
           this.recordList = data
-          console.log(this.recordList)
         },
         error: (err:any) => {
           console.log(err)

@@ -60,6 +60,7 @@ export class EditarTipoVinculacionComponent implements OnInit {
       this.tipoVinculacionService.EditarTipoVinculacion(modelo).subscribe({
         next:( data:any ) => {
           OpenGeneralModal('Editado con Exito')
+          this.router.navigate(["/parametrizacion/tipo-vinculacion/listar-tipo-vinculacion"])
         },
         error:( error:any ) => {
           console.log(error)
@@ -67,7 +68,7 @@ export class EditarTipoVinculacionComponent implements OnInit {
         }
       })
 
-      this.router.navigate(["/parametrizacion/tipo-vinculacion/listar-tipo-vinculacion"])
+      
     }
   }
 

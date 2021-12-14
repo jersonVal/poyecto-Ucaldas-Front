@@ -34,13 +34,14 @@ export class EliminarDepartamentoComponent implements OnInit {
     this.departamentoService.EliminarDepartamento(this.id).subscribe({
       next:( data:any ) => {
         OpenGeneralModal('Eliminado con Exito')
+        this.router.navigate(["/parametrizacion/departamento/listar-departamento"])
       },
       error:( error:any ) => {
         console.log(error)
         OpenGeneralModal(GeneralData.GENERAL_ERROR_MESSAGE)
       }
     })
-    this.router.navigate(["/parametrizacion/departamento/listar-departamento"])
+    
     
   }
   BuscarRegistro(){

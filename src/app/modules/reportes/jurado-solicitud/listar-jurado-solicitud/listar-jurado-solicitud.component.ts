@@ -65,7 +65,6 @@ export class ListarJuradoSolicitudComponent implements OnInit {
       {
         next: (data: JuradoSolicitudModel[])=>{
           this.recordList = data
-          console.log(data)
         },
         error: (err:any) => {
           console.log(err)

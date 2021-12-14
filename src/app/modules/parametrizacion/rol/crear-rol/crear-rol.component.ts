@@ -46,6 +46,7 @@ export class CrearRolComponent implements OnInit {
       this.servicioRol.CrearRol(modelo).subscribe({
         next:( data:any ) => {
           OpenGeneralModal('Creado con Exito')
+          this.router.navigate(["/parametrizacion/rol/listar-rol"])
         },
         error:( error:any ) => {
           console.log(error)
@@ -53,7 +54,7 @@ export class CrearRolComponent implements OnInit {
         }
       })
 
-      this.router.navigate(["/parametrizacion/rol/listar-rol"])
+      
     }
   }
 

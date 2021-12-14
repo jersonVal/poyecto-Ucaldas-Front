@@ -91,13 +91,13 @@ export class EliminarSolicitudComponent implements OnInit {
     this.solicitudService.RemoveSolicitud(this.id).subscribe({
       next:( data:any ) => {
         OpenGeneralModal('Eliminado con Exito')
+        this.router.navigate(["/solicitud/listar-solicitud"])
       },
       error:( error:any ) => {
         console.log(error)
         OpenGeneralModal(GeneralData.GENERAL_ERROR_MESSAGE)
       }
     })
-    this.router.navigate(["/solicitud/listar-solicitud"])
     
   }
 

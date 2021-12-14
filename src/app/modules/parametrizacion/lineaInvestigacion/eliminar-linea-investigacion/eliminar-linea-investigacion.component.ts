@@ -43,13 +43,14 @@ export class EliminarLineaInvestigacionComponent implements OnInit {
     this.lineaInvestigacionService.RemoveLineaInvestigacion(this.id).subscribe({
       next:( data:any ) => {
         OpenGeneralModal('Eliminado con Exito')
+        this.router.navigate(["/parametrizacion/linea-investigacion/listar-linea-investigacion"])
       },
       error:( error:any ) => {
         console.log(error)
         OpenGeneralModal(GeneralData.GENERAL_ERROR_MESSAGE)
       }
     })
-    this.router.navigate(["/parametrizacion/linea-investigacion/listar-linea-investigacion"])
+    
     
   }
 

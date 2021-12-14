@@ -49,12 +49,13 @@ export class RecuperacionClaveComponent implements OnInit {
         next:( data:any ) => {
           console.log(data)
           OpenGeneralModal('Contraseña cambiada con exito')
+          this.router.navigate(['/home']);
         },
         error:( error:any ) => {
           OpenGeneralModal(GeneralData.GENERAL_ERROR_MESSAGE)
         }
       })
-      this.router.navigate(['/home']);
+     
     }
   }
 

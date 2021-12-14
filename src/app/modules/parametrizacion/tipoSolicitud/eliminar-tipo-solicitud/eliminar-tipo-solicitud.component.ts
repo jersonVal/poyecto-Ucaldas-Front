@@ -33,13 +33,14 @@ export class EliminarTipoSolicitudComponent implements OnInit {
     this.tipoSolicitudService.EliminarTipoSolicitud(this.id).subscribe({
       next:( data:any ) => {
         OpenGeneralModal('Eliminado con Exito')
+        this.router.navigate(["/parametrizacion/tipo-solicitud/listar-tipo-solicitud"])
       },
       error:( error:any ) => {
         console.log(error)
         OpenGeneralModal(GeneralData.GENERAL_ERROR_MESSAGE)
       }
     })
-    this.router.navigate(["/parametrizacion/tipo-solicitud/listar-tipo-solicitud"])
+    
     
   }
   BuscarRegistro(){

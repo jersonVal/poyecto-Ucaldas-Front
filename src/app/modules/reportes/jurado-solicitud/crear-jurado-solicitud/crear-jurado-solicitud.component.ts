@@ -61,18 +61,19 @@ export class CrearJuradoSolicitudComponent implements OnInit {
       modelo.fechaInvitacion = this.GetForm['fechaInvitacion'].value;
       modelo.observaciones = this.GetForm['descripcion'].value;
       modelo.fechaRespuesta = "";
-      modelo.estado = "Pendiente";
+      modelo.estado = "61b9158662192aa994739088";
       console.log(modelo)
       //Llamado al servicio de identificacion de usuario
       this.juradoSolicitudService.CrearJuradoSolicitud(modelo).subscribe({
         next:( data:any ) => {
           OpenGeneralModal('Creado correctamente')
+          this.router.navigate(['/reportes/jurado-solicitud/listar-jurado-solicitud']);
         },
         error:( error:any ) => {
           OpenGeneralModal(GeneralData.GENERAL_ERROR_MESSAGE)
         }
       })
-      this.router.navigate(['/reportes/jurado-solicitud/listar-jurado-solicitud']);
+      
     }
   }
 

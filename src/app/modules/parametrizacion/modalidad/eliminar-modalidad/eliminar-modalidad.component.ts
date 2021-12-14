@@ -32,13 +32,14 @@ export class EliminarModalidadComponent implements OnInit {
     this.modalidadService.EliminarModalidad(this.id).subscribe({
       next:( data:any ) => {
         OpenGeneralModal('Eliminado con Exito')
+        this.router.navigate(["/parametrizacion/modalidad/listar-modalidad"])
       },
       error:( error:any ) => {
         console.log(error)
         OpenGeneralModal(GeneralData.GENERAL_ERROR_MESSAGE)
       }
     })
-    this.router.navigate(["/parametrizacion/modalidad/listar-modalidad"])
+    
     
   }
   BuscarRegistro(){

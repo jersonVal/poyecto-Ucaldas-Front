@@ -88,7 +88,6 @@ export class EditarJuradoSolicitudComponent implements OnInit {
     this.estadoService.getRecord().subscribe({
       next: (data: EstadoModel[])=>{
         this.estadoSelect = data
-        console.log(this.estadoSelect)
         setTimeout(()=> {
           InitSelectById('estado');
         }, 100)
@@ -140,7 +139,7 @@ export class EditarJuradoSolicitudComponent implements OnInit {
           OpenGeneralModal(GeneralData.GENERAL_ERROR_MESSAGE);
         }
       })
-      // this.router.navigate(['/reportes/jurado-solicitud/listar-jurado-solicitud'])
+   
     }
   }
 

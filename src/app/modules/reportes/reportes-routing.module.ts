@@ -8,7 +8,6 @@ import { CrearLineaInvestigacionComponent } from './linea-investigacion-jurado/c
 import { EditarLineaInvestigacionComponent } from './linea-investigacion-jurado/editar-linea-investigacion/editar-linea-investigacion.component';
 import { EliminarLineaInvestigacionComponent } from './linea-investigacion-jurado/eliminar-linea-investigacion/eliminar-linea-investigacion.component';
 import { ListarLineaInvestigacionComponent } from './linea-investigacion-jurado/listar-linea-investigacion/listar-linea-investigacion.component';
-import { ProponenteDeSolicitudComponent } from './proponente-de-solicitud/proponente-de-solicitud.component';
 import { ResultadoEvaluacionComponent } from './resultado-evaluacion/resultado-evaluacion.component';
 import { TipoDeComiteDeSolicitudComponent } from './tipo-de-comite-de-solicitud/tipo-de-comite-de-solicitud.component';
 
@@ -44,10 +43,6 @@ const routes: Routes = [
   {
     path:"lineas-de-investigacion-de-jurado/listar-linea-investigacion-jurado",
     component: ListarLineaInvestigacionComponent
-  },
-  {
-    path: "proponente-de-solicitud",
-    component: ProponenteDeSolicitudComponent
   },
   {
     path: "resultado-evaluacion",

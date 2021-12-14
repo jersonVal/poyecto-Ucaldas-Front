@@ -38,15 +38,17 @@ export class EliminarJuradoSolicitudComponent implements OnInit {
     this.juradoSolicitudService.EliminarSolicitudJurado(this.id).subscribe({
       next: (data: any) => {
         OpenGeneralModal('Eliminado con Exito')
+        this.router.navigate(["/reportes/jurado-solicitud/listar-jurado-solicitud"])
       },
       error: (error: any) => {
         console.log(error)
         OpenGeneralModal(GeneralData.GENERAL_ERROR_MESSAGE)
       }
     })
-    this.router.navigate(["/reportes/jurado-solicitud/listar-jurado-solicitud"])
 
   }
+
+  
   BuscarRegistro() {
     let _id = this.route.snapshot.params["_id"];
     this.juradoSolicitudService.BuscarRegistro(_id).subscribe({

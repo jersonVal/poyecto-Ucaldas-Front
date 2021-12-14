@@ -37,18 +37,16 @@ export class JuradoLineaInvestigacionService {
   EditarJuradoLineaInvestigacion(modelo:JuradoLineaInvestigacionModel):Observable<JuradoLineaInvestigacionModel>{
     return this.http.put(`${this.url}/lineas-investigacion-jurado/${modelo._id}`,{
       id_jurado: modelo.id_jurado,
-      lineas_investigacion: modelo.id_lineaInvestigacion
+      id_lineaInvestigacion: modelo.id_lineaInvestigacion
     })
   } 
 
   BuscarRegistro(_id: string):Observable<JuradoLineaInvestigacionModel>{
     return this.http.get<JuradoLineaInvestigacionModel>(`${this.url}/lineas-investigacion-jurado/${_id}`);
   }
+
+  EliminarJuradoLinea(_id: string): Observable<any>{
+    return this.http.delete(`${this.url}/lineas-investigacion-jurado/${_id}`,{
+    })
+  }
 }  
-///////////////////////////////////////////////////
-// ACA ESTOYYYYYYYYYYYYYYYYYYYy
-// OJOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-// CAMBIAR URL POR QUE ESTAN MAL
-// EN EL BACK EL PUT Y EL GET ESTAN DISTINTOS
-// CREO QUE SOLO ES CAMBIAR ESO Y YA QUEDA EL DE EDITAR
-//

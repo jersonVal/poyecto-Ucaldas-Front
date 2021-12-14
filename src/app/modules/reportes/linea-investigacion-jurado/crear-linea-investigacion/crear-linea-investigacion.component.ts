@@ -64,13 +64,14 @@ export class CrearLineaInvestigacionComponent implements OnInit {
       this.juradoLineaInvestigacionService.CrearJuradoLineaInvestigacion(modelo).subscribe({
         next:( data:any ) => {
           OpenGeneralModal('Creado correctamente')
+          this.router.navigate(['/reportes/lineas-de-investigacion-de-jurado/listar-linea-investigacion-jurado']);
         },
         error:( error:any ) => {
           OpenGeneralModal(GeneralData.GENERAL_ERROR_MESSAGE)
           console.log(error)
         }
       })
-      this.router.navigate(['/reportes/lineas-de-investigacion-de-jurado/listar-linea-investigacion-jurado']);
+      
     }
   }
 

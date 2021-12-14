@@ -53,6 +53,7 @@ export class EditarFacultadComponent implements OnInit {
       this.facultadService.EditarFacultad(modelo).subscribe({
         next:( data:any ) => {
           OpenGeneralModal('Editado con Exito')
+          this.router.navigate(["/parametrizacion/facultad/listar-facultad"])
         },
         error:( error:any ) => {
           console.log(error)
@@ -60,7 +61,7 @@ export class EditarFacultadComponent implements OnInit {
         }
       })
 
-      this.router.navigate(["/parametrizacion/facultad/listar-facultad"])
+      
     }
   }
 

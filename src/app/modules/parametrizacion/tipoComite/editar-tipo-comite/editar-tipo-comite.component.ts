@@ -61,6 +61,7 @@ export class EditarTipoComiteComponent implements OnInit {
       this.tipoComiteService.EditarTipoComite(modelo).subscribe({
         next:( data:any ) => {
           OpenGeneralModal('Editado con Exito')
+          this.router.navigate(["/parametrizacion/tipo-comite/listar-tipo-comite"])
         },
         error:( error:any ) => {
           console.log(error)
@@ -68,7 +69,7 @@ export class EditarTipoComiteComponent implements OnInit {
         }
       })
 
-      this.router.navigate(["/parametrizacion/tipo-comite/listar-tipo-comite"])
+      
     }
   }
 

@@ -39,15 +39,17 @@ export class EliminarProponenteComponent implements OnInit {
     this.bussinessService.EliminarProponente(this.id).subscribe({
       next:( data:any ) => {
         OpenGeneralModal('Eliminado con Exito')
+        this.router.navigate(["/proponente/listar-proponente"])
       },
       error:( error:any ) => {
         console.log(error)
         OpenGeneralModal(GeneralData.GENERAL_ERROR_MESSAGE)
       }
     })
-    this.router.navigate(["/proponente/listar-proponente"])
     
   }
+
+  
   BuscarRegistro(){
     let _id = this.route.snapshot.params["_id"];
     this.bussinessService.BuscarRegistro(_id).subscribe({

@@ -10,6 +10,7 @@ import { FooterComponent } from './public/template/footer/footer.component';
 import { InternalServerErrorComponent } from './public/errors/internal-server-error/internal-server-error.component';
 import { NotFoundComponent } from './public/errors/not-found/not-found.component';
 import {HttpClientModule} from '@angular/common/http';
+import { InvitacionJuradoComponent } from './email/invitacion-jurado/invitacion-jurado.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {HttpClientModule} from '@angular/common/http';
     NavbarComponent,
     FooterComponent,
     InternalServerErrorComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    InvitacionJuradoComponent
   ],
   imports: [
     BrowserModule,

@@ -105,7 +105,7 @@ export class EditarLineaInvestigacionComponent implements OnInit {
       console.log(modelo)
       this.juradoLineaInvestigacionService.EditarJuradoLineaInvestigacion(modelo).subscribe({
         next:( data:any ) => {
-          OpenGeneralModal('Creado con Exito')
+          OpenGeneralModal('Editado con Exito')
           this.router.navigate(['/reportes/lineas-de-investigacion-de-jurado/listar-linea-investigacion-jurado']);
         },
         error:( error:any ) => {

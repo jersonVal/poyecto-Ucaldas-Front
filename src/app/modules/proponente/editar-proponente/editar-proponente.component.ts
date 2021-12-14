@@ -148,6 +148,7 @@ export class EditarProponenteComponent implements OnInit {
         next:( data:any ) => {
           console.log(data)
           OpenGeneralModal('Editado con Exito')
+          this.router.navigate(["/proponente/listar-proponente"]);
         },
         error:( error:any ) => {
           console.log(error)
@@ -155,7 +156,7 @@ export class EditarProponenteComponent implements OnInit {
         }
       })
 
-      this.router.navigate(["/proponente/listar-proponente"]);
+      
     }
   }
   OnChangeInputFile(event: any){

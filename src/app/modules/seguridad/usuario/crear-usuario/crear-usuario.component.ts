@@ -67,13 +67,14 @@ export class CrearUsuarioComponent implements OnInit {
         next:( data:any ) => {
           console.log(data)
           OpenGeneralModal('Creado con Exito')
+          this.router.navigate(['/seguridad/inicio-sesion']);
         },
         error:( error:any ) => {
           console.log(error)
           OpenGeneralModal(GeneralData.GENERAL_ERROR_MESSAGE)
         }
       })
-      this.router.navigate(['/seguridad/inicio-sesion']);
+      
     }
   }
 

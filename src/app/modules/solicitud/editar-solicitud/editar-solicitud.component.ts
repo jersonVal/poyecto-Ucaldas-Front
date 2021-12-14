@@ -113,14 +113,15 @@ export class EditarSolicitudComponent implements OnInit {
       
       this.solicitudService.EditarSolicitud(modelo).subscribe({
         next:( data:any ) => {
-          OpenGeneralModal('Creado con Exito')
+          OpenGeneralModal('Editado con Exito')
+          this.router.navigate(['/solicitud/listar-solicitud'])
         },
         error:( error:any ) => {
           console.log(error)
           OpenGeneralModal(GeneralData.GENERAL_ERROR_MESSAGE)
         }
       })
-      this.router.navigate(['/solicitud/listar-solicitud'])
+      
     }
   }
 

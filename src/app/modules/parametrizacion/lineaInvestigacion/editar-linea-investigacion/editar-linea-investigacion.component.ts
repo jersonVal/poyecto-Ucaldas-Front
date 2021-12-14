@@ -60,6 +60,7 @@ export class EditarLineaInvestigacionComponent implements OnInit {
       this.lineaInvestigacionService.EditarLineaInvestigacion(modelo).subscribe({
         next:( data:any ) => {
           OpenGeneralModal('Editado con Exito')
+          this.router.navigate(["/parametrizacion/linea-investigacion/listar-linea-investigacion"])
         },
         error:( error:any ) => {
           console.log(error)
@@ -67,7 +68,7 @@ export class EditarLineaInvestigacionComponent implements OnInit {
         }
       })
 
-      this.router.navigate(["/parametrizacion/linea-investigacion/listar-linea-investigacion"])
+      
     }
   }
 
